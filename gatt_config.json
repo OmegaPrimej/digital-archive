@@ -1,0 +1,32 @@
+{
+    "adapter": "hci0",
+    "device_name": "Termux-GATT",
+    "services": [
+        {
+            "name": "Battery",
+            "uuid": "180F",
+            "characteristics": [
+                {
+                    "name": "Battery Level",
+                    "uuid": "2A19",
+                    "value": 95,
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "name": "Device Info",
+            "uuid": "180A",
+            "characteristics": [
+                {
+                    "name": "Manufacturer",
+                    "uuid": "2A29",
+                    "value": "Termux",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "advertising_interval": 100,
+    "connectable": true
+}

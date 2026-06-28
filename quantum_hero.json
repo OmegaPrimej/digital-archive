@@ -1,0 +1,21 @@
+{
+  "path": "Time-Forged King",
+  "achievements": [
+    "Architect of Destiny",
+    "Paradox Weaver",
+    "Hero Score: 800"
+  ],
+  "quantum_powers": {
+    "time_travel": true,
+    "quantum_awareness": true,
+    "strategic_mind": true,
+    "mirror_reflection": false,
+    "paradox_weaver": true
+  },
+  "rituals_completed": 2,
+  "shadow_confronted": true,
+  "timeline_choices": {
+    "chapter1": "C"
+  },
+  "timestamp": "2025-12-10T05:17:16.265340"
+}

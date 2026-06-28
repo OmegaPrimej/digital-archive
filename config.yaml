@@ -1,0 +1,10 @@
+project:
+  name: "Automatos-X"
+  version: "2.0.0"
+settings:
+  optimization_level: "ultra"
+  validation: true
+  auto_doc: true
+paths:
+  output: "./output"
+  models: "./models"

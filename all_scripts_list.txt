@@ -1,0 +1,732 @@
+-rwx------. 1 u0_a190 u0_a190 1991 2025-12-29 19:10:10.643981326 -0800 /data/data/com.termux/files/home/cyber_ascii/menu.sh
+-rwx------. 1 u0_a190 u0_a190 1789 2025-12-29 19:20:58.463980862 -0800 /data/data/com.termux/files/home/cyberpunk_ascii/menu.sh
+-rwx------. 1 u0_a190 u0_a190 2817 2026-01-06 20:23:35.018994082 -0800 /data/data/com.termux/files/home/cyberpunk_ascii/main_menu.sh
+-rwx------. 1 u0_a190 u0_a190 142 2026-01-06 20:23:35.048994082 -0800 /data/data/com.termux/files/home/cyberpunk_ascii/start_cyberpunk.sh
+-rwx------. 1 u0_a190 u0_a190 60 2025-11-05 03:09:44.124265289 -0800 /data/data/com.termux/files/home/quantum_nexus/start_quantum.sh
+-rw-------. 1 u0_a190 u0_a190 482 2025-11-17 00:03:29.371049135 -0800 /data/data/com.termux/files/home/luluchain/setup_termux.sh
+-rwx------. 1 u0_a190 u0_a190 5299 2026-04-03 03:04:17.173919830 -0700 /data/data/com.termux/files/home/downloads/setup_p2p_mesh.sh
+-rw-------. 1 u0_a190 u0_a190 2558 2026-01-02 14:04:41.369332631 -0800 /data/data/com.termux/files/home/vjepa_build/install_vjepa.sh
+-rw-------. 1 u0_a190 u0_a190 919 2026-01-02 14:07:34.309332507 -0800 /data/data/com.termux/files/home/vjepa_build/quick_start.sh
+-rwx------. 1 u0_a190 u0_a190 77 2025-11-30 20:47:02.679997078 -0800 /data/data/com.termux/files/home/quantum_ai_system/quantum_ai_system/scripts/run_system.sh
+-rw-------. 1 u0_a190 u0_a190 480 2025-12-08 21:58:43.215971073 -0800 /data/data/com.termux/files/home/projects/quantum-broadcast/omega_clean.sh
+-rwx------. 1 u0_a190 u0_a190 21 2026-01-14 14:28:07.261786224 -0800 /data/data/com.termux/files/home/scripts/ai.sh
+-rwx------. 1 u0_a190 u0_a190 915 2026-01-23 17:41:15.009998165 -0800 /data/data/com.termux/files/home/scripts/ai_sweep.sh
+-rwx------. 1 u0_a190 u0_a190 1931 2026-01-23 17:43:25.529998071 -0800 /data/data/com.termux/files/home/scripts/ai_sweep_pro.sh
+-rw-------. 1 u0_a190 u0_a190 7505 2026-01-26 10:56:34.273445672 -0800 /data/data/com.termux/files/home/scripts/ascii_fixer.sh
+-rwx------. 1 u0_a190 u0_a190 1284 2026-01-26 11:04:15.943445342 -0800 /data/data/com.termux/files/home/scripts/ascii_viewer.sh
+-rw-------. 1 u0_a190 u0_a190 81 2026-01-25 12:52:20.739921056 -0800 /data/data/com.termux/files/home/scripts/bridge.sh
+-rwx------. 1 u0_a190 u0_a190 590 2026-01-07 22:49:53.849999418 -0800 /data/data/com.termux/files/home/scripts/btc.sh
+-rwx------. 1 u0_a190 u0_a190 2425 2026-01-07 23:25:18.099997898 -0800 /data/data/com.termux/files/home/scripts/btc_menu.sh
+-rwx------. 1 u0_a190 u0_a190 33 2025-12-30 04:12:49.759987048 -0800 /data/data/com.termux/files/home/scripts/build.sh
+-rwx------. 1 u0_a190 u0_a190 830 2026-01-20 19:26:13.149988669 -0800 /data/data/com.termux/files/home/scripts/build_and_run.sh
+-rwx------. 1 u0_a190 u0_a190 300 2025-12-18 01:50:40.066225834 -0800 /data/data/com.termux/files/home/scripts/capture.sh
+-rwx------. 1 u0_a190 u0_a190 237 2026-01-16 03:29:08.481541156 -0800 /data/data/com.termux/files/home/scripts/chromecast.sh
+-rwx------. 1 u0_a190 u0_a190 1263 2025-12-30 11:19:42.333786913 -0800 /data/data/com.termux/files/home/scripts/cyberpunk_maker.sh
+-rwx------. 1 u0_a190 u0_a190 11532 2025-12-30 03:48:50.029988078 -0800 /data/data/com.termux/files/home/scripts/cyberpunk_video.sh
+-rwx------. 1 u0_a190 u0_a190 518 2026-01-25 21:58:06.485990407 -0800 /data/data/com.termux/files/home/scripts/deploy_attestation.sh
+-rwx------. 1 u0_a190 u0_a190 1348 2025-11-17 01:00:57.012383209 -0800 /data/data/com.termux/files/home/scripts/deploy_luluchain_enterprise.sh
+-rwx------. 1 u0_a190 u0_a190 681 2026-01-24 10:08:11.429989899 -0800 /data/data/com.termux/files/home/scripts/dns_probe.sh
+-rw-------. 1 u0_a190 u0_a190 0 2026-01-25 22:12:00.605989810 -0800 /data/data/com.termux/files/home/scripts/execute_next_steps.sh
+-rwx------. 1 u0_a190 u0_a190 209 2025-12-24 15:40:30.069994987 -0800 /data/data/com.termux/files/home/scripts/fembot.sh
+-rwx------. 1 u0_a190 u0_a190 176 2026-01-13 03:23:14.009727574 -0800 /data/data/com.termux/files/home/scripts/fembot_shell_wrapper.sh
+-rwx------. 1 u0_a190 u0_a190 246 2026-01-18 19:07:20.515998672 -0800 /data/data/com.termux/files/home/scripts/file.sh
+-rwx------. 1 u0_a190 u0_a190 3545 2026-01-24 10:55:56.079987850 -0800 /data/data/com.termux/files/home/scripts/final_analysis.sh
+-rwx------. 1 u0_a190 u0_a190 4908 2026-01-24 11:07:38.709987347 -0800 /data/data/com.termux/files/home/scripts/final_report.sh
+-rwx------. 1 u0_a190 u0_a190 511 2026-01-26 11:21:19.223444610 -0800 /data/data/com.termux/files/home/scripts/fix_ascii.sh
+-rwx------. 1 u0_a190 u0_a190 137 2025-11-20 13:34:04.163501639 -0800 /data/data/com.termux/files/home/scripts/fix_install.sh
+-rwx------. 1 u0_a190 u0_a190 468 2026-01-25 22:14:50.885989688 -0800 /data/data/com.termux/files/home/scripts/galactic_dashboard.sh
+-rwx------. 1 u0_a190 u0_a190 396 2025-11-30 21:51:48.254738713 -0800 /data/data/com.termux/files/home/scripts/gatt_debug.sh
+-rwx------. 1 u0_a190 u0_a190 126 2026-01-13 02:18:22.839730357 -0800 /data/data/com.termux/files/home/scripts/gold_nanes.sh
+-rw-------. 1 u0_a190 u0_a190 0 2026-01-21 02:14:19.224138456 -0800 /data/data/com.termux/files/home/scripts/install-omega.sh
+-rwx------. 1 u0_a190 u0_a190 1154 2026-01-13 04:11:15.219725513 -0800 /data/data/com.termux/files/home/scripts/install.sh
+-rwx------. 1 u0_a190 u0_a190 21174 2025-12-29 19:05:29.813981526 -0800 /data/data/com.termux/files/home/scripts/install_cyberpunk_ascii.sh
+-rwx------. 1 u0_a190 u0_a190 188 2025-11-20 13:28:37.363501873 -0800 /data/data/com.termux/files/home/scripts/install_deps.sh
+-rwx------. 1 u0_a190 u0_a190 978 2025-12-30 11:45:25.413785809 -0800 /data/data/com.termux/files/home/scripts/install_ebt.sh
+-rwx------. 1 u0_a190 u0_a190 266 2026-01-12 03:59:16.095537728 -0800 /data/data/com.termux/files/home/scripts/install_helpers.sh
+-rwx------. 1 u0_a190 u0_a190 1906 2026-01-20 03:58:48.801268893 -0800 /data/data/com.termux/files/home/scripts/install_mesh.sh
+-rwx------. 1 u0_a190 u0_a190 534 2025-12-30 15:27:34.330989557 -0800 /data/data/com.termux/files/home/scripts/install_nexus.sh
+-rwx------. 1 u0_a190 u0_a190 1746 2026-01-20 03:35:16.111269904 -0800 /data/data/com.termux/files/home/scripts/install_termux.sh
+-rwx------. 1 u0_a190 u0_a190 255 2026-01-24 01:19:19.613622026 -0800 /data/data/com.termux/files/home/scripts/light_video.sh
+-rwx------. 1 u0_a190 u0_a190 2817 2025-12-29 19:03:34.583981609 -0800 /data/data/com.termux/files/home/scripts/main_menu.sh
+-rwx------. 1 u0_a190 u0_a190 125 2025-12-30 04:35:03.249986094 -0800 /data/data/com.termux/files/home/scripts/make_video.sh
+-rwx------. 1 u0_a190 u0_a190 586 2026-01-16 10:29:11.061523130 -0800 /data/data/com.termux/files/home/scripts/mesh_dial.sh
+-rwx------. 1 u0_a190 u0_a190 1109 2026-01-18 01:36:57.599992318 -0800 /data/data/com.termux/files/home/scripts/mic_intercept.sh
+-rwx------. 1 u0_a190 u0_a190 6014 2026-01-18 01:22:45.769992927 -0800 /data/data/com.termux/files/home/scripts/mic_monitor.sh
+-rwx------. 1 u0_a190 u0_a190 74 2026-01-31 06:48:25.889997286 -0800 /data/data/com.termux/files/home/scripts/myscript.sh
+-rwx------. 1 u0_a190 u0_a190 725 2025-12-29 19:54:43.733979414 -0800 /data/data/com.termux/files/home/scripts/neon_android.sh
+-rwx------. 1 u0_a190 u0_a190 436 2026-01-24 01:20:04.203621994 -0800 /data/data/com.termux/files/home/scripts/netcat_server.sh
+-rwx------. 1 u0_a190 u0_a190 161 2026-01-12 04:03:25.295537550 -0800 /data/data/com.termux/files/home/scripts/omega.sh
+-rwx------. 1 u0_a190 u0_a190 444 2025-12-08 22:01:11.735970967 -0800 /data/data/com.termux/files/home/scripts/omega_clean.sh
+-rwx------. 1 u0_a190 u0_a190 342 2026-01-20 04:00:38.251268815 -0800 /data/data/com.termux/files/home/scripts/one_punch.sh
+-rwx------. 1 u0_a190 u0_a190 1268 2025-11-29 15:41:22.674627573 -0800 /data/data/com.termux/files/home/scripts/phantom_investigator.sh
+-rwx------. 1 u0_a190 u0_a190 3639 2026-01-26 11:22:00.263444580 -0800 /data/data/com.termux/files/home/scripts/process_shared_image.sh
+-rwx------. 1 u0_a190 u0_a190 830 2025-11-27 11:22:57.617977488 -0800 /data/data/com.termux/files/home/scripts/quantum_monitor.sh
+-rwx------. 1 u0_a190 u0_a190 337 2026-01-25 22:14:50.925989688 -0800 /data/data/com.termux/files/home/scripts/quantum_tyrant_export.sh
+-rwx------. 1 u0_a190 u0_a190 614 2026-01-20 03:59:20.941268870 -0800 /data/data/com.termux/files/home/scripts/quick_mesh.sh
+-rw-------. 1 u0_a190 u0_a190 0 2026-01-25 22:32:43.685988921 -0800 /data/data/com.termux/files/home/scripts/real_world_setup.sh
+-rwx------. 1 u0_a190 u0_a190 1217 2026-01-10 04:14:28.145522667 -0800 /data/data/com.termux/files/home/scripts/roku_auto.sh
+-rwx------. 1 u0_a190 u0_a190 1048 2026-01-10 04:20:16.255522418 -0800 /data/data/com.termux/files/home/scripts/roku_control.sh
+-rwx------. 1 u0_a190 u0_a190 458 2026-01-10 04:11:32.875522793 -0800 /data/data/com.termux/files/home/scripts/roku_direct_401.sh
+-rwx------. 1 u0_a190 u0_a190 290 2026-01-25 22:14:50.955989688 -0800 /data/data/com.termux/files/home/scripts/rubin_tapeout.sh
+-rwx------. 1 u0_a190 u0_a190 118 2026-01-16 14:57:18.487625823 -0800 /data/data/com.termux/files/home/scripts/run.sh
+-rwx------. 1 u0_a190 u0_a190 118 2026-01-12 04:03:38.855537540 -0800 /data/data/com.termux/files/home/scripts/run_omega.sh
+-rwx------. 1 u0_a190 u0_a190 688 2026-01-25 21:58:56.745990371 -0800 /data/data/com.termux/files/home/scripts/run_sovereign.sh
+-rwx------. 1 u0_a190 u0_a190 666 2026-01-24 10:01:37.869990180 -0800 /data/data/com.termux/files/home/scripts/scan.sh
+-rwx------. 1 u0_a190 u0_a190 68 2026-01-18 19:05:29.095998752 -0800 /data/data/com.termux/files/home/scripts/script.sh
+-rwx------. 1 u0_a190 u0_a190 1179 2026-01-20 02:11:59.461273478 -0800 /data/data/com.termux/files/home/scripts/search_files.sh
+-rwx------. 1 u0_a190 u0_a190 1318 2026-01-20 03:59:46.731268852 -0800 /data/data/com.termux/files/home/scripts/setup_all.sh
+-rwx------. 1 u0_a190 u0_a190 3131 2025-12-08 12:02:41.309993399 -0800 /data/data/com.termux/files/home/scripts/setup_poker.sh
+-rwx------. 1 u0_a190 u0_a190 142 2025-12-29 19:03:34.633981609 -0800 /data/data/com.termux/files/home/scripts/start_cyberpunk.sh
+-rwx------. 1 u0_a190 u0_a190 362 2025-11-30 21:49:00.624738833 -0800 /data/data/com.termux/files/home/scripts/start_gatt_service.sh
+-rwx------. 1 u0_a190 u0_a190 162 2026-01-09 09:30:47.279999448 -0800 /data/data/com.termux/files/home/scripts/sweep.sh
+-rwx------. 1 u0_a190 u0_a190 51445 2026-01-15 09:37:46.605378061 -0800 /data/data/com.termux/files/home/scripts/termux_autonomous.sh
+-rw-------. 1 u0_a190 u0_a190 0 2026-01-25 22:10:12.665989887 -0800 /data/data/com.termux/files/home/scripts/termux_commands.sh
+-rwx------. 1 u0_a190 u0_a190 14 2025-12-24 22:01:18.739994829 -0800 /data/data/com.termux/files/home/scripts/termux_install.sh
+-rwx------. 1 u0_a190 u0_a190 942 2026-01-20 03:35:29.871269894 -0800 /data/data/com.termux/files/home/scripts/test_binary_tone.sh
+-rwx------. 1 u0_a190 u0_a190 538 2026-01-24 10:33:51.969988797 -0800 /data/data/com.termux/files/home/scripts/test_dns.sh
+-rwx------. 1 u0_a190 u0_a190 455 2026-01-20 04:00:21.121268827 -0800 /data/data/com.termux/files/home/scripts/test_mesh.sh
+-rwx------. 1 u0_a190 u0_a190 12763 2026-01-25 10:54:11.919926126 -0800 /data/data/com.termux/files/home/scripts/tls_optimizer.sh
+-rwx------. 1 u0_a190 u0_a190 483 2026-01-06 20:07:53.538994756 -0800 /data/data/com.termux/files/home/scripts/tree.sh
+-rwx------. 1 u0_a190 u0_a190 753 2026-01-10 04:40:38.815521544 -0800 /data/data/com.termux/files/home/scripts/usb_inspect.sh
+-rwx------. 1 u0_a190 u0_a190 13854 2026-01-08 13:24:07.799232885 -0800 /data/data/com.termux/files/home/scripts/xolo_toolkit.sh
+-rwx------. 1 u0_a190 u0_a190 513 2026-01-31 18:01:28.589968402 -0800 /data/data/com.termux/files/home/install.sh
+-rw-------. 1 u0_a190 u0_a190 35885 2026-02-01 00:03:01.119952887 -0800 /data/data/com.termux/files/home/OmnicoreTool/generate_html.sh
+-rw-------. 1 u0_a190 u0_a190 35885 2026-02-01 00:03:49.659952852 -0800 /data/data/com.termux/files/home/OmnicoreTool/omnitx.sh
+-rwx------. 1 u0_a190 u0_a190 1261 2025-11-27 11:46:30.627976477 -0800 /data/data/com.termux/files/home/quantum-engine/quantum_monitor.sh
+-rwx------. 1 u0_a190 u0_a190 219 2025-11-27 12:00:15.917975887 -0800 /data/data/com.termux/files/home/quantum-rss-engine/scripts/daily_automation.sh
+-rwx------. 1 u0_a190 u0_a190 2341 2025-11-27 11:55:13.717976103 -0800 /data/data/com.termux/files/home/quantum-rss-engine/monitor_production.sh
+-rwx------. 1 u0_a190 u0_a190 1470 2025-11-27 11:55:55.257976073 -0800 /data/data/com.termux/files/home/quantum-rss-engine/install_production.sh
+-rwx------. 1 u0_a190 u0_a190 37 2026-01-14 04:23:09.564759315 -0800 /data/data/com.termux/files/home/.termux/boot/start-plasma.sh
+-rw-------. 1 u0_a190 u0_a190 271 2026-02-08 06:39:12.759993541 -0800 /data/data/com.termux/files/home/.fancy_prompt.sh
+-rwx------. 1 u0_a190 u0_a190 154 2026-02-09 18:41:03.283958031 -0800 /data/data/com.termux/files/home/bt_scan.sh
+-rwx------. 1 u0_a190 u0_a190 16957 2026-01-13 04:31:19.949724651 -0800 /data/data/com.termux/files/home/QuantumCommProject/setup_termux.sh
+-rwx------. 1 u0_a190 u0_a190 461 2026-01-13 04:31:19.989724651 -0800 /data/data/com.termux/files/home/QuantumCommProject/run_quantum_chat.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 439 2026-01-13 13:39:05.931502313 -0800 /data/data/com.termux/files/home/.video_wallpaper.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 56 2026-01-13 13:42:37.851502162 -0800 /data/data/com.termux/files/home/.shortcuts/*.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 83 2026-01-13 13:43:19.511502132 -0800 /data/data/com.termux/files/home/.shortcuts/AI_Assistant.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 104 2026-01-13 13:43:19.521502132 -0800 /data/data/com.termux/files/home/.shortcuts/Google_Clock.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 87 2026-01-13 13:43:19.531502132 -0800 /data/data/com.termux/files/home/.shortcuts/Google_Calendar.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 77 2026-01-13 13:43:19.541502132 -0800 /data/data/com.termux/files/home/.shortcuts/Terminal.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 55 2026-01-13 13:43:19.541502132 -0800 /data/data/com.termux/files/home/.shortcuts/File_Manager.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 79 2026-01-13 13:43:19.551502132 -0800 /data/data/com.termux/files/home/.shortcuts/YouTube.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 99 2026-01-13 13:43:19.561502132 -0800 /data/data/com.termux/files/home/.shortcuts/Weather.sh
+-rwxr-xr-x. 1 u0_a190 u0_a190 154 2026-01-13 13:43:19.561502132 -0800 /data/data/com.termux/files/home/.shortcuts/clock.sh
+-rwx------. 1 u0_a190 u0_a190 448 2026-01-16 10:38:31.771522729 -0800 /data/data/com.termux/files/home/omega_prime_archive/mesh_dial.sh
+-rwx------. 1 u0_a190 u0_a190 1269 2026-01-16 10:36:59.571522795 -0800 /data/data/com.termux/files/home/omega_prime_archive/mesh_client.sh
+-rwx------. 1 u0_a190 u0_a190 608 2026-03-15 12:16:49.599981167 -0700 /data/data/com.termux/files/home/setup-termux-proot.sh
+-rwx------. 1 u0_a190 u0_a190 437 2026-03-27 18:59:49.836872081 -0700 /data/data/com.termux/files/home/usb_probe.sh
+-rwx------. 1 u0_a190 u0_a190 2025 2026-03-27 19:06:48.536871782 -0700 /data/data/com.termux/files/home/battery_usb_live.sh
+-rwx------. 1 u0_a190 u0_a190 3726 2026-03-27 19:42:14.056870262 -0700 /data/data/com.termux/files/home/ai_power_monitor.sh
+-rwx------. 1 u0_a190 u0_a190 846 2026-03-27 20:15:23.376868839 -0700 /data/data/com.termux/files/home/signal_capture.sh
+-rwx------. 1 u0_a190 u0_a190 824 2026-03-27 20:17:49.396868734 -0700 /data/data/com.termux/files/home/decode_signal.sh
+-rwx------. 1 u0_a190 u0_a190 595 2026-03-27 20:50:34.246867329 -0700 /data/data/com.termux/files/home/power_spectrogram.sh
+-rwx------. 1 u0_a190 u0_a190 4309 2026-03-27 21:14:00.306866323 -0700 /data/data/com.termux/files/home/audio_engine_omega.sh
+-rwx------. 1 u0_a190 u0_a190 231 2026-04-07 06:42:43.405721834 -0700 /data/data/com.termux/files/home/tone.sh
+-rwx------. 1 u0_a190 u0_a190 699 2026-01-13 15:05:09.006165958 -0800 /data/data/com.termux/files/home/ai-consciousness-playground/install.sh
+-rwx------. 1 u0_a190 u0_a190 262 2026-01-13 14:44:23.246166849 -0800 /data/data/com.termux/files/home/ai-consciousness-playground/run.sh
+-rwx------. 1 u0_a190 u0_a190 1373 2026-03-22 20:44:23.829989441 -0700 /data/data/com.termux/files/home/list_networks.sh
+-rw-------. 1 u0_a190 u0_a190 1999 2026-03-23 00:59:32.229998721 -0700 /data/data/com.termux/files/home/find_blackjack.sh
+-rwx------. 1 u0_a190 u0_a190 482 2026-03-27 18:57:15.126872192 -0700 /data/data/com.termux/files/home/usb_full_diag.sh
+-rwx------. 1 u0_a190 u0_a190 8307 2026-03-27 19:55:21.246869699 -0700 /data/data/com.termux/files/home/ai_power_monitor_v3.sh
+-rwx------. 1 u0_a190 u0_a190 5075 2026-03-27 20:23:02.006868511 -0700 /data/data/com.termux/files/home/ai_power_engine_v4.sh
+-rwx------. 1 u0_a190 u0_a190 814 2026-03-27 21:02:10.996866831 -0700 /data/data/com.termux/files/home/audio_scope.sh
+-rwx------. 1 u0_a190 u0_a190 6553 2026-04-07 15:47:50.625870962 -0700 /data/data/com.termux/files/home/nec_power.sh
+-rwx------. 1 u0_a190 u0_a190 4686 2026-04-07 15:57:44.185870538 -0700 /data/data/com.termux/files/home/ir_power_stereo.sh
+-rwx------. 1 u0_a190 u0_a190 132 2026-02-09 18:47:54.713957737 -0800 /data/data/com.termux/files/home/wifi_scan.sh
+-rwx------. 1 u0_a190 u0_a190 73126 2026-01-13 05:05:03.449723204 -0800 /data/data/com.termux/files/home/QuantumTermux/setup_termux.sh
+-rwx------. 1 u0_a190 u0_a190 4644 2026-01-15 09:41:57.575377882 -0800 /data/data/com.termux/files/home/ai_machine_system/termux_autonomous.sh
+-rwx------. 1 u0_a190 u0_a190 3271 1973-11-29 13:33:09.000000000 -0800 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/encode_unicode-1.0.0/do.sh
+-rwx------. 1 u0_a190 u0_a190 261 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bytes-1.11.1/ci/miri.sh
+-rwx------. 1 u0_a190 u0_a190 115 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bytes-1.11.1/ci/panic-abort.sh
+-rwx------. 1 u0_a190 u0_a190 726 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bytes-1.11.1/ci/test-stable.sh
+-rwx------. 1 u0_a190 u0_a190 410 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bytes-1.11.1/ci/tsan.sh
+-rw-------. 1 u0_a190 u0_a190 730 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/smallvec-1.15.1/scripts/run_miri.sh
+-rwx------. 1 u0_a190 u0_a190 521 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sharded-slab-0.1.7/bin/loom.sh
+-rwx------. 1 u0_a190 u0_a190 189 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/similar-2.7.0/scripts/wasmtime-wrapper.sh
+-rw-------. 1 u0_a190 u0_a190 6277 1969-12-31 16:00:01.000000000 -0800 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/untrusted-0.9.0/mk/cargo.sh
+-rw-------. 1 u0_a190 u0_a190 2985 1969-12-31 16:00:01.000000000 -0800 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/untrusted-0.9.0/mk/install-build-tools.sh
+-rwx------. 1 u0_a190 u0_a190 542 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/combine-4.6.7/ci.sh
+-rwx------. 1 u0_a190 u0_a190 239 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/combine-4.6.7/release.sh
+-rw-------. 1 u0_a190 u0_a190 198 1973-11-29 13:33:09.000000000 -0800 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jni-0.21.1/.github/workflows/run_invocation_tests.sh
+-rw-------. 1 u0_a190 u0_a190 260 1973-11-29 13:33:09.000000000 -0800 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jni-0.21.1/.github/workflows/shellcheck.sh
+-rwx------. 1 u0_a190 u0_a190 982 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/redox_syscall-0.5.18/src/scheme/generate.sh
+-rwx------. 1 u0_a190 u0_a190 107 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/displaydoc-0.2.5/update-readme.sh
+-rwx------. 1 u0_a190 u0_a190 164 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.11/scripts/wasmtime-wrapper.sh
+-rwx------. 1 u0_a190 u0_a190 957 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/autogen.sh
+-rw-------. 1 u0_a190 u0_a190 1474 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/build-aux/manconv.sh
+-rw-------. 1 u0_a190 u0_a190 783 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/build-aux/version.sh
+-rwx------. 1 u0_a190 u0_a190 3450 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/macosx/build.sh
+-rw-------. 1 u0_a190 u0_a190 1509 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/src/liblzma/validate_map.sh
+-rwx------. 1 u0_a190 u0_a190 2992 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/tests/test_compress.sh
+-rwx------. 1 u0_a190 u0_a190 1069 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/tests/test_files.sh
+-rwx------. 1 u0_a190 u0_a190 1873 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/tests/test_scripts.sh
+-rw-------. 1 u0_a190 u0_a190 502 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/encoding_rs-0.8.35/ci/miri.sh
+-rwx------. 1 u0_a190 u0_a190 90 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.6.1/.github/workflows/run-on-host.sh
+-rwx------. 1 u0_a190 u0_a190 513 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie-0.18.1/scripts/test.sh
+-rw-------. 1 u0_a190 u0_a190 834 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustls-native-certs-0.8.3/integration-tests/macos.sh
+-rwx------. 1 u0_a190 u0_a190 3608 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cookie_store-0.22.0/release.sh
+-rwx------. 1 u0_a190 u0_a190 182 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/publish.sh
+-rwx------. 1 u0_a190 u0_a190 739 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/cargo.sh
+-rwx------. 1 u0_a190 u0_a190 1675 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_actions.sh
+-rwx------. 1 u0_a190 u0_a190 1074 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_all_toolchains_tested.sh
+-rwx------. 1 u0_a190 u0_a190 661 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_fmt.sh
+-rwx------. 1 u0_a190 u0_a190 1313 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_job_dependencies.sh
+-rwx------. 1 u0_a190 u0_a190 2217 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_msrv_is_minimal.sh
+-rwx------. 1 u0_a190 u0_a190 738 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_readme.sh
+-rwx------. 1 u0_a190 u0_a190 1401 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_stale_stderr.sh
+-rwx------. 1 u0_a190 u0_a190 2537 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_todo.sh
+-rwx------. 1 u0_a190 u0_a190 3039 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/check_versions.sh
+-rwx------. 1 u0_a190 u0_a190 778 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/ci/release_crate_version.sh
+-rwx------. 1 u0_a190 u0_a190 125 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enum_dispatch-0.3.13/tests/build-no_std.sh
+-rw-------. 1 u0_a190 u0_a190 767 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-0.1.44/test-macros/bin/macro-results.sh
+-rwx------. 1 u0_a190 u0_a190 212 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/target-lexicon-0.13.2/scripts/rust-targets.sh
+-rwx------. 1 u0_a190 u0_a190 3465 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasi-0.14.2+wasi-0.2.4/ci/regenerate.sh
+-rwx------. 1 u0_a190 u0_a190 880 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasi-0.14.2+wasi-0.2.4/ci/vendor-wit.sh
+-rwx------. 1 u0_a190 u0_a190 663 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/cargo.sh
+-rwx------. 1 u0_a190 u0_a190 1074 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/ci/check_all_toolchains_tested.sh
+-rwx------. 1 u0_a190 u0_a190 560 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/ci/check_fmt.sh
+-rwx------. 1 u0_a190 u0_a190 1313 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/ci/check_job_dependencies.sh
+-rwx------. 1 u0_a190 u0_a190 704 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/ci/check_readme.sh
+-rwx------. 1 u0_a190 u0_a190 1157 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/ci/check_todo.sh
+-rwx------. 1 u0_a190 u0_a190 3039 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/ci/check_versions.sh
+-rwx------. 1 u0_a190 u0_a190 714 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/ci/release_crate_version.sh
+-rwx------. 1 u0_a190 u0_a190 4803 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-0.26.0/.netlify/build.sh
+-rw-------. 1 u0_a190 u0_a190 2402 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-0.26.0/.netlify/redirect.sh
+-rw-------. 1 u0_a190 u0_a190 239 2006-07-23 18:21:28.000000000 -0700 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-0.26.0/emscripten/env.sh
+-rwx------. 1 u0_a190 u0_a190 1136 2026-03-15 11:59:33.859981908 -0700 /data/data/com.termux/files/home/install-kvm.sh
+-rwx------. 1 u0_a190 u0_a190 629 2026-03-22 20:21:46.869990412 -0700 /data/data/com.termux/files/home/discover_chromecast.sh
+-rwx------. 1 u0_a190 u0_a190 941 2026-03-22 20:47:02.329989328 -0700 /data/data/com.termux/files/home/discover_cast.sh
+-rwx------. 1 u0_a190 u0_a190 1116 2026-03-27 19:16:26.216871369 -0700 /data/data/com.termux/files/home/battery_live.sh
+-rwx------. 1 u0_a190 u0_a190 1758 2026-03-27 19:35:51.416870535 -0700 /data/data/com.termux/files/home/power_watchdog.sh
+-rwx------. 1 u0_a190 u0_a190 1155 2026-03-27 19:38:37.086870417 -0700 /data/data/com.termux/files/home/power_analyze.sh
+-rwx------. 1 u0_a190 u0_a190 6157 2026-03-27 19:45:41.276870113 -0700 /data/data/com.termux/files/home/ai_power_monitor_v2.sh
+-rwx------. 1 u0_a190 u0_a190 701 2026-03-27 20:59:49.606866932 -0700 /data/data/com.termux/files/home/audio_encoder.sh
+-rwx------. 1 u0_a190 u0_a190 3634 2026-03-27 21:09:08.446866532 -0700 /data/data/com.termux/files/home/audio_engine.sh
+-rw-------. 1 u0_a190 u0_a190 987 2026-03-29 10:00:51.305999380 -0700 /data/data/com.termux/files/home/isx_root.sh
+-rwx------. 1 u0_a190 u0_a190 759 2026-04-05 14:31:12.109988763 -0700 /data/data/com.termux/files/home/quantum_whisper.sh
+-rwx------. 1 u0_a190 u0_a190 847 2026-04-05 12:52:47.829992986 -0700 /data/data/com.termux/files/home/quantum_whisper_ai.sh
+-rwx------. 1 u0_a190 u0_a190 5945 2026-04-07 15:36:20.175871456 -0700 /data/data/com.termux/files/home/nec_audio_power.sh
+-rw-------. 1 u0_a190 u0_a190 1717 2026-03-13 14:23:10.469679362 -0700 /data/data/com.termux/files/home/veronica_liberation.sh
+-rwx------. 1 u0_a190 u0_a190 1399 2026-03-15 12:03:06.269981756 -0700 /data/data/com.termux/files/home/install-qemu-termux.sh
+-rw-------. 1 u0_a190 u0_a190 512 2026-03-15 12:06:00.129981631 -0700 /data/data/com.termux/files/home/fix-termux-qemu.sh
+-rw-------. 1 u0_a190 u0_a190 3890 2026-03-23 08:57:39.119999015 -0700 /data/data/com.termux/files/home/usb_comms.sh
+-rwx------. 1 u0_a190 u0_a190 1110 2026-03-27 18:48:27.556872569 -0700 /data/data/com.termux/files/home/usb_mode_check.sh
+-rw-------. 1 u0_a190 u0_a190 1610 2026-03-27 18:52:35.516872392 -0700 /data/data/com.termux/files/home/usbfulldiag.sh
+-rwx------. 1 u0_a190 u0_a190 8553 2026-03-27 19:32:14.826870690 -0700 /data/data/com.termux/files/home/battery_ultra_live.sh
+-rwx------. 1 u0_a190 u0_a190 14724 2026-03-27 20:31:46.866868135 -0700 /data/data/com.termux/files/home/ai_power_engine_v5.sh
+-rwx------. 1 u0_a190 u0_a190 3234 2026-04-07 15:51:33.585870803 -0700 /data/data/com.termux/files/home/ir_power.sh
+-rwx------. 1 u0_a190 u0_a190 24 2026-01-20 19:29:39.769988522 -0800 /data/data/com.termux/files/home/omega_projects/run.sh
+-rwx------. 1 u0_a190 u0_a190 404 2026-01-20 23:15:51.085831934 -0800 /data/data/com.termux/files/home/dist/run_namo.sh
+-rwx------. 1 u0_a190 u0_a190 616 2026-01-20 23:15:51.155831934 -0800 /data/data/com.termux/files/home/dist/install_termux.sh
+-rw-------. 1 u0_a190 u0_a190 366 2026-01-20 02:57:07.661271541 -0800 /data/data/com.termux/files/home/tone/install.sh
+-rw-------. 1 u0_a190 u0_a190 3855 2026-01-20 13:06:44.378849806 -0800 /data/data/com.termux/files/home/AndroidForensics/AirScope.sh
+-rw-------. 1 u0_a190 u0_a190 4910 2026-01-20 13:06:44.428849806 -0800 /data/data/com.termux/files/home/AndroidForensics/dumpsys.sh
+-rw-------. 1 u0_a190 u0_a190 5330 2026-01-20 13:06:44.428849806 -0800 /data/data/com.termux/files/home/AndroidForensics/extract.sh
+-rw-------. 1 u0_a190 u0_a190 3723 2026-01-20 13:06:44.428849806 -0800 /data/data/com.termux/files/home/AndroidForensics/secretCodes.sh
+-rwx------. 1 u0_a190 u0_a190 1317 2026-01-21 02:46:10.764137089 -0800 /data/data/com.termux/files/home/omega_system/start_omega.sh
+-rwx------. 1 u0_a190 u0_a190 604 2026-01-21 02:46:44.004137065 -0800 /data/data/com.termux/files/home/omega_system/stop_omega.sh
+-rwx------. 1 u0_a190 u0_a190 431 2026-01-24 07:11:31.949997480 -0800 /data/data/com.termux/files/home/omega_backend/run.sh
+-rwx------. 1 u0_a190 u0_a190 407 2026-01-26 04:16:28.589840494 -0800 /data/data/com.termux/files/home/security-lab/monitor.sh
+-rwx------. 1 u0_a190 u0_a190 319 2026-01-26 04:24:53.479840133 -0800 /data/data/com.termux/files/home/security-lab/run_ssl_server.sh
+-rwx------. 1 u0_a190 u0_a190 478 2026-01-26 04:25:06.999840123 -0800 /data/data/com.termux/files/home/security-lab/start_ssl_lab.sh
+-rwx------. 1 u0_a190 u0_a190 403 2026-01-26 04:28:05.499839995 -0800 /data/data/com.termux/files/home/security-lab/hex_ping.sh
+-rwx------. 1 u0_a190 u0_a190 907 2026-01-26 04:38:22.329839554 -0800 /data/data/com.termux/files/home/security-lab/network_test.sh
+-rwx------. 1 u0_a190 u0_a190 392 2026-01-26 04:28:44.179839968 -0800 /data/data/com.termux/files/home/security-lab/send_hex.sh
+-rwx------. 1 u0_a190 u0_a190 560 2026-01-26 04:35:51.629839662 -0800 /data/data/com.termux/files/home/security-lab/ping_test.sh
+   706151      8 -rwx------   1 u0_a190  u0_a190      7634 Dec 24 22:24 /data/data/com.termux/files/home/sphere_game.py
+   497707      4 -rwx------   1 u0_a190  u0_a190       513 Jan 31 18:01 /data/data/com.termux/files/home/royal_node.py
+   593837      4 -rwx------   1 u0_a190  u0_a190       901 Jan  7 03:08 /data/data/com.termux/files/home/fresh_start.py
+   625445     12 -rwx------   1 u0_a190  u0_a190     10955 Dec 24 22:32 /data/data/com.termux/files/home/fembot_creator.py
+   626090      4 -rwx------   1 u0_a190  u0_a190      3677 Dec 24 22:33 /data/data/com.termux/files/home/ascii_fembots.py
+   455061      4 -rwx------   1 u0_a190  u0_a190       594 Dec 24 22:35 /data/data/com.termux/files/home/create_from_template.py
+   704554      4 -rwx------   1 u0_a190  u0_a190       393 Dec 24 22:36 /data/data/com.termux/files/home/quick_fembot.py
+   439261      4 -rwx------   1 u0_a190  u0_a190      1166 Dec 25 00:50 /data/data/com.termux/files/home/game.py
+   452607      4 -rwx------   1 u0_a190  u0_a190       448 Dec 25 09:52 /data/data/com.termux/files/home/green_aacii.py
+   712123      4 -rwx------   1 u0_a190  u0_a190       967 Dec 25 09:53 /data/data/com.termux/files/home/green_cat.py
+   728030      4 -rwx------   1 u0_a190  u0_a190       656 Dec 26 13:50 /data/data/com.termux/files/home/RABBIT_hole.py
+   726617      4 -rwx------   1 u0_a190  u0_a190      1111 Dec 26 14:09 /data/data/com.termux/files/home/RABBIT_BURROW.py
+   719469      4 -rwx------   1 u0_a190  u0_a190      1101 Dec 26 14:15 /data/data/com.termux/files/home/rabbit.py
+   669646     24 -rwx------   1 u0_a190  u0_a190     22097 Nov  3 23:54 /data/data/com.termux/files/home/.foundry/bin/foundryup
+   488597      4 -rwx------   1 u0_a190  u0_a190      1558 Dec 29 19:10 /data/data/com.termux/files/home/cyber_ascii/ascii_tiny.py
+   488620      4 -rwx------   1 u0_a190  u0_a190      1336 Dec 29 19:10 /data/data/com.termux/files/home/cyber_ascii/image_loader.py
+   717255      4 -rwx------   1 u0_a190  u0_a190       140 Dec 29 19:17 /data/data/com.termux/files/home/cyber/video_light.py
+   718767      8 -rwx------   1 u0_a190  u0_a190      5192 Dec 29 19:19 /data/data/com.termux/files/home/cyberpunk_ascii/video_light.py
+   718660      4 -rwx------   1 u0_a190  u0_a190      3136 Dec 29 19:19 /data/data/com.termux/files/home/cyberpunk_ascii/player.py
+   697516      8 -rwx------   1 u0_a190  u0_a190      4857 Jan  6 20:23 /data/data/com.termux/files/home/cyberpunk_ascii/ascii_converter.py
+   697522      4 -rwx------   1 u0_a190  u0_a190      2676 Jan  6 20:23 /data/data/com.termux/files/home/cyberpunk_ascii/animation_player.py
+   697208      8 -rwx------   1 u0_a190  u0_a190      6499 Jan  6 20:23 /data/data/com.termux/files/home/cyberpunk_ascii/web_interface.py
+   697305      4 -rwx------   1 u0_a190  u0_a190      2691 Jan  6 20:23 /data/data/com.termux/files/home/cyberpunk_ascii/utils.py
+   565060      4 -rwx------   1 u0_a190  u0_a190       589 Dec 30 00:01 /data/data/com.termux/files/home/uri.py
+   732419      4 -rwx------   1 u0_a190  u0_a190       581 Dec 30 12:50 /data/data/com.termux/files/home/image.py
+   746839     16 -rwx------   1 u0_a190  u0_a190     12555 Dec 30 00:46 /data/data/com.termux/files/home/Screenshot_20251229-184409.png
+   770011     12 -rwx--x--x   1 u0_a190  u0_a190      8800 Feb  8 13:17 /data/data/com.termux/files/home/.local/lib/python3.12/site-packages/tornado/speedups.abi3.so
+   769909      4 -rwx--x--x   1 u0_a190  u0_a190       265 Feb  8 13:17 /data/data/com.termux/files/home/.local/lib/python3.12/site-packages/pywebio/html/image/favicon_closed_16.png
+   770028      4 -rwx--x--x   1 u0_a190  u0_a190       513 Feb  8 13:17 /data/data/com.termux/files/home/.local/lib/python3.12/site-packages/pywebio/html/image/favicon_closed_32.png
+   770054      4 -rwx--x--x   1 u0_a190  u0_a190       251 Feb  8 13:17 /data/data/com.termux/files/home/.local/lib/python3.12/site-packages/pywebio/html/image/favicon_open_16.png
+   770049      4 -rwx--x--x   1 u0_a190  u0_a190       466 Feb  8 13:17 /data/data/com.termux/files/home/.local/lib/python3.12/site-packages/pywebio/html/image/favicon_open_32.png
+   770125      4 -rwx--x--x   1 u0_a190  u0_a190      2611 Feb  8 13:17 /data/data/com.termux/files/home/.local/lib/python3.12/site-packages/pywebio/html/js/FileSaver.min.js
+   770077     12 -rwx--x--x   1 u0_a190  u0_a190     11143 Feb  8 13:17 /data/data/com.termux/files/home/.local/lib/python3.12/site-packages/pywebio/html/js/mustache.min.js
+   564091      4 -rwxr-xr-x   1 u0_a190  u0_a190       207 Dec 30 11:17 /data/data/com.termux/files/home/.local/bin/httpx
+   771442      4 -rwx--x--x   1 u0_a190  u0_a190      2558 Feb  8 13:17 /data/data/com.termux/files/home/.local/bin/pywebio-path-deploy
+   568132     16 -rwx------   1 u0_a190  u0_a190     16131 Dec 30 10:43 /data/data/com.termux/files/home/quantum_safe_ebt_processor.py
+   567675      4 -rwx------   1 u0_a190  u0_a190      2926 Dec 30 10:57 /data/data/com.termux/files/home/ebt_paymemt_processor.py
+   568099     36 -rwx------   1 u0_a190  u0_a190     35827 Dec 30 11:06 /data/data/com.termux/files/home/quantum_ebt_unified.py
+   695350      8 -rwx------   1 u0_a190  u0_a190      4400 Dec 30 12:12 /data/data/com.termux/files/home/ebt_processor.py
+   570465      4 -rwx------   1 u0_a190  u0_a190      2210 Dec 30 11:14 /data/data/com.termux/files/home/safe_deps.py
+   570342     36 -rwx------   1 u0_a190  u0_a190     35827 Dec 30 11:14 /data/data/com.termux/files/home/quantum_ebt_unified_backup.py
+   570343      8 -rwx------   1 u0_a190  u0_a190      5095 Dec 30 11:14 /data/data/com.termux/files/home/run_quantum_ebt.py
+   568528      4 -rwx------   1 u0_a190  u0_a190      1752 Dec 30 11:29 /data/data/com.termux/files/home/test_setup.py
+   568231      4 -rwx------   1 u0_a190  u0_a190      4092 Dec 30 11:31 /data/data/com.termux/files/home/ebt_payment_processor.py
+   568469      8 -rwx------   1 u0_a190  u0_a190      5273 Dec 30 11:44 /data/data/com.termux/files/home/ebt_minimal.py
+   316997     12 -rwx------   1 u0_a190  u0_a190     10894 Nov  4 21:46 /data/data/com.termux/files/home/omega-nexus/iso.py
+   325588     20 -rwx------   1 u0_a190  u0_a190     19767 Nov  5 03:43 /data/data/com.termux/files/home/quantum_nexus/quantum_nexus_core.py
+   564766      4 -rwx------   1 u0_a190  u0_a190      3208 Dec 30 14:47 /data/data/com.termux/files/home/AIDROID.py
+   576184      4 -rwx------   1 u0_a190  u0_a190      1180 Dec 30 14:53 /data/data/com.termux/files/home/frequency.py
+   576748     80 -rwx------   1 u0_a190  u0_a190     81285 Dec 30 15:25 /data/data/com.termux/files/home/nexus_ai.py
+   568090      8 -rwx------   1 u0_a190  u0_a190      8069 Dec 30 11:53 /data/data/com.termux/files/home/ebt_payment_processor_optimized.py
+   565857     12 -rwx------   1 u0_a190  u0_a190     12061 Dec 30 12:51 /data/data/com.termux/files/home/android_explorer.py
+   716798     56 -rwx------   1 u0_a190  u0_a190     56213 Dec 30 14:26 /data/data/com.termux/files/home/android_inspector.py
+   576403     48 -rwx------   1 u0_a190  u0_a190     47767 Dec 30 15:00 /data/data/com.termux/files/home/quantum_assistant.py
+   578652     80 -rwx------   1 u0_a190  u0_a190     81880 Dec 30 15:55 /data/data/com.termux/files/home/quantum_nexus.py
+   571817     16 -rwx------   1 u0_a190  u0_a190     14468 Dec 31 00:53 /data/data/com.termux/files/home/SSL.py
+   574773      4 -rwx------   1 u0_a190  u0_a190      1581 Dec 30 16:07 /data/data/com.termux/files/home/Neural_Architectures.py
+   575180     20 -rwx------   1 u0_a190  u0_a190     20250 Dec 30 17:04 /data/data/com.termux/files/home/ai_sandbox.py
+   572928     24 -rwx------   1 u0_a190  u0_a190     23562 Dec 30 17:15 /data/data/com.termux/files/home/omega_vision.py
+   578801      4 -rwx------   1 u0_a190  u0_a190      3194 Dec 30 16:14 /data/data/com.termux/files/home/Sentient_Signal.py
+   578061     16 -rwx------   1 u0_a190  u0_a190     12853 Dec 30 16:54 /data/data/com.termux/files/home/cosmicresonancetreasury_node.py
+   633456      4 -rwx------   1 u0_a190  u0_a190        26 Jan 22 00:51 /data/data/com.termux/files/home/2025_Sentient_Edition.py
+   580177     16 -rwx------   1 u0_a190  u0_a190     12315 Dec 30 17:11 /data/data/com.termux/files/home/sentientsignalpipeline.py
+   571544      8 -rwx------   1 u0_a190  u0_a190      7530 Dec 30 17:17 /data/data/com.termux/files/home/core_signal_engine.py
+   579439      4 -rwx------   1 u0_a190  u0_a190       656 Dec 30 17:21 /data/data/com.termux/files/home/sentient_signal_protocal.py
+   576045      8 -rwx------   1 u0_a190  u0_a190      5333 Dec 30 19:10 /data/data/com.termux/files/home/quantum_sandbox_v3.py
+   576565      4 -rwx------   1 u0_a190  u0_a190      2761 Dec 30 18:47 /data/data/com.termux/files/home/soup_nexux.py
+   563805      4 -rwx------   1 u0_a190  u0_a190      2780 Dec 30 18:51 /data/data/com.termux/files/home/emergent_loop.py
+   749746      4 -rwx------   1 u0_a190  u0_a190      2493 Dec 30 18:53 /data/data/com.termux/files/home/nexus_a2a.py
+   575990     16 -rwx------   1 u0_a190  u0_a190     12491 Dec 30 19:14 /data/data/com.termux/files/home/omegaemergentagents.py
+   576363     20 -rwx------   1 u0_a190  u0_a190     16546 Dec 30 19:25 /data/data/com.termux/files/home/OMEGA_POINT_ENGINE.py
+   577528     28 -rwx------   1 u0_a190  u0_a190     27034 Dec 30 19:46 /data/data/com.termux/files/home/OMEGA_PRIME.py
+   577701      4 -rwx------   1 u0_a190  u0_a190      1275 Dec 30 19:50 /data/data/com.termux/files/home/Nexus_Floating_Hub.py
+   574821      4 -rwx------   1 u0_a190  u0_a190      1679 Dec 30 19:52 /data/data/com.termux/files/home/nexus_hub.py
+   563596      4 -rwx------   1 u0_a190  u0_a190      1178 Dec 30 19:54 /data/data/com.termux/files/home/ai_mouse.py
+   578759      4 -rwx------   1 u0_a190  u0_a190      3216 Dec 30 19:56 /data/data/com.termux/files/home/Optimized_Nexus_Hub-v3.0.py
+   746147     28 -rwx------   1 u0_a190  u0_a190     27333 Dec 30 19:58 /data/data/com.termux/files/home/OMEGA_PRIME-v1.2.py
+   747865      4 -rwx------   1 u0_a190  u0_a190      2819 Dec 30 23:42 /data/data/com.termux/files/home/JAVA.py
+   579665      4 -rwx------   1 u0_a190  u0_a190      1179 Dec 30 16:04 /data/data/com.termux/files/home/signal_backup.py
+   639459     44 -rwx------   1 u0_a190  u0_a190     41665 Dec 31 01:39 /data/data/com.termux/files/home/TSL_handshake.py
+   750545     40 -rwx------   1 u0_a190  u0_a190     40956 Dec 31 02:21 /data/data/com.termux/files/home/high_volume_simulator.py
+   725519      4 -rwx------   1 u0_a190  u0_a190       199 Jan 16 05:31 /data/data/com.termux/files/home/omega
+   583233     52 -rwx------   1 u0_a190  u0_a190     52693 Dec 31 03:12 /data/data/com.termux/files/home/high_volume.py
+   578528     48 -rwx------   1 u0_a190  u0_a190     48967 Dec 31 02:55 /data/data/com.termux/files/home/digital_payments.py
+   582494     28 -rwx------   1 u0_a190  u0_a190     27079 Dec 31 03:26 /data/data/com.termux/files/home/ultra.py
+   570785     40 -rwx------   1 u0_a190  u0_a190     36923 Dec 31 03:39 /data/data/com.termux/files/home/ultraHv.py
+   578605     20 -rwx------   1 u0_a190  u0_a190     19348 Dec 31 03:45 /data/data/com.termux/files/home/hvT.py
+   582042      8 -rwx------   1 u0_a190  u0_a190      7370 Dec 31 06:28 /data/data/com.termux/files/home/btcCost.py
+   583224     20 -rwx------   1 u0_a190  u0_a190     18078 Dec 31 06:32 /data/data/com.termux/files/home/fo7labtc.py
+   597577     20 -rwx------   1 u0_a190  u0_a190     19947 Dec 31 06:54 /data/data/com.termux/files/home/decpress.py
+   577712     12 -rwx------   1 u0_a190  u0_a190     11506 Dec 31 07:04 /data/data/com.termux/files/home/pattern.py
+   583076     36 -rwx------   1 u0_a190  u0_a190     35976 Dec 31 07:23 /data/data/com.termux/files/home/MULTI.py
+   582379      4 -rwx------   1 u0_a190  u0_a190      1103 Dec 31 11:42 /data/data/com.termux/files/home/asertion.py
+   585391      4 -rwx------   1 u0_a190  u0_a190      2391 Dec 31 12:03 /data/data/com.termux/files/home/simple.py
+   488658      4 -rwx------   1 u0_a190  u0_a190       380 Jan 31 17:53 /data/data/com.termux/files/home/royal_ai.py
+   654191      4 -rwx------   1 u0_a190  u0_a190       572 Jan  9 00:30 /data/data/com.termux/files/home/alice.py
+   578283     16 -rwx------   1 u0_a190  u0_a190     14324 Dec 31 14:11 /data/data/com.termux/files/home/bank_processor.py
+   587583      4 -rwx------   1 u0_a190  u0_a190       810 Dec 31 16:39 /data/data/com.termux/files/home/alicev2.py
+   586409      4 -rwx------   1 u0_a190  u0_a190      2169 Dec 31 14:11 /data/data/com.termux/files/home/run_banking_system.py
+   660438      4 -rwx------   1 u0_a190  u0_a190      4032 Jan  6 12:45 /data/data/com.termux/files/home/lin2a.py
+   637146     12 -rwx------   1 u0_a190  u0_a190     10300 Jan  6 20:04 /data/data/com.termux/files/home/content_explorer.py
+   584348     16 -rwx------   1 u0_a190  u0_a190     15525 Jan  6 22:41 /data/data/com.termux/files/home/mary.py
+   587990     24 -rwx------   1 u0_a190  u0_a190     21770 Jan  7 01:30 /data/data/com.termux/files/home/genesis_x.py
+   590496     24 -rwx------   1 u0_a190  u0_a190     21607 Jan  7 04:33 /data/data/com.termux/files/home/reality.py
+   567266      4 -rwx------   1 u0_a190  u0_a190      1294 Jan  7 07:26 /data/data/com.termux/files/home/roku_commands.py
+   586797      8 -rwx------   1 u0_a190  u0_a190      4232 Jan 22 05:29 /data/data/com.termux/files/home/stack.py
+   650206      4 -rwx------   1 u0_a190  u0_a190      2063 Jan  7 07:57 /data/data/com.termux/files/home/stackzy.py
+   588910      8 -rwx------   1 u0_a190  u0_a190      6389 Jan  7 08:07 /data/data/com.termux/files/home/diagnose.py
+   648669      4 -rwx------   1 u0_a190  u0_a190      2021 Jan  7 08:10 /data/data/com.termux/files/home/wifi_scanner.py
+   650063      8 -rwx------   1 u0_a190  u0_a190      6219 Jan  7 08:25 /data/data/com.termux/files/home/wifi_scanner_fixed.py
+   650502      4 -rwx------   1 u0_a190  u0_a190      2762 Jan  7 08:44 /data/data/com.termux/files/home/scann.py
+   700932      8 -rwx------   1 u0_a190  u0_a190      7724 Jan  7 09:21 /data/data/com.termux/files/home/omega_dsp_engine2.py
+   641616     12 -rwx------   1 u0_a190  u0_a190      9295 Jan  7 09:34 /data/data/com.termux/files/home/omega_dsp_engine_color_ascii.py
+   535626      4 -rwx------   1 u0_a190  u0_a190        53 Jan  7 20:33 /data/data/com.termux/files/home/bin/termux-file-editor
+   758280      4 -rwx------   1 u0_a190  u0_a190       681 Jan 20 19:42 /data/data/com.termux/files/home/bin/gspell
+   594428     12 -rwx------   1 u0_a190  u0_a190     10565 Jan  7 09:40 /data/data/com.termux/files/home/omega_dsp_engine_quantum_whisper.py
+   746378      4 -rwx------   1 u0_a190  u0_a190      1227 Jan  7 09:44 /data/data/com.termux/files/home/show_hex_image.py
+   695581      4 -rwx------   1 u0_a190  u0_a190      2084 Jan  7 10:04 /data/data/com.termux/files/home/quantum_whisper_profiler.py
+   650477      4 -rwx------   1 u0_a190  u0_a190      1415 Jan  7 10:20 /data/data/com.termux/files/home/local_model_chat.py
+   626793      4 -rwx------   1 u0_a190  u0_a190      1939 Jan  7 21:32 /data/data/com.termux/files/home/clean_whisper.py
+   638478      4 -rwx------   1 u0_a190  u0_a190       821 Jan  7 22:43 /data/data/com.termux/files/home/btc_balance.py
+   579515      4 -rwx------   1 u0_a190  u0_a190      1545 Jan  7 23:29 /data/data/com.termux/files/home/lost_btc.py
+   693294      4 -rwx------   1 u0_a190  u0_a190      1574 Jan  8 00:54 /data/data/com.termux/files/home/replicate_cli.py
+   694230      4 -rwx------   1 u0_a190  u0_a190      4033 Jan  8 01:11 /data/data/com.termux/files/home/metwork_scann.py
+   693648      4 -rwx------   1 u0_a190  u0_a190      3182 Jan  8 01:28 /data/data/com.termux/files/home/global_scann.py
+   584901      4 -rwx------   1 u0_a190  u0_a190      3819 Jan  8 02:32 /data/data/com.termux/files/home/resonance_engine.py
+   724721      4 -rwx------   1 u0_a190  u0_a190      3244 Jan  9 01:02 /data/data/com.termux/files/home/QNet.py
+   718115      8 -rwx------   1 u0_a190  u0_a190      4455 Jan  8 19:17 /data/data/com.termux/files/home/create_node.py
+   724331     12 -rwx------   1 u0_a190  u0_a190      9462 Jan  9 00:01 /data/data/com.termux/files/home/omega_ports.py
+   720616      4 -rwx------   1 u0_a190  u0_a190      2992 Jan  9 01:05 /data/data/com.termux/files/home/qnode_agent.py
+   725651      4 -rwx------   1 u0_a190  u0_a190      3244 Jan  9 01:09 /data/data/com.termux/files/home/qnet_controller.py
+   727895      4 -rwx------   1 u0_a190  u0_a190       797 Jan  9 09:29 /data/data/com.termux/files/home/tone.py
+   738280      4 -rwx------   1 u0_a190  u0_a190       362 Jan  9 10:30 /data/data/com.termux/files/home/tonezzz.py
+   741912      8 -rwx------   1 u0_a190  u0_a190      4143 Jan 10 01:37 /data/data/com.termux/files/home/roku_control2.py
+   586192      4 -rwx------   1 u0_a190  u0_a190       579 Jan 10 01:43 /data/data/com.termux/files/home/roku_external.py
+   740263     20 -rwx------   1 u0_a190  u0_a190     17780 Jan 10 01:51 /data/data/com.termux/files/home/roku-directConnect.py
+   743734      4 -rwx------   1 u0_a190  u0_a190       850 Jan 10 02:04 /data/data/com.termux/files/home/Raxor.py
+   741383      4 -rwx------   1 u0_a190  u0_a190       809 Jan 10 02:08 /data/data/com.termux/files/home/wifi_direct.py
+   742231      4 -rwx------   1 u0_a190  u0_a190       374 Jan 10 02:15 /data/data/com.termux/files/home/roku_check.py
+   744537      4 -rwx------   1 u0_a190  u0_a190      1023 Jan 10 03:50 /data/data/com.termux/files/home/roku_direct_probe.py
+   736546      4 -rwx------   1 u0_a190  u0_a190       722 Jan 10 07:27 /data/data/com.termux/files/home/wifiSzm.py
+   725560      4 -rwx------   1 u0_a190  u0_a190      1701 Jan 10 08:33 /data/data/com.termux/files/home/master.py
+   742678      4 -rwx------   1 u0_a190  u0_a190      2354 Jan 10 08:43 /data/data/com.termux/files/home/search.py
+   742161      4 -rwx------   1 u0_a190  u0_a190       879 Jan 10 08:47 /data/data/com.termux/files/home/sockets.py
+   745135     28 -rwx------   1 u0_a190  u0_a190     28205 Jan 10 09:19 /data/data/com.termux/files/home/master_script.py
+   745209      8 -rwx------   1 u0_a190  u0_a190      7316 Jan 10 10:54 /data/data/com.termux/files/home/anomaly_detector.py
+   744268      4 -rwx------   1 u0_a190  u0_a190      2745 Jan 10 22:14 /data/data/com.termux/files/home/tic.py
+   578375     52 -rwx------   1 u0_a190  u0_a190     51797 Dec 31 03:02 /data/data/com.termux/files/home/transfer.py
+   582352     20 -rwx------   1 u0_a190  u0_a190     19279 Dec 31 03:29 /data/data/com.termux/files/home/ultra2.py
+   721487      4 -rwx------   1 u0_a190  u0_a190      1469 Nov 27 05:16 /data/data/com.termux/files/home/scripts/kira_neonova.py
+   401553      4 -rwx------   1 u0_a190  u0_a190       927 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/commit-msg.sample
+   401563      8 -rwx------   1 u0_a190  u0_a190      4753 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/fsmonitor-watchman.sample
+   401584      4 -rwx------   1 u0_a190  u0_a190       220 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/post-update.sample
+   401724      4 -rwx------   1 u0_a190  u0_a190       455 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/pre-applypatch.sample
+   401417      4 -rwx------   1 u0_a190  u0_a190      1680 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/pre-commit.sample
+   401702      4 -rwx------   1 u0_a190  u0_a190       447 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/pre-merge-commit.sample
+   393493      4 -rwx------   1 u0_a190  u0_a190      1405 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/pre-push.sample
+   393484      8 -rwx------   1 u0_a190  u0_a190      4956 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/pre-rebase.sample
+   397620      4 -rwx------   1 u0_a190  u0_a190       575 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/pre-receive.sample
+   397269      4 -rwx------   1 u0_a190  u0_a190      1604 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/prepare-commit-msg.sample
+   397427      4 -rwx------   1 u0_a190  u0_a190      2814 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/push-to-checkout.sample
+   397400      4 -rwx------   1 u0_a190  u0_a190      2339 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/sendemail-validate.sample
+   398294      4 -rwx------   1 u0_a190  u0_a190      3681 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/update.sample
+   397584      4 -rwx------   1 u0_a190  u0_a190       509 Mar 22 19:58 /data/data/com.termux/files/home/scripts/erebus-protocol/.git/hooks/applypatch-msg.sample
+   576114     12 -rwx------   1 u0_a190  u0_a190     11506 Dec 31 06:59 /data/data/com.termux/files/home/databtc.py
+   579465     20 -rwx------   1 u0_a190  u0_a190     16804 Dec 31 11:40 /data/data/com.termux/files/home/ebsz.py
+   750444      8 -rwx------   1 u0_a190  u0_a190      7308 Dec 31 13:58 /data/data/com.termux/files/home/OMEGA_BANK.py
+   585715     24 -rwx------   1 u0_a190  u0_a190     21744 Dec 31 14:11 /data/data/com.termux/files/home/web_bank.py
+   584465     12 -rwx------   1 u0_a190  u0_a190      9667 Dec 31 15:34 /data/data/com.termux/files/home/Reality.py
+   576116     40 -rwx------   1 u0_a190  u0_a190     39644 Dec 31 16:30 /data/data/com.termux/files/home/Omega_Reality.py
+   587719      4 -rwx------   1 u0_a190  u0_a190      1335 Dec 31 16:47 /data/data/com.termux/files/home/alicev3.py
+   655818     12 -rwx------   1 u0_a190  u0_a190     10459 Nov 27 11:45 /data/data/com.termux/files/home/quantum-engine/quantum_engine.py
+   668233      8 -rwx------   1 u0_a190  u0_a190      7117 Nov 27 11:53 /data/data/com.termux/files/home/quantum-rss-engine/init_database.py
+   669835      8 -rwx------   1 u0_a190  u0_a190      7501 Nov 27 11:54 /data/data/com.termux/files/home/quantum-rss-engine/rss_processor.py
+   669903     12 -rwx------   1 u0_a190  u0_a190      9780 Nov 27 11:54 /data/data/com.termux/files/home/quantum-rss-engine/quantum_prod_engine.py
+   587041      4 -rwx------   1 u0_a190  u0_a190       191 Dec 31 23:40 /data/data/com.termux/files/home/sustainable_growth_with_profits.py
+   593754     12 -rwx------   1 u0_a190  u0_a190     10706 Jan  2 14:03 /data/data/com.termux/files/home/v_Jepa.py
+   656001      8 -rwx------   1 u0_a190  u0_a190      6388 Jan  6 12:45 /data/data/com.termux/files/home/lina.py
+   695932      4 -rwx------   1 u0_a190  u0_a190       685 Jan  6 16:58 /data/data/com.termux/files/home/plaympv
+   702049      4 -rwx------   1 u0_a190  u0_a190      2368 Jan  6 19:45 /data/data/com.termux/files/home/android.py
+   581645      4 -rwx------   1 u0_a190  u0_a190       891 Jan  6 19:56 /data/data/com.termux/files/home/view.py
+   586035     32 -rwx------   1 u0_a190  u0_a190     30304 Jan  6 23:06 /data/data/com.termux/files/home/charolette.py
+   584678     32 -rwx------   1 u0_a190  u0_a190     30304 Jan  6 23:11 /data/data/com.termux/files/home/upgraded_intimate_analyzer.py
+   588634     48 -rwx------   1 u0_a190  u0_a190     48841 Jan  7 01:40 /data/data/com.termux/files/home/prompt_engine.py
+   594409      4 -rwx------   1 u0_a190  u0_a190      1111 Jan  7 03:08 /data/data/com.termux/files/home/backup/RABBIT_BURROW.py
+   585426      4 -rwx------   1 u0_a190  u0_a190       656 Jan  7 03:08 /data/data/com.termux/files/home/backup/RABBIT_hole.py
+   582053      4 -rwx------   1 u0_a190  u0_a190      3677 Jan  7 03:08 /data/data/com.termux/files/home/backup/ascii_fembots.py
+   587159     12 -rwx------   1 u0_a190  u0_a190     10300 Jan  7 03:08 /data/data/com.termux/files/home/backup/content_explorer.py
+   587533      4 -rwx------   1 u0_a190  u0_a190       594 Jan  7 03:08 /data/data/com.termux/files/home/backup/create_from_template.py
+   595138     12 -rwx------   1 u0_a190  u0_a190     10955 Jan  7 03:08 /data/data/com.termux/files/home/backup/fembot_creator.py
+   595143      4 -rwx------   1 u0_a190  u0_a190      1166 Jan  7 03:08 /data/data/com.termux/files/home/backup/game.py
+   594537      4 -rwx------   1 u0_a190  u0_a190       448 Jan  7 03:08 /data/data/com.termux/files/home/backup/green_aacii.py
+   594411      4 -rwx------   1 u0_a190  u0_a190       967 Jan  7 03:08 /data/data/com.termux/files/home/backup/green_cat.py
+   586843     48 -rwx------   1 u0_a190  u0_a190     47767 Jan  7 03:08 /data/data/com.termux/files/home/backup/quantum_assistant.py
+   595233     80 -rwx------   1 u0_a190  u0_a190     81880 Jan  7 03:08 /data/data/com.termux/files/home/backup/quantum_nexus.py
+   594356      8 -rwx------   1 u0_a190  u0_a190      5333 Jan  7 03:08 /data/data/com.termux/files/home/backup/quantum_sandbox_v3.py
+   594265      4 -rwx------   1 u0_a190  u0_a190       393 Jan  7 03:08 /data/data/com.termux/files/home/backup/quick_fembot.py
+   594434      4 -rwx------   1 u0_a190  u0_a190      1101 Jan  7 03:08 /data/data/com.termux/files/home/backup/rabbit.py
+   594460      8 -rwx------   1 u0_a190  u0_a190      7634 Jan  7 03:08 /data/data/com.termux/files/home/backup/sphere_game.py
+   594453      4 -rwx------   1 u0_a190  u0_a190       191 Jan  7 03:08 /data/data/com.termux/files/home/backup/sustainable_growth_with_profits.py
+   725337      4 -rwx------   1 u0_a190  u0_a190       220 Jan  9 00:18 /data/data/com.termux/files/home/rename_one.py
+   592243     16 -rwx------   1 u0_a190  u0_a190     12446 Jan  7 02:55 /data/data/com.termux/files/home/reality_manupulation.py
+   747928      4 -rwxr-xr-x   1 u0_a190  u0_a190       224 Jan 13 13:39 /data/data/com.termux/files/home/.termux/boot/video_wallpaper
+   645370      4 -rwx------   1 u0_a190  u0_a190      1844 Jan  7 09:14 /data/data/com.termux/files/home/roku_control.py
+   648943      4 -rwx------   1 u0_a190  u0_a190      2112 Jan  7 07:53 /data/data/com.termux/files/home/stackz.py
+   586422      4 -rwx------   1 u0_a190  u0_a190      1616 Jan  7 07:29 /data/data/com.termux/files/home/roku_discovery.py
+   648969      4 -rwx------   1 u0_a190  u0_a190      2721 Jan  7 08:13 /data/data/com.termux/files/home/roku_controller.py
+   651084     16 -rwx------   1 u0_a190  u0_a190     13442 Jan 15 09:31 /data/data/com.termux/files/home/network_scanner.py
+   650896      4 -rwx------   1 u0_a190  u0_a190       541 Jan  7 10:36 /data/data/com.termux/files/home/open.py
+   648971      8 -rwx------   1 u0_a190  u0_a190      6684 Jan  7 09:11 /data/data/com.termux/files/home/omega_dsp_engine.py
+   645024     12 -rwx------   1 u0_a190  u0_a190      8859 Jan  7 09:27 /data/data/com.termux/files/home/omega_dsp_engine_ascii_max.py
+   493591      4 -rwx------   1 u0_a190  u0_a190       455 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/pre-applypatch.sample
+   493534      4 -rwx------   1 u0_a190  u0_a190      1680 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/pre-commit.sample
+   493616      4 -rwx------   1 u0_a190  u0_a190       447 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/pre-merge-commit.sample
+   493638      4 -rwx------   1 u0_a190  u0_a190      1405 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/pre-push.sample
+   493311      8 -rwx------   1 u0_a190  u0_a190      4956 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/pre-rebase.sample
+   493625      4 -rwx------   1 u0_a190  u0_a190      1604 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/prepare-commit-msg.sample
+   493612      4 -rwx------   1 u0_a190  u0_a190      2814 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/push-to-checkout.sample
+   493341      4 -rwx------   1 u0_a190  u0_a190      2339 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/sendemail-validate.sample
+   493338      4 -rwx------   1 u0_a190  u0_a190      3681 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/update.sample
+   493650      4 -rwx------   1 u0_a190  u0_a190       927 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/commit-msg.sample
+   493357      8 -rwx------   1 u0_a190  u0_a190      4753 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/fsmonitor-watchman.sample
+   493590      4 -rwx------   1 u0_a190  u0_a190       220 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/post-update.sample
+   493325      4 -rwx------   1 u0_a190  u0_a190       575 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/pre-receive.sample
+   493501      4 -rwx------   1 u0_a190  u0_a190       509 Feb  1 03:47 /data/data/com.termux/files/home/TERMUX-files/.git/hooks/applypatch-msg.sample
+   494444      4 -rwx------   1 u0_a190  u0_a190       151 Feb  1 04:02 /data/data/com.termux/files/home/TERMUX-files/hello.py
+   747187      4 -rwx------   1 u0_a190  u0_a190      1825 Jan  7 23:33 /data/data/com.termux/files/home/dormant_scan.py
+   563832      4 -rwx------   1 u0_a190  u0_a190      3319 Jan  7 23:38 /data/data/com.termux/files/home/btc_lozt.py
+   497545     12 -rwx------   1 u0_a190  u0_a190      9577 Feb  1 08:55 /data/data/com.termux/files/home/install-nethunter-termux
+   573395      4 -rwx------   1 u0_a190  u0_a190       173 Jan  8 00:06 /data/data/com.termux/files/home/node_test.py
+   271139      4 -rwx------   1 u0_a190  u0_a190      3094 Jan  8 00:41 /data/data/com.termux/files/home/bannana.py
+   646895      4 -rwx------   1 u0_a190  u0_a190       653 Jan  8 00:47 /data/data/com.termux/files/home/replicate.py
+   698305      4 -rwx------   1 u0_a190  u0_a190      2109 Jan  8 14:46 /data/data/com.termux/files/home/ticAi.py
+   707078     40 -rwx------   1 u0_a190  u0_a190     38625 Jan  8 17:39 /data/data/com.termux/files/home/source.py
+   709210     28 -rwx------   1 u0_a190  u0_a190     25876 Jan  8 19:12 /data/data/com.termux/files/home/Deploy_Trinity.py
+   718432     20 -rwx------   1 u0_a190  u0_a190     18651 Jan  8 20:14 /data/data/com.termux/files/home/deploy_trinity.py
+   625633      4 -rwx------   1 u0_a190  u0_a190        38 Jan  9 01:06 /data/data/com.termux/files/home/qnode_payload.py
+   720652      8 -rwx------   1 u0_a190  u0_a190      8036 Jan  9 01:11 /data/data/com.termux/files/home/omega_qnet_controller.py
+   728842      4 -rwx------   1 u0_a190  u0_a190        39 Jan  9 07:54 /data/data/com.termux/files/home/Sweep.py
+   741541      4 -rwx------   1 u0_a190  u0_a190      2436 Jan  9 09:39 /data/data/com.termux/files/home/omega_remote.py
+   741140     32 -rwx------   1 u0_a190  u0_a190     30933 Jan  9 09:44 /data/data/com.termux/files/home/jack.py
+   736205      8 -rwx------   1 u0_a190  u0_a190      4243 Jan  9 09:52 /data/data/com.termux/files/home/omega_remote_v3.py
+   739530      4 -rwx------   1 u0_a190  u0_a190      1367 Jan  9 10:38 /data/data/com.termux/files/home/make_remote_wavs.py
+   743538      4 -rwx------   1 u0_a190  u0_a190       801 Jan 10 02:02 /data/data/com.termux/files/home/Razor_Black_Widow.py
+   739551      4 -rwx------   1 u0_a190  u0_a190       504 Jan 10 03:25 /data/data/com.termux/files/home/Roku_SSDP_discovery.py
+   742929      4 -rwx------   1 u0_a190  u0_a190       657 Jan 10 02:44 /data/data/com.termux/files/home/roku_remote.py
+   742427      4 -rwx------   1 u0_a190  u0_a190       472 Jan 10 03:08 /data/data/com.termux/files/home/ECP.py
+   744779      4 -rwx------   1 u0_a190  u0_a190       603 Jan 10 03:12 /data/data/com.termux/files/home/roku_remote2.py
+   743954      4 -rwx------   1 u0_a190  u0_a190       583 Jan 10 03:40 /data/data/com.termux/files/home/roku_remote5.py
+   586065      8 -rwx------   1 u0_a190  u0_a190      5056 Jan 10 05:00 /data/data/com.termux/files/home/usb_probe.py
+   745396      4 -rwx------   1 u0_a190  u0_a190       663 Jan 10 07:21 /data/data/com.termux/files/home/rokuRm.py
+   723485      4 -rwx------   1 u0_a190  u0_a190       222 Jan 10 07:30 /data/data/com.termux/files/home/wifiszz.py
+   742587      4 -rwx------   1 u0_a190  u0_a190      1520 Jan 10 20:01 /data/data/com.termux/files/home/random_glitch.py
+   753771      4 -rwx------   1 u0_a190  u0_a190       578 Jan 12 05:45 /data/data/com.termux/files/home/diag.py
+   754057     20 -rwx------   1 u0_a190  u0_a190     16582 Jan 12 05:56 /data/data/com.termux/files/home/time2.py
+   754184      8 -rwx------   1 u0_a190  u0_a190      4774 Jan 12 06:00 /data/data/com.termux/files/home/sg.py
+   754224      4 -rwx------   1 u0_a190  u0_a190       843 Jan 12 06:01 /data/data/com.termux/files/home/large.py
+   757743      4 -rwx------   1 u0_a190  u0_a190      1333 Jan 12 06:36 /data/data/com.termux/files/home/timeap.py
+   769048      4 -rwx------   1 u0_a190  u0_a190        57 Jan 12 20:50 /data/data/com.termux/files/home/omega_flask4/run
+   455767      4 -rwx------   1 u0_a190  u0_a190      1007 Jan 13 00:11 /data/data/com.termux/files/home/btcseed.py
+   458665      8 -rwx------   1 u0_a190  u0_a190      6832 Jan 13 00:16 /data/data/com.termux/files/home/btcharmoicz.py
+   767132      4 -rwx------   1 u0_a190  u0_a190      2825 Jan 13 00:24 /data/data/com.termux/files/home/btcmgiier.py
+   457944      8 -rwx------   1 u0_a190  u0_a190      8082 Jan 13 00:26 /data/data/com.termux/files/home/btcupZ.py
+   459030     20 -rwx------   1 u0_a190  u0_a190     17060 Jan 13 03:17 /data/data/com.termux/files/home/chat_data_parser.py
+   461117      4 -rwx------   1 u0_a190  u0_a190      1355 Jan 13 07:16 /data/data/com.termux/files/home/loop.py
+   460594      4 -rwx------   1 u0_a190  u0_a190       548 Jan 13 13:25 /data/data/com.termux/files/home/omega_video_server.py
+   772438      4 -rwx------   1 u0_a190  u0_a190        21 Jan 14 02:21 /data/data/com.termux/files/home/web_source.py
+   771773    292 -rwx------   1 u0_a190  u0_a190    298681 Jan 14 02:50 /data/data/com.termux/files/home/bannana3.py
+   774979      4 -rwx------   1 u0_a190  u0_a190      1517 Jan 14 07:40 /data/data/com.termux/files/home/nikita.py
+   774970      4 -rwx------   1 u0_a190  u0_a190      3050 Jan 14 08:07 /data/data/com.termux/files/home/ascii.py
+   713509      8 -rwx------   1 u0_a190  u0_a190      6308 Jan 14 09:08 /data/data/com.termux/files/home/decode.py
+   711464     28 -rwx------   1 u0_a190  u0_a190     27663 Jan 14 14:40 /data/data/com.termux/files/home/sulfer_ai.py
+   772890      4 -rwx------   1 u0_a190  u0_a190      2483 Jan 14 14:49 /data/data/com.termux/files/home/vssino.py
+   714054      8 -rwx------   1 u0_a190  u0_a190      5795 Jan 14 23:35 /data/data/com.termux/files/home/voice.py
+   647177      4 -rwx------   1 u0_a190  u0_a190      1794 Jan 14 23:25 /data/data/com.termux/files/home/voice3.py
+   721175      4 -rwx------   1 u0_a190  u0_a190       437 Jan 14 23:31 /data/data/com.termux/files/home/test_imports.py
+   719637     12 -rwx------   1 u0_a190  u0_a190     10988 Jan 15 09:29 /data/data/com.termux/files/home/machine_ai_orchestrator.py
+   727109      4 -rwx------   1 u0_a190  u0_a190       526 Jan 16 03:52 /data/data/com.termux/files/home/cast_youtube.py
+   723757     24 -rwx------   1 u0_a190  u0_a190     21476 Jan 16 10:35 /data/data/com.termux/files/home/omega_prime_archive/omega_prime_v6.py
+   481686      4 -rwx------   1 u0_a190  u0_a190       455 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/pre-applypatch.sample
+   481539      4 -rwx------   1 u0_a190  u0_a190      1680 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/pre-commit.sample
+   481404      4 -rwx------   1 u0_a190  u0_a190       447 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/pre-merge-commit.sample
+   481685      4 -rwx------   1 u0_a190  u0_a190      1405 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/pre-push.sample
+   481453      8 -rwx------   1 u0_a190  u0_a190      4956 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/pre-rebase.sample
+   481614      4 -rwx------   1 u0_a190  u0_a190      1604 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/prepare-commit-msg.sample
+   481394      4 -rwx------   1 u0_a190  u0_a190      2814 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/push-to-checkout.sample
+   481687      4 -rwx------   1 u0_a190  u0_a190      2339 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/sendemail-validate.sample
+   481449      4 -rwx------   1 u0_a190  u0_a190      3681 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/update.sample
+   481553      4 -rwx------   1 u0_a190  u0_a190       927 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/commit-msg.sample
+   481507      8 -rwx------   1 u0_a190  u0_a190      4753 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/fsmonitor-watchman.sample
+   481544      4 -rwx------   1 u0_a190  u0_a190       220 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/post-update.sample
+   481587      4 -rwx------   1 u0_a190  u0_a190       575 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/pre-receive.sample
+   481547      4 -rwx------   1 u0_a190  u0_a190       509 Jan 25 15:21 /data/data/com.termux/files/home/DVWA/.git/hooks/applypatch-msg.sample
+   738042      8 -rwx------   1 u0_a190  u0_a190      6899 Jan 12 00:29 /data/data/com.termux/files/home/mouse.py
+   735086      4 -rwx------   1 u0_a190  u0_a190       764 Feb 15 01:16 /data/data/com.termux/files/home/ir.py
+   734856      4 -rwx------   1 u0_a190  u0_a190       337 Jan 12 00:48 /data/data/com.termux/files/home/ai_agent.py
+   736561      4 -rwx------   1 u0_a190  u0_a190       474 Jan 12 01:00 /data/data/com.termux/files/home/aii.py
+   752319      4 -rwx------   1 u0_a190  u0_a190      2483 Jan 12 05:42 /data/data/com.termux/files/home/machine.py
+   753575     16 -rwx------   1 u0_a190  u0_a190     13195 Jan 12 05:50 /data/data/com.termux/files/home/time.py
+   758768      4 -rwx------   1 u0_a190  u0_a190      1568 Jan 12 07:48 /data/data/com.termux/files/home/processing.py
+   758604      4 -rwx------   1 u0_a190  u0_a190      1466 Jan 12 07:50 /data/data/com.termux/files/home/sim.py
+   767077      4 -rwx------   1 u0_a190  u0_a190        59 Jan 12 20:32 /data/data/com.termux/files/home/omega_flask2/run
+   756398      4 -rwx------   1 u0_a190  u0_a190      1417 Jan 13 04:03 /data/data/com.termux/files/home/sophisticated_chat.py
+   715348      4 -rwx------   1 u0_a190  u0_a190      2942 Jan 13 04:45 /data/data/com.termux/files/home/blockchain_deployment.py
+   741542      4 -rwx------   1 u0_a190  u0_a190      1705 Jan 13 08:33 /data/data/com.termux/files/home/cpu.py
+   471660      8 -rwx------   1 u0_a190  u0_a190      5554 Jan 13 13:20 /data/data/com.termux/files/home/home.py
+   461651     16 -rwx------   1 u0_a190  u0_a190     16212 Jan 13 13:55 /data/data/com.termux/files/home/home_customizer.py
+   463832     36 -rwx------   1 u0_a190  u0_a190     34433 Jan 13 15:03 /data/data/com.termux/files/home/ai-consciousness-playground/app.py
+   771434      8 -rwx------   1 u0_a190  u0_a190      6710 Jan 13 15:08 /data/data/com.termux/files/home/ai-consciousness-playground/app-ultralight.py
+   769470      4 -rwx------   1 u0_a190  u0_a190        21 Jan 14 02:21 /data/data/com.termux/files/home/source_viewer.py
+   770863      4 -rwx------   1 u0_a190  u0_a190      1989 Jan 14 03:20 /data/data/com.termux/files/home/html_debugger.py
+   771109     40 -rwx------   1 u0_a190  u0_a190     40540 Jan 14 03:35 /data/data/com.termux/files/home/web_imspector_pro.py
+   772832     40 -rwx------   1 u0_a190  u0_a190     40541 Jan 14 03:36 /data/data/com.termux/files/home/web_inspector_pro.py
+   772762      4 -rwx------   1 u0_a190  u0_a190      2891 Jan 14 08:16 /data/data/com.termux/files/home/ascii_video.py
+   774745      4 -rwx------   1 u0_a190  u0_a190      1982 Jan 14 23:30 /data/data/com.termux/files/home/speach.py
+   718837      4 -rwx------   1 u0_a190  u0_a190      2477 Jan 14 23:42 /data/data/com.termux/files/home/pipeline.py
+   719694      8 -rwx------   1 u0_a190  u0_a190      4646 Jan 15 09:35 /data/data/com.termux/files/home/termux_Autonomous.py
+   720321      4 -rwx------   1 u0_a190  u0_a190        28 Jan 16 04:21 /data/data/com.termux/files/home/find_chromecast.py
+   726194      4 -rwx------   1 u0_a190  u0_a190      2365 Jan 16 22:07 /data/data/com.termux/files/home/open_cast_setup.py
+   726880      4 -rwx------   1 u0_a190  u0_a190      1018 Jan 25 22:05 /data/data/com.termux/files/home/omega_prime.py
+   800781     12 -rwx------   1 u0_a190  u0_a190      8779 Mar  2 18:07 /data/data/com.termux/files/home/aurora_telepathy.py
+   785438     12 -rwx------   1 u0_a190  u0_a190     11420 Mar  2 21:32 /data/data/com.termux/files/home/mary_unified.py
+   734894      4 -rwx------   1 u0_a190  u0_a190      2885 Jan 12 01:08 /data/data/com.termux/files/home/aiZ.py
+   748364      4 -rwx------   1 u0_a190  u0_a190      1291 Jan 12 03:41 /data/data/com.termux/files/home/swarm.py
+   753734      4 -rwx------   1 u0_a190  u0_a190       892 Jan 12 05:44 /data/data/com.termux/files/home/temp.py
+   757909      4 -rwx------   1 u0_a190  u0_a190      1568 Jan 12 07:46 /data/data/com.termux/files/home/jackp.py
+   758082      4 -rwx------   1 u0_a190  u0_a190       816 Jan 12 07:50 /data/data/com.termux/files/home/simenv.py
+   752618      4 -rwx------   1 u0_a190  u0_a190      2724 Jan 12 07:56 /data/data/com.termux/files/home/kernel_ai_agent.py
+   755744      8 -rwx------   1 u0_a190  u0_a190      4267 Jan 12 09:39 /data/data/com.termux/files/home/projevtor.py
+   461715      4 -rwx------   1 u0_a190  u0_a190      2995 Jan 12 09:56 /data/data/com.termux/files/home/media.py
+   455254     20 -rwx------   1 u0_a190  u0_a190     17060 Jan 13 03:21 /data/data/com.termux/files/home/fembot_ai_core.py
+   587064      4 -rwx------   1 u0_a190  u0_a190       150 Jan 13 03:58 /data/data/com.termux/files/home/quantum_circuit_qkd.py
+   768168      8 -rwx------   1 u0_a190  u0_a190      7316 Jan 13 07:22 /data/data/com.termux/files/home/anonly.py
+   462494     12 -rwx------   1 u0_a190  u0_a190      9703 Jan 13 07:23 /data/data/com.termux/files/home/qc.py
+   464857      4 -rwx------   1 u0_a190  u0_a190       168 Jan 13 13:24 /data/data/com.termux/files/home/play_video_shortcut.py
+   715210      4 -rwx------   1 u0_a190  u0_a190      3456 Jan 14 14:10 /data/data/com.termux/files/home/bios_clock.py
+   713730     12 -rwx------   1 u0_a190  u0_a190      8967 Jan 14 14:46 /data/data/com.termux/files/home/glitchZz.py
+   712387      4 -rwx------   1 u0_a190  u0_a190      1355 Jan 14 14:48 /data/data/com.termux/files/home/timex.py
+   744735      4 -rwx------   1 u0_a190  u0_a190      2325 Jan 14 23:41 /data/data/com.termux/files/home/voice2.py
+   718274      4 -rwx------   1 u0_a190  u0_a190      2774 Jan 14 23:46 /data/data/com.termux/files/home/pipeline2.py
+   715784      8 -rwx------   1 u0_a190  u0_a190      4944 Jan 15 09:44 /data/data/com.termux/files/home/ai_machine_system/machine_code_interface.py
+   714905      8 -rwx------   1 u0_a190  u0_a190      7013 Jan 15 09:45 /data/data/com.termux/files/home/ai_machine_system/network_scanner.py
+   743535     12 -rwx------   1 u0_a190  u0_a190     10988 Jan 15 09:47 /data/data/com.termux/files/home/ai_machine_system/machine_ai_orchestrator.py
+   713745     24 -rwx------   1 u0_a190  u0_a190     21173 Jan 15 21:39 /data/data/com.termux/files/home/QUANTUM_\ REALITY_GLITCH\ _ENGINE.py
+   720189      4 -rwx------   1 u0_a190  u0_a190      3642 Jan 15 23:16 /data/data/com.termux/files/home/hive_node.py
+   721138     12 -rwx------   1 u0_a190  u0_a190     11469 Jan 16 03:30 /data/data/com.termux/files/home/chromecast_controller.py
+   766435      4 -rwx------   1 u0_a190  u0_a190      3353 Mar  2 17:55 /data/data/com.termux/files/home/aurora_loop.py
+   795629     12 -rwx------   1 u0_a190  u0_a190      9312 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lddtree-0.4.0/tests/test.elf
+   796322      4 -rwx------   1 u0_a190  u0_a190       145 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/configparser-3.1.0/.gitignore
+   798645     20 -rwx------   1 u0_a190  u0_a190     16776 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-zigbuild-0.22.1/tests/fixtures/test_aarch64.dylib
+   798646     36 -rwx------   1 u0_a190  u0_a190     33160 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-zigbuild-0.22.1/tests/fixtures/test_universal2.dylib
+   798658      8 -rwx------   1 u0_a190  u0_a190      4200 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cargo-zigbuild-0.22.1/tests/fixtures/test_x86_64.dylib
+   811560    196 -rwx------   1 u0_a190  u0_a190    197416 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fat-macho-0.4.10/tests/fixtures/hellofat
+   811561     68 -rwx------   1 u0_a190  u0_a190     65970 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fat-macho-0.4.10/tests/fixtures/simplefat
+   811563     68 -rwx------   1 u0_a190  u0_a190     65913 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fat-macho-0.4.10/tests/fixtures/simplefat.dylib
+   811565     20 -rwx------   1 u0_a190  u0_a190     16823 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fat-macho-0.4.10/tests/fixtures/thin_arm64
+   811571     20 -rwx------   1 u0_a190  u0_a190     16536 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fat-macho-0.4.10/tests/fixtures/thin_x86_64
+   811647     12 -rwx------   1 u0_a190  u0_a190     11657 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/console-0.15.11/tests/data/sample_zellij_session.log
+   823477      4 -rwx------   1 u0_a190  u0_a190      3311 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/extra/7z2lzma/7z2lzma.bash
+   823543      4 -rwx------   1 u0_a190  u0_a190      1443 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/lzma-sys-0.1.20/xz-5.2/po4a/update-po
+   783723      4 -rwx------   1 u0_a190  u0_a190       292 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/autocfg-1.3.0/tests/wrap_ignored
+   812033      4 -rwx------   1 u0_a190  u0_a190      2595 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bytesize-2.3.1/scripts/bump-changelogs
+   812035      4 -rwx------   1 u0_a190  u0_a190       817 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bytesize-2.3.1/scripts/update-release-notes
+   815467      4 -rwx------   1 u0_a190  u0_a190       292 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/autocfg-1.5.0/tests/wrap_ignored
+   816522     16 -rwx------   1 u0_a190  u0_a190     16218 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-segmentation-1.12.0/scripts/unicode.py
+   816524      8 -rwx------   1 u0_a190  u0_a190      6195 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-segmentation-1.12.0/scripts/unicode_gen_breaktests.py
+   816713     24 -rwx------   1 u0_a190  u0_a190     24560 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-normalization-0.1.25/scripts/unicode.py
+   821733     80 -rwx------   1 u0_a190  u0_a190     81780 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-width-0.2.2/scripts/unicode.py
+   822153      4 -rwx------   1 u0_a190  u0_a190       783 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.7.5/test
+   822907      4 -rwx------   1 u0_a190  u0_a190      2528 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.39/githooks/pre-push
+   839887      4 -rwx------   1 u0_a190  u0_a190       530 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jiter-0.11.1/benches/generate_big.py
+   793626      4 -rwx------   1 u0_a190  u0_a190       783 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.5/test
+   835852      4 -rwx------   1 u0_a190  u0_a190      3649 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-automata-0.4.13/test
+   836740      4 -rwx------   1 u0_a190  u0_a190      1196 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wyz-0.5.1/Cargo.toml.orig
+   827055      4 -rwx------   1 u0_a190  u0_a190      3649 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-automata-0.3.9/test
+   839465      4 -rwx------   1 u0_a190  u0_a190       652 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/python3-dll-a-0.2.14/parse-stable-abi.py
+   802931      4 -rwx------   1 u0_a190  u0_a190      1448 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/regex-1.12.2/test
+   840224      4 -rwx------   1 u0_a190  u0_a190      2278 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/zerocopy-0.8.25/githooks/pre-push
+   837469      4 -rwx------   1 u0_a190  u0_a190       158 Jul 23  2006 /data/data/com.termux/files/home/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pyo3-0.26.0/emscripten/runner.py
+   742467      4 -rwx------   1 u0_a190  u0_a190      1584 Jan 10 20:03 /data/data/com.termux/files/home/random_seq.py
+   745171     12 -rwx------   1 u0_a190  u0_a190     11717 Jan 10 22:00 /data/data/com.termux/files/home/roul3ttez.py
+   738937      4 -rwx------   1 u0_a190  u0_a190       445 Jan 12 00:39 /data/data/com.termux/files/home/win.py
+   754136      4 -rwx------   1 u0_a190  u0_a190      2931 Jan 12 05:58 /data/data/com.termux/files/home/node16.py
+   754270      8 -rwx------   1 u0_a190  u0_a190      4111 Jan 12 06:03 /data/data/com.termux/files/home/frame.py
+   757648      4 -rwx------   1 u0_a190  u0_a190       445 Jan 12 06:33 /data/data/com.termux/files/home/document.py
+   769723      4 -rwx------   1 u0_a190  u0_a190        57 Jan 12 20:44 /data/data/com.termux/files/home/omega_flask3/run
+   767095      4 -rwx------   1 u0_a190  u0_a190       534 Jan 13 00:10 /data/data/com.termux/files/home/seedbtc.py
+   768175      4 -rwx------   1 u0_a190  u0_a190       534 Jan 13 00:13 /data/data/com.termux/files/home/btcseedz.py
+   766773      4 -rwx------   1 u0_a190  u0_a190       893 Jan 13 00:15 /data/data/com.termux/files/home/btcharmonic.py
+   739740      4 -rwx------   1 u0_a190  u0_a190      1774 Jan 13 03:20 /data/data/com.termux/files/home/fembot_quick_start.py
+   463492      4 -rwx------   1 u0_a190  u0_a190       210 Jan 13 13:12 /data/data/com.termux/files/home/wall.py
+   460477     16 -rwx------   1 u0_a190  u0_a190     16212 Jan 13 13:57 /data/data/com.termux/files/home/home_customizer_fixed.py
+   771233      4 -rwx------   1 u0_a190  u0_a190      1471 Jan 14 02:20 /data/data/com.termux/files/home/viewsource.py
+   771846     16 -rwx------   1 u0_a190  u0_a190     15831 Jan 14 02:41 /data/data/com.termux/files/home/dark_viewer.py
+   774479      4 -rwx------   1 u0_a190  u0_a190      3021 Jan 14 08:07 /data/data/com.termux/files/home/image_to_ascii.py
+   713107      4 -rwx------   1 u0_a190  u0_a190      3846 Jan 14 14:02 /data/data/com.termux/files/home/cpu_throttle_bios.py
+   712796      0 -rwx------   1 u0_a190  u0_a190         0 Jan 15 21:41 /data/data/com.termux/files/home/ENGINE.py
+   723118      4 -rwx------   1 u0_a190  u0_a190      2702 Jan 16 03:47 /data/data/com.termux/files/home/auto_cast.py
+   723766      4 -rwx------   1 u0_a190  u0_a190      2728 Feb 15 15:53 /data/data/com.termux/files/home/mirror_browser_to_chromecast.py
+   726621      4 -rwx------   1 u0_a190  u0_a190      1025 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/hardhat/dist/src/cli.js
+   717213      4 -rwx------   1 u0_a190  u0_a190      3504 Feb 28 00:10 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/@esbuild/android-arm/bin/esbuild
+   654023  13224 -rwx------   1 u0_a190  u0_a190  13524819 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/@esbuild/android-arm/esbuild.wasm
+   720221      8 -rwx------   1 u0_a190  u0_a190      4748 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/semver/bin/semver.js
+   702938    120 -rwx------   1 u0_a190  u0_a190    120491 Feb 28 00:10 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/cli.cjs
+   706588      4 -rwx------   1 u0_a190  u0_a190       586 Feb 28 00:10 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/cjs/api/index.cjs
+   718136      4 -rwx------   1 u0_a190  u0_a190       513 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/cjs/api/index.mjs
+   706417      4 -rwx------   1 u0_a190  u0_a190       484 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/cjs/index.cjs
+   719189      4 -rwx------   1 u0_a190  u0_a190       412 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/cjs/index.mjs
+   706829      4 -rwx------   1 u0_a190  u0_a190      1255 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/esm/api/index.cjs
+   714002      4 -rwx------   1 u0_a190  u0_a190      1109 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/esm/api/index.mjs
+   706635      8 -rwx------   1 u0_a190  u0_a190      7652 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/esm/index.cjs
+   804453      8 -rwx------   1 u0_a190  u0_a190      7014 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/esm/index.mjs
+   706934      4 -rwx------   1 u0_a190  u0_a190      1032 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/loader.cjs
+   707471      4 -rwx------   1 u0_a190  u0_a190       506 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/patch-repl.cjs
+   707194      4 -rwx------   1 u0_a190  u0_a190      1008 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/preflight.cjs
+   707281      4 -rwx------   1 u0_a190  u0_a190       758 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/repl.cjs
+   713578      4 -rwx------   1 u0_a190  u0_a190       497 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/suppress-warnings.cjs
+   719453    120 -rwx------   1 u0_a190  u0_a190    120402 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/cli.mjs
+   742464      4 -rwx------   1 u0_a190  u0_a190       729 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/loader.mjs
+   810689      4 -rwx------   1 u0_a190  u0_a190       496 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/patch-repl.mjs
+   770517      4 -rwx------   1 u0_a190  u0_a190       973 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/preflight.mjs
+   488934      4 -rwx------   1 u0_a190  u0_a190       718 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/repl.mjs
+   782577      4 -rwx------   1 u0_a190  u0_a190       484 Feb 28 00:11 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/tsx/dist/suppress-warnings.mjs
+   715162     12 -rwx------   1 u0_a190  u0_a190      9350 Feb 28 00:10 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/esbuild/bin/esbuild
+   717472     24 -rwx------   1 u0_a190  u0_a190     23817 Feb 28 00:10 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/get-tsconfig/dist/index.cjs
+   701328     24 -rwx------   1 u0_a190  u0_a190     23805 Feb 28 00:10 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/get-tsconfig/dist/index.mjs
+   717374      4 -rwx------   1 u0_a190  u0_a190      2150 Feb 28 00:10 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/resolve-pkg-maps/dist/index.cjs
+   702950      4 -rwx------   1 u0_a190  u0_a190      2080 Feb 28 00:10 /data/data/com.termux/files/home/omfg/omfg-treasury/node_modules/resolve-pkg-maps/dist/index.mjs
+   787793     12 -rwx------   1 u0_a190  u0_a190     11438 Mar  2 18:15 /data/data/com.termux/files/home/aurora_quantum_loop.py
+   725868      4 -rwx------   1 u0_a190  u0_a190       355 Jan 16 14:38 /data/data/com.termux/files/home/awaken_v2.py
+   697773     20 -rwx------   1 u0_a190  u0_a190     16803 Apr  3 11:51 /data/data/com.termux/files/home/quantum_portfolio_harmonizer.py
+   713109     40 -rwx------   1 u0_a190  u0_a190     38524 Jan 17 04:15 /data/data/com.termux/files/home/voy.py
+   722742      8 -rwx------   1 u0_a190  u0_a190      5445 Jan 16 14:53 /data/data/com.termux/files/home/sovereign_kernel_v2.py
+   710634      8 -rwx------   1 u0_a190  u0_a190      5777 Jan 16 23:34 /data/data/com.termux/files/home/pilow.py
+   729432      4 -rwx------   1 u0_a190  u0_a190      2945 Jan 18 05:15 /data/data/com.termux/files/home/termcazzt.py
+   716869     24 -rwx------   1 u0_a190  u0_a190     21476 Jan 16 10:31 /data/data/com.termux/files/home/omega_prime_v6.py
+   719269     48 -rwx------   1 u0_a190  u0_a190     47111 Jan 18 04:38 /data/data/com.termux/files/home/cast4.py
+   616388     12 -rwx------   1 u0_a190  u0_a190      8850 Jan 20 03:34 /data/data/com.termux/files/home/binary_tone_encoder.py
+   485082      4 -rwx------   1 u0_a190  u0_a190      1083 Jan 24 11:30 /data/data/com.termux/files/home/sync_service.py
+   710703      4 -rwx------   1 u0_a190  u0_a190      1890 Jan 16 23:38 /data/data/com.termux/files/home/canvas2.py
+   730026      4 -rwx------   1 u0_a190  u0_a190        80 Jan 18 04:27 /data/data/com.termux/files/home/browser.py
+   745661      4 -rwx------   1 u0_a190  u0_a190      1106 Jan 18 19:37 /data/data/com.termux/files/home/bannanna.py
+   719533     48 -rwx------   1 u0_a190  u0_a190     46171 Jan 16 10:47 /data/data/com.termux/files/home/ai_agent_scanner.py
+   712991      4 -rwx------   1 u0_a190  u0_a190       481 Jan 16 10:56 /data/data/com.termux/files/home/frequency_mesh.py
+   730963      4 -rwx------   1 u0_a190  u0_a190        94 Jan 18 03:45 /data/data/com.termux/files/home/secert_web.py
+   724055      4 -rwx------   1 u0_a190  u0_a190      1153 Jan 16 14:17 /data/data/com.termux/files/home/awaken.py
+   590001      8 -rwx------   1 u0_a190  u0_a190      4974 Jan 16 14:31 /data/data/com.termux/files/home/sovereign_kernel.py
+   711267      4 -rwx------   1 u0_a190  u0_a190       149 Jan 16 14:15 /data/data/com.termux/files/home/load_manifest.py
+   708110     32 -rwx------   1 u0_a190  u0_a190     29477 Jan 16 22:19 /data/data/com.termux/files/home/cast7.py
+   719312    136 -rwx------   1 u0_a190  u0_a190    136587 Jan 17 03:47 /data/data/com.termux/files/home/mirror.py
+   709949      4 -rwx------   1 u0_a190  u0_a190      2687 Jan 16 23:32 /data/data/com.termux/files/home/ascii_web.py
+   711522      4 -rwx------   1 u0_a190  u0_a190      1249 Jan 16 23:33 /data/data/com.termux/files/home/canvas_web.py
+   731071      8 -rwx------   1 u0_a190  u0_a190      4730 Jan 18 03:52 /data/data/com.termux/files/home/secert2_web.py
+   709301      4 -rwx------   1 u0_a190  u0_a190       406 Jan 18 06:00 /data/data/com.termux/files/home/sourceT.py
+   649330      0 -rwx------   1 u0_a190  u0_a190         0 Jan 18 18:32 /data/data/com.termux/files/home/secretWebx.py
+   711909      4 -rwx------   1 u0_a190  u0_a190      3566 Jan 20 02:47 /data/data/com.termux/files/home/test_encoder.py
+   471950      4 -rwx------   1 u0_a190  u0_a190      1107 Jan 20 02:56 /data/data/com.termux/files/home/tone/binary_tone_encoder.py
+   479547      4 -rwxr-xr-x   1 u0_a190  u0_a190         5 Jan 21 02:05 /data/data/com.termux/files/home/omega-system/logs/omega.pid
+   479548     12 -rwxr-xr-x   1 u0_a190  u0_a190      9407 Jan 21 02:09 /data/data/com.termux/files/home/omega-system/logs/omega_20260121_020552.log
+   479550      4 -rwxr-xr-x   1 u0_a190  u0_a190      2182 Jan 21 02:13 /data/data/com.termux/files/home/omega-system/logs/omega.log
+   479464     12 -rwxr-xr-x   1 u0_a190  u0_a190      9112 Jan 21 02:05 /data/data/com.termux/files/home/omega-system/app.py
+   479501      8 -rwxr-xr-x   1 u0_a190  u0_a190      8010 Jan 21 02:05 /data/data/com.termux/files/home/omega-system/index.html
+   728736      0 -rwx------   1 u0_a190  u0_a190         0 Jan 18 18:27 /data/data/com.termux/files/home/webbz.py
+   655797     12 -rwx------   1 u0_a190  u0_a190      8850 Jan 20 02:45 /data/data/com.termux/files/home/binary_code_encoder.py
+   727742      4 -rwx------   1 u0_a190  u0_a190       452 Jan 18 06:14 /data/data/com.termux/files/home/make_page.py
+   511901      4 -rwx------   1 u0_a190  u0_a190      1251 Jan 24 01:18 /data/data/com.termux/files/home/super_simple_video.py
+   713000     16 -rwx------   1 u0_a190  u0_a190     12978 Jan 16 21:49 /data/data/com.termux/files/home/peer.py
+   714320      4 -rwx------   1 u0_a190  u0_a190       487 Jan 18 05:10 /data/data/com.termux/files/home/chromez.py
+   724020      8 -rwx------   1 u0_a190  u0_a190      5191 Jan 20 02:50 /data/data/com.termux/files/home/alien.py
+   722281      4 -rwx------   1 u0_a190  u0_a190      3066 Jan 20 04:01 /data/data/com.termux/files/home/mesh_dial.py
+   725136      4 -rwx------   1 u0_a190  u0_a190      2340 Jan 18 11:13 /data/data/com.termux/files/home/view_source.py
+   727868      4 -rwx------   1 u0_a190  u0_a190      2560 Jan 18 11:18 /data/data/com.termux/files/home/htmlviewer/view_source.py
+   629801      4 -rwx------   1 u0_a190  u0_a190       455 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/pre-applypatch.sample
+   614735      4 -rwx------   1 u0_a190  u0_a190      1680 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/pre-commit.sample
+   608607      4 -rwx------   1 u0_a190  u0_a190       447 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/pre-merge-commit.sample
+   471615      4 -rwx------   1 u0_a190  u0_a190      1405 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/pre-push.sample
+   615632      8 -rwx------   1 u0_a190  u0_a190      4956 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/pre-rebase.sample
+   615856      4 -rwx------   1 u0_a190  u0_a190      1604 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/prepare-commit-msg.sample
+   613373      4 -rwx------   1 u0_a190  u0_a190      2814 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/push-to-checkout.sample
+   606932      4 -rwx------   1 u0_a190  u0_a190      2339 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/sendemail-validate.sample
+   716094      4 -rwx------   1 u0_a190  u0_a190      3681 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/update.sample
+   710949      4 -rwx------   1 u0_a190  u0_a190       927 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/commit-msg.sample
+   705104      8 -rwx------   1 u0_a190  u0_a190      4753 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/fsmonitor-watchman.sample
+   651713      4 -rwx------   1 u0_a190  u0_a190       220 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/post-update.sample
+   617281      4 -rwx------   1 u0_a190  u0_a190       575 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/pre-receive.sample
+   616619      4 -rwx------   1 u0_a190  u0_a190       509 Jan 20 13:06 /data/data/com.termux/files/home/AndroidForensics/.git/hooks/applypatch-msg.sample
+   461896      4 -rwx------   1 u0_a190  u0_a190       112 Jan 20 16:33 /data/data/com.termux/files/home/alpha_prime.py
+   462211      4 -rwx------   1 u0_a190  u0_a190       658 Jan 20 19:26 /data/data/com.termux/files/home/guidance_spell.py
+   479935      4 -rwx------   1 u0_a190  u0_a190      2943 Jan 21 02:43 /data/data/com.termux/files/home/omega_system/app.py
+   614654      4 -rwxr-xr-x   1 u0_a190  u0_a190      1272 Jan 20 03:31 /data/data/com.termux/files/home/.omega_vision_sandbox/sd_runner.py
+   693479      4 -rwx------   1 u0_a190  u0_a190      1940 Jan 25 15:25 /data/data/com.termux/files/home/termux_ai.py
+   717927      4 -rwx------   1 u0_a190  u0_a190      2365 Jan 16 23:48 /data/data/com.termux/files/home/googlecast.py
+   729343      4 -rwx------   1 u0_a190  u0_a190      2365 Jan 18 04:49 /data/data/com.termux/files/home/webb.py
+   727914      4 -rwx------   1 u0_a190  u0_a190       271 Jan 18 05:12 /data/data/com.termux/files/home/termuxcast.py
+   490941      4 -rwx------   1 u0_a190  u0_a190      2325 Jan 25 21:58 /data/data/com.termux/files/home/sovereign_attestation.py
+   747098     12 -rwx------   1 u0_a190  u0_a190      8765 Jan 26 11:04 /data/data/com.termux/files/home/ascii_fixer.py
+   748839      8 -rwx------   1 u0_a190  u0_a190      4269 Jan 26 11:21 /data/data/com.termux/files/home/convert_image.py

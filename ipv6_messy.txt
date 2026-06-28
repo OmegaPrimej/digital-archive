@@ -1,0 +1,1 @@
+grep -E '^[0-9a-fA-F:]+$' ipv6_messy.txt > ipv6_clean.txt

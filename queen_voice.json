@@ -1,0 +1,9 @@
+{
+  "variant": "en+f5",
+  "speed": 130,
+  "pitch": 45,
+  "emphasis": 25,
+  "volume": 100,
+  "bass_boost": 6,
+  "treble_cut": -2
+}

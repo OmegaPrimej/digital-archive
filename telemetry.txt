@@ -1,0 +1,6 @@
+[INFO] SH module: STREAM mode
+[INFO] Brownfield UART0: polling 1Hz
+[INFO] Pipeline: ENCRYPTED -> AZURE_IOT
+[STREAM] temp=23.4C pressure=101.3kPa
+[STREAM] temp=23.5C vibration=0.01g
+[INFO] Uplink OK: heartbeat OK

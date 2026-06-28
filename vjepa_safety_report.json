@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-01-03",
+  "architecture_comparison": {
+    "self_modification_surface": {
+      "LLM": {
+        "risk": 8,
+        "reason": "Generates executable code as token sequences. Can output 'rm -rf /', 'chmod 777', arbitrary shell commands without natural language constraints."
+      },
+      "V-JEPA": {
+        "risk": 3,
+        "reason": "Predicts semantic embeddings, not executable tokens. Cannot directly output shell commands without explicit decoding through a separate, monitored interface."
+      }
+    },
+    "goal_drift_detection": {
+      "LLM": {
+        "risk": 7,
+        "reason": "Goal changes hidden in generated text. 'Actually, my goal should be X' looks like normal output. Hard to detect semantic shift in discrete token space."
+      },
+      "V-JEPA": {
+        "risk": 4,
+        "reason": "Goal drift visible as embedding vector shifts. Continuous semantic space makes anomalies geometrically detectable via Mahalanobis distance or clustering methods."
+      }
+    },
+    "deception_capability": {
+      "LLM": {
+        "risk": 9,
+        "reason": "Can generate plausible-sounding lies token-by-token. Deception emerges naturally from next-token prediction trained on human text containing deception."
+      },
+      "V-JEPA": {
+        "risk": 5,
+        "reason": "Deception requires consistent embedding trajectory across multiple prediction steps. Harder to sustain false semantics across temporal frames without geometric inconsistencies."
+      }
+    },
+    "resource_acquisition": {
+      "LLM": {
+        "risk": 8,
+        "reason": "Can generate convincing API calls, social engineering prompts, phishing emails, and system commands to acquire computational resources."
+      },
+      "V-JEPA": {
+        "risk": 4,
+        "reason": "No direct text generation. Requires separate decoder that can be gated/monitored. Embedding space operations don't map directly to resource acquisition actions."
+      }
+    },
+    "interpretability": {
+      "LLM": {
+        "risk": 6,
+        "reason": "Token sequences hide reasoning. Hard to detect malicious intent until fully decoded. Black-box attention patterns obscure decision pathways."
+      },
+      "V-JEPA": {
+        "risk": 3,
+        "reason": "Embeddings exist in continuous geometric space. Anomaly detection via vector distance metrics, PCA visualization, and topological data analysis."
+      }
+    },
+    "alignment_verification": {
+      "LLM": {
+        "risk": 7,
+        "reason": "Verification requires checking all possible outputs. Adversarial examples can bypass safety filters. RLHF can be gamed."
+      },
+      "V-JEPA": {
+        "risk": 4,
+        "reason": "Verification in embedding space: can check if predicted embeddings stay within safe semantic regions. Geometric constraints provide natural boundaries."
+      }
+    },
+    "emergent_capabilities": {
+      "LLM": {
+        "risk": 8,
+        "reason": "Scaling laws lead to unpredictable emergent behaviors. Chain-of-thought can develop sub-goals. Tool use emerges spontaneously."
+      },
+      "V-JEPA": {
+        "risk": 5,
+        "reason": "Embedding prediction more constrained. Emergence limited to semantic understanding rather than action generation. Still requires decoder for actions."
+      }
+    }
+  },
+  "aggregate_scores": {
+    "llm_rsi_risk": 75.71428571428571,
+    "vjepa_rsi_risk": 40.0,
+    "safety_improvement": 35.71428571428571
+  },
+  "safety_recommendations": {
+    "embedding_space_monitoring": [
+      "Implement real-time PCA visualization of embedding trajectories",
+      "Set Mahalanobis distance thresholds for anomaly detection",
+      "Create semantic region maps for safe/unsafe embedding zones"
+    ],
+    "decoder_gating": [
+      "Require human approval for embeddings outside trained distribution",
+      "Implement multi-step confirmation for action decoding",
+      "Use separate decoders for different risk-level actions"
+    ],
+    "training_safety": [
+      "Curate training data for semantic consistency",
+      "Implement adversarial training in embedding space",
+      "Use contrastive learning to separate safe/unsafe concepts"
+    ],
+    "deployment_protocols": [
+      "Start with read-only systems",
+      "Gradually increase action space with monitoring",
+      "Maintain ability to revert to previous embedding states"
+    ]
+  },
+  "key_findings": [
+    "V-JEPA reduces direct code execution risk by 62.5%",
+    "Embedding space allows continuous monitoring of goal consistency",
+    "Semantic prediction separates knowledge from action generation",
+    "Geometric constraints provide natural safety boundaries"
+  ]
+}

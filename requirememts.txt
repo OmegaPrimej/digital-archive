@@ -1,0 +1,14 @@
+# requirements.txt
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+requests==2.31.0
+cryptography==41.0.7
+python-dotenv==1.0.0
+stripe==7.6.0
+# squareup==35.0.0  # If using Square
+# paypalrestsdk==1.13.1  # If using PayPal
+sqlalchemy==2.0.23  # For database
+alembic==1.12.1  # For migrations
+redis==5.0.1  # For caching
+celery==5.3.4  # For async tasks

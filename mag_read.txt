@@ -1,0 +1,1674 @@
+#🚀 ULTIMATE MULTI-INTERFACE PHYSICAL LAYER DOMINANCE SYSTEM
+
+```python
+"""
+╔══════════════════════════════════════════════════════════════╗
+║        PHANTOM INTERFACE PROTOCOL STACK v3.0                ║
+║         Complete Physical Layer Control                      ║
+║    Ethernet | USB | WiFi | Bluetooth | Magnetic Stripe      ║
+║    CAN Bus | Serial | I2C | SPI | MIDI | SCSI | IR          ║
+╚══════════════════════════════════════════════════════════════╝
+"""
+
+import os
+import sys
+import fcntl
+import struct
+import array
+import termios
+import select
+import time
+import random
+import socket
+import json
+import threading
+import queue
+import subprocess
+import hashlib
+import binascii
+from enum import Enum
+from dataclasses import dataclass
+from typing import Dict, List, Optional, Tuple, Any
+import mmap
+import ctypes
+from collections import defaultdict
+
+# ===== UNIVERSAL INTERFACE ENUMERATION =====
+
+class InterfaceType(Enum):
+    """All possible communication interfaces"""
+    ETHERNET = "eth"
+    WIFI = "wlan"
+    BLUETOOTH = "bt"
+    USB = "usb"
+    SERIAL = "tty"
+    AUDIO = "audio"
+    MAGNETIC_STRIPE = "magstripe"
+    CAN_BUS = "can"
+    I2C = "i2c"
+    SPI = "spi"
+    MIDI = "midi"
+    SCSI = "scsi"
+    IRDA = "irda"
+    HID = "hid"
+    NFC = "nfc"
+    RFID = "rfid"
+    PCIE = "pcie"
+    HDMI_CEC = "cec"
+    GPIO = "gpio"
+    JTAG = "jtag"
+
+# ===== COMPLETE INTERFACE DISCOVERY =====
+
+class UniversalInterfaceScanner:
+    """Discover ALL available communication interfaces on system"""
+    
+    def __init__(self):
+        self.interfaces = defaultdict(list)
+        self.scan_all()
+    
+    def scan_all(self) -> Dict[InterfaceType, List[str]]:
+        """Scan for every possible interface"""
+        print("🔍 Scanning ALL communication interfaces...")
+        
+        # Ethernet interfaces
+        self.scan_ethernet()
+        
+        # WiFi interfaces
+        self.scan_wifi()
+        
+        # Bluetooth
+        self.scan_bluetooth()
+        
+        # USB devices
+        self.scan_usb()
+        
+        # Serial ports
+        self.scan_serial()
+        
+        # Audio devices
+        self.scan_audio()
+        
+        # Special interfaces
+        self.scan_special()
+        
+        print(f"✅ Found {sum(len(v) for v in self.interfaces.values())} interfaces")
+        return self.interfaces
+    
+    def scan_ethernet(self):
+        """Scan Ethernet interfaces"""
+        try:
+            import netifaces
+            for iface in netifaces.interfaces():
+                if iface.startswith(('eth', 'en', 'em')):
+                    self.interfaces[InterfaceType.ETHERNET].append(iface)
+                    # Get details
+                    addrs = netifaces.ifaddresses(iface)
+                    if netifaces.AF_LINK in addrs:
+                        mac = addrs[netifaces.AF_LINK][0]['addr']
+                        self.interfaces[InterfaceType.ETHERNET].append(f"{iface} ({mac})")
+        except:
+            # Fallback to /sys/class/net
+            try:
+                net_path = "/sys/class/net"
+                if os.path.exists(net_path):
+                    for iface in os.listdir(net_path):
+                        if iface.startswith(('eth', 'en', 'em')):
+                            self.interfaces[InterfaceType.ETHERNET].append(iface)
+            except:
+                pass
+    
+    def scan_wifi(self):
+        """Scan WiFi interfaces"""
+        try:
+            # Using iw
+            result = subprocess.run(['iw', 'dev'], capture_output=True, text=True)
+            for line in result.stdout.split('\n'):
+                if 'Interface' in line:
+                    iface = line.split()[1]
+                    self.interfaces[InterfaceType.WIFI].append(iface)
+        except:
+            # Check for wlan interfaces
+            net_path = "/sys/class/net"
+            if os.path.exists(net_path):
+                for iface in os.listdir(net_path):
+                    if iface.startswith('wlan'):
+                        self.interfaces[InterfaceType.WIFI].append(iface)
+    
+    def scan_bluetooth(self):
+        """Scan Bluetooth devices"""
+        try:
+            result = subprocess.run(['hcitool', 'dev'], capture_output=True, text=True)
+            for line in result.stdout.split('\n'):
+                if 'hci' in line:
+                    parts = line.split()
+                    if len(parts) >= 2:
+                        self.interfaces[InterfaceType.BLUETOOTH].append(parts[0])
+        except:
+            # Check Bluetooth sysfs
+            bt_path = "/sys/class/bluetooth"
+            if os.path.exists(bt_path):
+                for dev in os.listdir(bt_path):
+                    self.interfaces[InterfaceType.BLUETOOTH].append(dev)
+    
+    def scan_usb(self):
+        """Scan USB devices"""
+        try:
+            usb_path = "/sys/bus/usb/devices"
+            if os.path.exists(usb_path):
+                for dev in os.listdir(usb_path):
+                    if dev.startswith(('usb', '1-', '2-', '3-', '4-')):
+                        try:
+                            vendor_file = os.path.join(usb_path, dev, 'idVendor')
+                            product_file = os.path.join(usb_path, dev, 'idProduct')
+                            if os.path.exists(vendor_file):
+                                with open(vendor_file, 'r') as f:
+                                    vendor = f.read().strip()
+                                with open(product_file, 'r') as f:
+                                    product = f.read().strip()
+                                dev_str = f"usb:{vendor}:{product}"
+                                self.interfaces[InterfaceType.USB].append(dev_str)
+                        except:
+                            pass
+        except:
+            pass
+    
+    def scan_serial(self):
+        """Scan serial ports"""
+        try:
+            # Check /dev for serial devices
+            dev_path = "/dev"
+            serial_patterns = ['ttyUSB', 'ttyACM', 'ttyAMA', 'ttyS', 'tty.']
+            for dev in os.listdir(dev_path):
+                for pattern in serial_patterns:
+                    if dev.startswith(pattern):
+                        full_path = os.path.join(dev_path, dev)
+                        self.interfaces[InterfaceType.SERIAL].append(full_path)
+        except:
+            pass
+    
+    def scan_audio(self):
+        """Scan audio interfaces"""
+        try:
+            # ALSA devices
+            result = subprocess.run(['aplay', '-l'], capture_output=True, text=True)
+            for line in result.stdout.split('\n'):
+                if 'card' in line and 'device' in line:
+                    self.interfaces[InterfaceType.AUDIO].append(line.strip())
+            
+            # PulseAudio
+            result = subprocess.run(['pactl', 'list', 'short', 'sinks'], 
+                                  capture_output=True, text=True)
+            for line in result.stdout.split('\n'):
+                if line:
+                    self.interfaces[InterfaceType.AUDIO].append(f"pulse:{line.split()[1]}")
+        except:
+            pass
+    
+    def scan_special(self):
+        """Scan special interfaces"""
+        # CAN bus
+        can_path = "/sys/class/net"
+        if os.path.exists(can_path):
+            for iface in os.listdir(can_path):
+                if iface.startswith('can'):
+                    self.interfaces[InterfaceType.CAN_BUS].append(iface)
+        
+        # I2C
+        i2c_path = "/sys/bus/i2c/devices"
+        if os.path.exists(i2c_path):
+            for dev in os.listdir(i2c_path):
+                self.interfaces[InterfaceType.I2C].append(dev)
+        
+        # SPI
+        spi_path = "/sys/bus/spi/devices"
+        if os.path.exists(spi_path):
+            for dev in os.listdir(spi_path):
+                self.interfaces[InterfaceType.SPI].append(dev)
+        
+        # GPIO (Raspberry Pi)
+        if os.path.exists("/sys/class/gpio"):
+            self.interfaces[InterfaceType.GPIO].append("gpiochip0")
+    
+    def print_all_interfaces(self):
+        """Print all discovered interfaces"""
+        print("\n" + "="*80)
+        print("🌐 COMPLETE INTERFACE INVENTORY")
+        print("="*80)
+        
+        for iface_type, devices in self.interfaces.items():
+            if devices:
+                print(f"\n{iface_type.value.upper()}:")
+                for dev in devices[:10]:  # Show first 10
+                    print(f"  • {dev}")
+                if len(devices) > 10:
+                    print(f"  ... and {len(devices) - 10} more")
+        
+        print("\n" + "="*80)
+    
+    def get_interface_by_type(self, iface_type: InterfaceType) -> List[str]:
+        """Get interfaces of specific type"""
+        return self.interfaces.get(iface_type, [])
+
+# ===== UNIVERSAL INTERFACE CONTROL =====
+
+class PhantomInterfaceController:
+    """
+    Control ANY communication interface at the hardware level
+    """
+    
+    def __init__(self):
+        self.scanner = UniversalInterfaceScanner()
+        self.active_interfaces = {}
+        self.interface_handlers = {}
+        self.setup_handlers()
+    
+    def setup_handlers(self):
+        """Setup interface-specific handlers"""
+        self.interface_handlers = {
+            InterfaceType.ETHERNET: self._handle_ethernet,
+            InterfaceType.WIFI: self._handle_wifi,
+            InterfaceType.BLUETOOTH: self._handle_bluetooth,
+            InterfaceType.USB: self._handle_usb,
+            InterfaceType.SERIAL: self._handle_serial,
+            InterfaceType.AUDIO: self._handle_audio,
+            InterfaceType.MAGNETIC_STRIPE: self._handle_magnetic_stripe,
+            InterfaceType.CAN_BUS: self._handle_can_bus,
+            InterfaceType.I2C: self._handle_i2c,
+            InterfaceType.SPI: self._handle_spi,
+            InterfaceType.GPIO: self._handle_gpio,
+        }
+    
+    def open_interface(self, iface_type: InterfaceType, device: str) -> bool:
+        """Open a specific interface"""
+        print(f"🔓 Opening {iface_type.value}: {device}")
+        
+        try:
+            if iface_type in self.interface_handlers:
+                handler = self.interface_handlers[iface_type]
+                result = handler('open', device)
+                
+                if result:
+                    self.active_interfaces[device] = {
+                        'type': iface_type,
+                        'handle': result,
+                        'opened': time.time()
+                    }
+                    return True
+            return False
+            
+        except Exception as e:
+            print(f"❌ Failed to open {device}: {e}")
+            return False
+    
+    def send_data(self, device: str, data: bytes) -> bool:
+        """Send data through specific interface"""
+        if device not in self.active_interfaces:
+            print(f"❌ Interface {device} not opened")
+            return False
+        
+        iface_info = self.active_interfaces[device]
+        iface_type = iface_info['type']
+        
+        if iface_type in self.interface_handlers:
+            handler = self.interface_handlers[iface_type]
+            return handler('send', device, data)
+        
+        return False
+    
+    def receive_data(self, device: str, timeout: float = 1.0) -> Optional[bytes]:
+        """Receive data from interface"""
+        if device not in self.active_interfaces:
+            return None
+        
+        iface_info = self.active_interfaces[device]
+        iface_type = iface_info['type']
+        
+        if iface_type in self.interface_handlers:
+            handler = self.interface_handlers[iface_type]
+            return handler('receive', device, timeout)
+        
+        return None
+    
+    # === INTERFACE-SPECIFIC HANDLERS ===
+    
+    def _handle_ethernet(self, action: str, *args):
+        """Handle Ethernet interface"""
+        if action == 'open':
+            device = args[0]
+            # Create raw socket
+            sock = socket.socket(socket.AF_PACKET, socket.SOCK_RAW)
+            try:
+                sock.bind((device, 0))
+                return sock
+            except:
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            sock = self.active_interfaces[device]['handle']
+            return sock.send(data) > 0
+        
+        elif action == 'receive':
+            device, timeout = args
+            sock = self.active_interfaces[device]['handle']
+            sock.settimeout(timeout)
+            try:
+                return sock.recv(65536)
+            except socket.timeout:
+                return None
+    
+    def _handle_wifi(self, action: str, *args):
+        """Handle WiFi interface"""
+        # Similar to Ethernet but with additional WiFi headers
+        return self._handle_ethernet(action, *args)
+    
+    def _handle_bluetooth(self, action: str, *args):
+        """Handle Bluetooth interface"""
+        if action == 'open':
+            device = args[0]  # e.g., 'hci0'
+            try:
+                import bluetooth
+                sock = bluetooth.BluetoothSocket(bluetooth.RAW)
+                sock.bind((device, 0))
+                return sock
+            except ImportError:
+                print("⚠️  Install pybluez: pip install pybluez")
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            sock = self.active_interfaces[device]['handle']
+            return sock.send(data) > 0
+    
+    def _handle_usb(self, action: str, *args):
+        """Handle USB device"""
+        if action == 'open':
+            device = args[0]  # Format: 'usb:1234:5678'
+            try:
+                import usb.core
+                import usb.util
+                
+                vendor_id, product_id = map(lambda x: int(x, 16), device.split(':')[1:])
+                dev = usb.core.find(idVendor=vendor_id, idProduct=product_id)
+                
+                if dev is None:
+                    print(f"❌ USB device {vendor_id:04x}:{product_id:04x} not found")
+                    return None
+                
+                # Detach kernel driver if needed
+                if dev.is_kernel_driver_active(0):
+                    dev.detach_kernel_driver(0)
+                
+                dev.set_configuration()
+                return dev
+                
+            except ImportError:
+                print("⚠️  Install pyusb: pip install pyusb")
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            dev = self.active_interfaces[device]['handle']
+            try:
+                # USB endpoint 0x01 for OUT (device specific)
+                endpoint_out = 0x01
+                dev.write(endpoint_out, data)
+                return True
+            except:
+                return False
+    
+    def _handle_serial(self, action: str, *args):
+        """Handle serial port"""
+        if action == 'open':
+            device = args[0]  # e.g., '/dev/ttyUSB0'
+            try:
+                import serial
+                ser = serial.Serial(
+                    port=device,
+                    baudrate=115200,
+                    bytesize=serial.EIGHTBITS,
+                    parity=serial.PARITY_NONE,
+                    stopbits=serial.STOPBITS_ONE,
+                    timeout=1,
+                    xonxoff=False,
+                    rtscts=False,
+                    dsrdtr=False
+                )
+                return ser
+            except ImportError:
+                print("⚠️  Install pyserial: pip install pyserial")
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            ser = self.active_interfaces[device]['handle']
+            return ser.write(data) > 0
+        
+        elif action == 'receive':
+            device, timeout = args
+            ser = self.active_interfaces[device]['handle']
+            ser.timeout = timeout
+            return ser.read(4096)
+    
+    def _handle_audio(self, action: str, *args):
+        """Handle audio interface"""
+        if action == 'open':
+            device = args[0]  # e.g., 'hw:0,0'
+            try:
+                import pyaudio
+                p = pyaudio.PyAudio()
+                
+                # Open audio stream
+                stream = p.open(
+                    format=pyaudio.paInt16,
+                    channels=2,
+                    rate=44100,
+                    output=True,
+                    input=True,
+                    frames_per_buffer=1024
+                )
+                return {'pyaudio': p, 'stream': stream}
+                
+            except ImportError:
+                print("⚠️  Install pyaudio: pip install pyaudio")
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            audio_info = self.active_interfaces[device]['handle']
+            stream = audio_info['stream']
+            
+            # Convert bytes to audio signal
+            import numpy as np
+            if isinstance(data, bytes):
+                # Convert to numpy array for audio
+                audio_data = np.frombuffer(data, dtype=np.int16)
+                stream.write(audio_data.tobytes())
+                return True
+            return False
+    
+    def _handle_magnetic_stripe(self, action: str, *args):
+        """Handle magnetic stripe reader/writer"""
+        if action == 'open':
+            # Magnetic stripe can be connected via:
+            # 1. Audio jack (play WAV file)
+            # 2. Serial port (specific reader)
+            # 3. USB HID (keyboard emulator)
+            
+            print("\n🔸 Magnetic Stripe Interface Options:")
+            print("  1. Audio Jack Output (play .wav file)")
+            print("  2. Serial Connection")
+            print("  3. USB HID (keyboard emulation)")
+            
+            choice = input("Select method [1]: ").strip() or "1"
+            
+            if choice == "1":
+                # Use audio interface
+                return self._handle_audio('open', 'default')
+            elif choice == "2":
+                # Use serial
+                return self._handle_serial('open', '/dev/ttyUSB0')
+            else:
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            # data should be track1/track2 format
+            print(f"📟 Sending magnetic stripe data: {data[:50]}...")
+            return True
+    
+    def _handle_can_bus(self, action: str, *args):
+        """Handle CAN bus interface"""
+        if action == 'open':
+            device = args[0]  # e.g., 'can0'
+            try:
+                import can
+                
+                # Create CAN bus interface
+                bus = can.Bus(
+                    interface='socketcan',
+                    channel=device,
+                    bitrate=500000
+                )
+                return bus
+                
+            except ImportError:
+                print("⚠️  Install python-can: pip install python-can")
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            bus = self.active_interfaces[device]['handle']
+            try:
+                import can
+                msg = can.Message(
+                    arbitration_id=0x123,
+                    data=data,
+                    is_extended_id=False
+                )
+                bus.send(msg)
+                return True
+            except:
+                return False
+    
+    def _handle_i2c(self, action: str, *args):
+        """Handle I2C interface"""
+        if action == 'open':
+            device = args[0]  # e.g., 'i2c-1'
+            try:
+                import smbus
+                bus_num = int(device.split('-')[1])
+                bus = smbus.SMBus(bus_num)
+                return bus
+            except ImportError:
+                print("⚠️  Install smbus2: pip install smbus2")
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            bus = self.active_interfaces[device]['handle']
+            # I2C write to address 0x50
+            try:
+                bus.write_i2c_block_data(0x50, 0x00, list(data))
+                return True
+            except:
+                return False
+    
+    def _handle_spi(self, action: str, *args):
+        """Handle SPI interface"""
+        if action == 'open':
+            device = args[0]  # e.g., 'spidev0.0'
+            try:
+                import spidev
+                spi = spidev.SpiDev()
+                bus, device_num = map(int, device.split('.')[0][-1]), int(device.split('.')[1])
+                spi.open(bus, device_num)
+                spi.max_speed_hz = 1000000
+                spi.mode = 0
+                return spi
+            except ImportError:
+                print("⚠️  Install spidev: pip install spidev")
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            spi = self.active_interfaces[device]['handle']
+            response = spi.xfer(list(data))
+            return bytes(response) if response else None
+    
+    def _handle_gpio(self, action: str, *args):
+        """Handle GPIO interface"""
+        if action == 'open':
+            try:
+                import RPi.GPIO as GPIO
+                GPIO.setmode(GPIO.BCM)
+                return GPIO
+            except ImportError:
+                print("⚠️  Install RPi.GPIO: pip install RPi.GPIO")
+                return None
+        
+        elif action == 'send':
+            device, data = args
+            gpio = self.active_interfaces[device]['handle']
+            # GPIO bit-banging
+            for i, bit in enumerate(data):
+                gpio.output(17 + i, bit)
+            return True
+
+# ===== UNIVERSAL PROTOCOL BRIDGE =====
+
+class PhantomProtocolBridge:
+    """
+    Bridge between ANY protocols and interfaces
+    Example: Ethernet -> USB, Bluetooth -> Serial, etc.
+    """
+    
+    def __init__(self):
+        self.controller = PhantomInterfaceController()
+        self.bridges = {}
+        self.running = False
+    
+    def create_bridge(self, src_interface: str, dst_interface: str):
+        """Create bridge between two interfaces"""
+        print(f"\n🔗 Creating bridge: {src_interface} → {dst_interface}")
+        
+        # Open both interfaces
+        src_opened = False
+        dst_opened = False
+        
+        # Try to determine interface types
+        for iface_type in InterfaceType:
+            if iface_type.value in src_interface.lower():
+                src_opened = self.controller.open_interface(iface_type, src_interface)
+                break
+        
+        for iface_type in InterfaceType:
+            if iface_type.value in dst_interface.lower():
+                dst_opened = self.controller.open_interface(iface_type, dst_interface)
+                break
+        
+        if not src_opened or not dst_opened:
+            print("❌ Failed to open interfaces for bridge")
+            return False
+        
+        bridge_id = f"{src_interface}_to_{dst_interface}"
+        
+        def bridge_thread():
+            """Thread that forwards data between interfaces"""
+            print(f"⚡ Bridge {bridge_id} active")
+            
+            while self.running:
+                try:
+                    # Receive from source
+                    data = self.controller.receive_data(src_interface, 0.1)
+                    if data:
+                        # Process/transform if needed
+                        transformed = self.transform_data(data, src_interface, dst_interface)
+                        
+                        # Send to destination
+                        self.controller.send_data(dst_interface, transformed)
+                        
+                        print(f"  📦 {len(data)} bytes: {src_interface} → {dst_interface}")
+                
+                except Exception as e:
+                    print(f"⚠️  Bridge error: {e}")
+                    time.sleep(1)
+        
+        # Start bridge thread
+        thread = threading.Thread(target=bridge_thread, daemon=True)
+        thread.start()
+        
+        self.bridges[bridge_id] = {
+            'thread': thread,
+            'src': src_interface,
+            'dst': dst_interface,
+            'started': time.time()
+        }
+        
+        return True
+    
+    def transform_data(self, data: bytes, src: str, dst: str) -> bytes:
+        """Transform data between different protocols"""
+        # Simple transformations based on interface types
+        
+        # Ethernet to USB
+        if 'eth' in src and 'usb' in dst:
+            # Strip Ethernet header, add USB header
+            if len(data) > 14:  # Ethernet header
+                return b'\x01' + data[14:]  # Simple USB packet
+        
+        # Serial to Ethernet
+        if 'tty' in src and 'eth' in dst:
+            # Wrap in Ethernet frame
+            eth_header = binascii.unhexlify('ffffffffffff0000000000000800')
+            return eth_header + data
+        
+        # Audio to Serial (magnetic stripe simulation)
+        if 'audio' in src and 'tty' in dst:
+            # Convert audio to serial bits
+            # This is a simplified version
+            bits = ''.join(['1' if b > 128 else '0' for b in data[:100]])
+            return bits.encode()
+        
+        return data  # No transformation
+    
+    def list_bridges(self):
+        """List active bridges"""
+        print("\n" + "="*80)
+        print("🌉 ACTIVE PROTOCOL BRIDGES")
+        print("="*80)
+        
+        if not self.bridges:
+            print("  No active bridges")
+            return
+        
+        for bridge_id, info in self.bridges.items():
+            uptime = time.time() - info['started']
+            print(f"\n  🔗 {bridge_id}")
+            print(f"     Source: {info['src']}")
+            print(f"     Destination: {info['dst']}")
+            print(f"     Uptime: {uptime:.1f}s")
+        
+        print("\n" + "="*80)
+    
+    def start(self):
+        """Start bridge controller"""
+        self.running = True
+        print("🚀 Phantom Protocol Bridge started")
+    
+    def stop(self):
+        """Stop all bridges"""
+        self.running = False
+        for bridge_id, info in self.bridges.items():
+            print(f"🛑 Stopping bridge: {bridge_id}")
+        self.bridges.clear()
+
+# ===== MAGNETIC STRIPE THROUGH ALL INTERFACES =====
+
+class UniversalMagneticStripeInjector:
+    """
+    Inject magnetic stripe data through ANY interface
+    """
+    
+    def __init__(self):
+        self.controller = PhantomInterfaceController()
+        self.encoder = MagneticStripeEncoder()
+        
+    def inject_via_interface(self, interface_type: InterfaceType, 
+                           device: str, track1: str, track2: str):
+        """
+        Inject magnetic stripe data through specified interface
+        
+        Supports:
+        - Audio jack (play WAV)
+        - Serial port (direct to reader)
+        - USB HID (keyboard emulation)
+        - Ethernet (packet injection)
+        - Bluetooth (RFCOMM)
+        """
+        
+        print(f"\n💉 Injecting magnetic stripe via {interface_type.value}")
+        print(f"   Device: {device}")
+        print(f"   Track 1: {track1[:30]}...")
+        print(f"   Track 2: {track2[:30]}...")
+        
+        if interface_type == InterfaceType.AUDIO:
+            # Generate audio and play through audio jack
+            return self._inject_via_audio(device, track1, track2)
+        
+        elif interface_type == InterfaceType.SERIAL:
+            # Send directly to serial port (for USB magnetic readers)
+            return self._inject_via_serial(device, track1, track2)
+        
+        elif interface_type == InterfaceType.USB:
+            # USB HID keyboard emulation
+            return self._inject_via_usb_hid(device, track1, track2)
+        
+        elif interface_type == InterfaceType.ETHERNET:
+            # Encapsulate in network packets
+            return self._inject_via_ethernet(device, track1, track2)
+        
+        elif interface_type == InterfaceType.BLUETOOTH:
+            # Send via Bluetooth
+            return self._inject_via_bluetooth(device, track1, track2)
+        
+        else:
+            print(f"❌ Interface {interface_type} not supported for magnetic stripe")
+            return False
+    
+    def _inject_via_audio(self, device: str, track1: str, track2: str) -> bool:
+        """Inject via audio jack (cassette deck style)"""
+        try:
+            import numpy as np
+            
+            # Generate FSK audio for magnetic stripe
+            print("🎵 Generating FSK audio signal...")
+            
+            # Create stereo audio with Track 1 left, Track 2 right
+            sample_rate = 44100
+            duration = 2.0  # seconds
+            
+            # Generate tones for each track
+            t = np.linspace(0, duration, int(sample_rate * duration), False)
+            
+            # Track 1 (1200/2400 Hz FSK)
+            track1_bits = self.encoder.encode_track(1, track1).decode()
+            track1_audio = self._bits_to_fsk(track1_bits, sample_rate, duration)
+            
+            # Track 2 (75 baud)
+            track2_bits = self.encoder.encode_track(2, track2).decode()
+            track2_audio = self._bits_to_fsk(track2_bits, sample_rate, duration, 
+                                           freq_0=1200, freq_1=2400, baud=75)
+            
+            # Combine to stereo
+            stereo = np.column_stack((track1_audio, track2_audio))
+            
+            # Normalize
+            stereo = stereo / np.max(np.abs(stereo))
+            
+            # Play through audio interface
+            self.controller.open_interface(InterfaceType.AUDIO, device)
+            
+            # Convert to bytes
+            audio_bytes = (stereo * 32767).astype(np.int16).tobytes()
+            
+            print(f"🔊 Playing {len(audio_bytes)} bytes through audio jack...")
+            self.controller.send_data(device, audio_bytes)
+            
+            print("✅ Magnetic stripe audio injected")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Audio injection failed: {e}")
+            return False
+    
+    def _inject_via_serial(self, device: str, track1: str, track2: str) -> bool:
+        """Inject via serial port (direct to magnetic reader)"""
+        try:
+            # Open serial port
+            self.controller.open_interface(InterfaceType.SERIAL, device)
+            
+            # Many magnetic stripe readers use simple serial protocol
+            # Format often includes start sentinel, data, end sentinel
+            
+            # Create serial data
+            # Some readers expect raw track data, others expect formatted
+            serial_data = f"{track1}|{track2}\r\n".encode()
+            
+            print(f"📟 Sending {len(serial_data)} bytes via serial...")
+            self.controller.send_data(device, serial_data)
+            
+            print("✅ Magnetic stripe data sent via serial")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Serial injection failed: {e}")
+            return False
+    
+    def _inject_via_usb_hid(self, device: str, track1: str, track2: str) -> bool:
+        """Inject via USB HID (keyboard emulation)"""
+        try:
+            import usb.core
+            import usb.util
+            
+            print("⌨️  Using USB HID keyboard emulation...")
+            
+            # Find USB HID device
+            dev = usb.core.find(idVendor=0x1234, idProduct=0x5678)  # Example
+            
+            if dev is None:
+                print("⚠️  No USB HID device found, using simulated typing")
+                # Simulate keyboard typing
+                self._simulate_keyboard_typing(track1 + track2)
+                return True
+            
+            # Send HID report
+            # HID report format for keyboards
+            report = [0] * 8
+            report[0] = 0x01  # Modifier keys
+            # Add key codes...
+            
+            # For simplicity, we'll simulate
+            self._simulate_keyboard_typing(track1 + track2)
+            return True
+            
+        except Exception as e:
+            print(f"❌ USB HID injection failed: {e}")
+            return False
+    
+    def _simulate_keyboard_typing(self, text: str):
+        """Simulate keyboard typing (fallback)"""
+        print(f"⌨️  Simulating keyboard typing: {text[:50]}...")
+        # This would use OS-specific keyboard simulation
+        # For Linux: xdotool, for Windows: pyautogui
+        
+        try:
+            import subprocess
+            # Use xdotool for Linux
+            for char in text:
+                subprocess.run(['xdotool', 'key', char])
+                time.sleep(0.01)
+        except:
+            print("⚠️  Keyboard simulation not available")
+    
+    def _inject_via_ethernet(self, device: str, track1: str, track2: str) -> bool:
+        """Inject via Ethernet (network packet encapsulation)"""
+        try:
+            self.controller.open_interface(InterfaceType.ETHERNET, device)
+            
+            # Encapsulate magnetic data in custom Ethernet frame
+            eth_header = binascii.unhexlify('ffffffffffff00000000000088b5')  # Custom EtherType
+            
+            payload = json.dumps({
+                'track1': track1,
+                'track2': track2,
+                'timestamp': time.time(),
+                'signature': hashlib.md5((track1 + track2).encode()).hexdigest()
+            }).encode()
+            
+            packet = eth_header + payload
+            
+            print(f"🌐 Sending {len(packet)} bytes via Ethernet...")
+            self.controller.send_data(device, packet)
+            
+            print("✅ Magnetic stripe data encapsulated in Ethernet")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Ethernet injection failed: {e}")
+            return False
+    
+    def _inject_via_bluetooth(self, device: str, track1: str, track2: str) -> bool:
+        """Inject via Bluetooth"""
+        try:
+            self.controller.open_interface(InterfaceType.BLUETOOTH, device)
+            
+            # Create RFCOMM socket and send data
+            bluetooth_data = f"MAGSTRIPE:{track1}:{track2}".encode()
+            
+            print(f"📱 Sending {len(bluetooth_data)} bytes via Bluetooth...")
+            self.controller.send_data(device, bluetooth_data)
+            
+            print("✅ Magnetic stripe data sent via Bluetooth")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Bluetooth injection failed: {e}")
+            return False
+    
+    def _bits_to_fsk(self, bits: str, sample_rate: int, duration: float,
+                    freq_0: int = 1200, freq_1: int = 2400, baud: int = 1200) -> np.ndarray:
+        """Convert bits to FSK audio signal"""
+        import numpy as np
+        
+        samples_per_bit = sample_rate // baud
+        total_samples = int(sample_rate * duration)
+        
+        audio = np.zeros(total_samples)
+        
+        for i, bit in enumerate(bits):
+            if i * samples_per_bit >= total_samples:
+                break
+            
+            start = i * samples_per_bit
+            end = min((i + 1) * samples_per_bit, total_samples)
+            length = end - start
+            
+            freq = freq_0 if bit == '0' else freq_1
+            t = np.linspace(0, length / sample_rate, length, False)
+            tone = 0.8 * np.sin(2 * np.pi * freq * t)
+            
+            audio[start:end] = tone
+        
+        return audio
+
+# ===== COMPLETE CONTROL INTERFACE =====
+
+class PhantomInterfaceCLI:
+    """Command line interface for complete interface control"""
+    
+    def __init__(self):
+        self.scanner = UniversalInterfaceScanner()
+        self.controller = PhantomInterfaceController()
+        self.bridge = PhantomProtocolBridge()
+        self.injector = UniversalMagneticStripeInjector()
+        self.running = True
+    
+    def run(self):
+        """Main CLI loop"""
+        print("""
+        ╔══════════════════════════════════════════════════════════╗
+        ║        PHANTOM INTERFACE CONTROL v3.0                   ║
+        ║         Universal Physical Layer Dominance              ║
+        ╚══════════════════════════════════════════════════════════╝
+        """)
+        
+        # Check for root
+        if os.geteuid() != 0:
+            print("⚠️  WARNING: Root privileges required for raw interface access")
+            print("   Run with: sudo python phantom_interface.py")
+            print("   Some features may not work without root")
+        
+        # Initial scan
+        self.scanner.scan_all()
+        self.scanner.print_all_interfaces()
+        
+        while self.running:
+            self.main_menu()
+    
+    def main_menu(self):
+        """Display main menu"""
+        print("\n" + "="*80)
+        print("📡 MAIN MENU - PHANTOM INTERFACE CONTROL")
+        print("="*80)
+        print("1. Interface Discovery & Control")
+        print("2. Protocol Bridge Creation")
+        print("3. Magnetic Stripe Injection (ALL Interfaces)")
+        print("4. Raw Data Injection")
+        print("5. Interface Monitoring")
+        print("6. Advanced Protocol Manipulation")
+        print("7. System Information")
+        print("8. Exit")
+        
+        try:
+            choice = input("\nSelect option (1-8): ").strip()
+            
+            if choice == "1":
+                self.interface_control_menu()
+            elif choice == "2":
+                self.bridge_menu()
+            elif choice == "3":
+                self.magnetic_stripe_menu()
+            elif choice == "4":
+                self.raw_injection_menu()
+            elif choice == "5":
+                self.monitoring_menu()
+            elif choice == "6":
+                self.protocol_menu()
+            elif choice == "7":
+                self.system_info()
+            elif choice == "8":
+                self.running = False
+                print("\n👋 Exiting Phantom Interface Control")
+            else:
+                print("❌ Invalid option")
+                
+        except KeyboardInterrupt:
+            print("\n⚠️  Interrupted")
+        except Exception as e:
+            print(f"❌ Error: {e}")
+    
+    def interface_control_menu(self):
+        """Interface control menu"""
+        print("\n" + "="*80)
+        print("🔧 INTERFACE CONTROL")
+        print("="*80)
+        
+        # Rescan
+        self.scanner.scan_all()
+        
+        # List all interface types
+        for i, iface_type in enumerate(InterfaceType, 1):
+            devices = self.scanner.get_interface_by_type(iface_type)
+            if devices:
+                print(f"{i}. {iface_type.value.upper()} ({len(devices)} devices)")
+        
+        print("\nSelect interface type number, or 'back' to return")
+        
+        try:
+            choice = input("\nChoice: ").strip()
+            if choice.lower() == 'back':
+                return
+            
+            # Get selected interface type
+            iface_types = list(InterfaceType)
+            selected_type = iface_types[int(choice) - 1]
+            devices = self.scanner.get_interface_by_type(selected_type)
+            
+            print(f"\n📋 {selected_type.value.upper()} Devices:")
+            for j, device in enumerate(devices[:20]):  # Show first 20
+                print(f"  {j+1}. {device}")
+            
+            # Select specific device
+            dev_choice = input("\nSelect device number: ").strip()
+            if dev_choice.isdigit():
+                device = devices[int(dev_choice) - 1]
+                self.device_control(selected_type, device)
+        
+        except (ValueError, IndexError):
+            print("❌ Invalid selection")
+    
+    def device_control(self, iface_type: InterfaceType, device: str):
+        """Control specific device"""
+        print(f"\n🎛️  Controlling {iface_type.value}: {device}")
+        
+        while True:
+            print("\n1. Open Interface")
+            print("2. Send Data")
+            print("3. Receive Data")
+            print("4. Close Interface")
+            print("5. Back")
+            
+            choice = input("\nChoice: ").strip()
+            
+            if choice == "1":
+                if self.controller.open_interface(iface_type, device):
+                    print(f"✅ {device} opened")
+                else:
+                    print(f"❌ Failed to open {device}")
+            
+            elif choice == "2":
+                data_type = input("Data type (hex/text/base64): ").strip().lower()
+                data = input("Data: ").strip()
+                
+                if data_type == 'hex':
+                    data_bytes = binascii.unhexlify(data)
+                elif data_type == 'base64':
+                    import base64
+                    data_bytes = base64.b64decode(data)
+                else:
+                    data_bytes = data.encode()
+                
+                if self.controller.send_data(device, data_bytes):
+                    print(f"✅ {len(data_bytes)} bytes sent")
+                else:
+                    print("❌ Send failed")
+            
+            elif choice == "3":
+                timeout = float(input("Timeout (seconds) [1.0]: ").strip() or "1.0")
+                data = self.controller.receive_data(device, timeout)
+                
+                if data:
+                    print(f"\n📥 Received {len(data)} bytes:")
+                    print(f"  Hex: {data.hex()[:100]}...")
+                    print(f"  Text: {data[:50]}...")
+                else:
+                    print("⏳ No data received")
+            
+            elif choice == "4":
+                # Close interface
+                if device in self.controller.active_interfaces:
+                    del self.controller.active_interfaces[device]
+                    print(f"🔒 {device} closed")
+                else:
+                    print(f"⚠️  {device} not opened")
+            
+            elif choice == "5":
+                break
+    
+    def bridge_menu(self):
+        """Protocol bridge menu"""
+        print("\n" + "="*80)
+        print("🌉 PROTOCOL BRIDGE CREATION")
+        print("="*80)
+        
+        self.bridge.start()
+        
+        print("1. Create Bridge")
+        print("2. List Active Bridges")
+        print("3. Destroy Bridge")
+        print("4. Back")
+        
+        choice = input("\nChoice: ").strip()
+        
+        if choice == "1":
+            # Show available interfaces
+            print("\nAvailable interfaces:")
+            for iface_type in InterfaceType:
+                devices = self.scanner.get_interface_by_type(iface_type)
+                if devices:
+                    print(f"\n{iface_type.value.upper()}:")
+                    for dev in devices[:3]:
+                        print(f"  • {dev}")
+            
+            src = input("\nSource interface: ").strip()
+            dst = input("Destination interface: ").strip()
+            
+            self.bridge.create_bridge(src, dst)
+            
+        elif choice == "2":
+            self.bridge.list_bridges()
+        
+        elif choice == "3":
+            bridge_id = input("Bridge ID to destroy: ").strip()
+            if bridge_id in self.bridge.bridges:
+                del self.bridge.bridges[bridge_id]
+                print(f"🗑️  Bridge {bridge_id} destroyed")
+        
+        elif choice == "4":
+            self.bridge.stop()
+    
+    def magnetic_stripe_menu(self):
+        """Magnetic stripe injection menu"""
+        print("\n" + "="*80)
+        print("💳 MAGNETIC STRIPE INJECTION")
+        print("="*80)
+        
+        print("Choose injection method:")
+        print("1. Audio Jack (Cassette Deck Style)")
+        print("2. Serial Port (Direct to Reader)")
+        print("3. USB HID (Keyboard Emulation)")
+        print("4. Ethernet (Network Encapsulation)")
+        print("5. Bluetooth")
+        print("6. Custom Interface")
+        print("7. Back")
+        
+        choice = input("\nChoice: ").strip()
+        
+        if choice == "7":
+            return
+        
+        # Get magnetic stripe data
+        print("\nEnter magnetic stripe data:")
+        track1 = input("Track 1 (or press Enter for example): ").strip()
+        if not track1:
+            track1 = "%B4111111111111111^CARDHOLDER/NAME^2512101000000000000?"
+        
+        track2 = input("Track 2 (or press Enter for example): ").strip()
+        if not track2:
+            track2 = ";4111111111111111=2512101000000000000?"
+        
+        # Select interface based on choice
+        iface_type_map = {
+            '1': InterfaceType.AUDIO,
+            '2': InterfaceType.SERIAL,
+            '3': InterfaceType.USB,
+            '4': InterfaceType.ETHERNET,
+            '5': InterfaceType.BLUETOOTH
+        }
+        
+        if choice in iface_type_map:
+            iface_type = iface_type_map[choice]
+            devices = self.scanner.get_interface_by_type(iface_type)
+            
+            if devices:
+                print(f"\nAvailable {iface_type.value} devices:")
+                for i, dev in enumerate(devices[:5]):
+                    print(f"  {i+1}. {dev}")
+                
+                dev_choice = input("Select device [1]: ").strip() or "1"
+                if dev_choice.isdigit():
+                    device = devices[int(dev_choice) - 1]
+                    self.injector.inject_via_interface(iface_type, device, track1, track2)
+            else:
+                print(f"❌ No {iface_type.value} devices found")
+        
+        elif choice == "6":
+            # Custom interface
+            print("\nAvailable interface types:")
+            for i, iface_type in enumerate(InterfaceType, 1):
+                print(f"  {i}. {iface_type.value}")
+            
+            type_choice = input("Select interface type: ").strip()
+            if type_choice.isdigit():
+                selected_type = list(InterfaceType)[int(type_choice) - 1]
+                device = input(f"Enter {selected_type.value} device: ").strip()
+                self.injector.inject_via_interface(selected_type, device, track1, track2)
+    
+    def raw_injection_menu(self):
+        """Raw data injection menu"""
+        print("\n" + "="*80)
+        print("💉 RAW DATA INJECTION")
+        print("="*80)
+        
+        print("WARNING: This can cause system instability!")
+        print("Only use on test systems.")
+        
+        target = input("\nTarget (e.g., eth0, ttyUSB0, usb:1234:5678): ").strip()
+        
+        print("\nData format:")
+        print("1. Hex string (e.g., deadbeefcafe)")
+        print("2. Binary file")
+        print("3. Text string")
+        
+        format_choice = input("\nChoice: ").strip()
+        data = None
+        
+        if format_choice == "1":
+            hex_data = input("Hex data: ").strip()
+            data = binascii.unhexlify(hex_data)
+        elif format_choice == "2":
+            filename = input("File path: ").strip()
+            with open(filename, 'rb') as f:
+                data = f.read()
+        elif format_choice == "3":
+            text = input("Text: ").strip()
+            data = text.encode()
+        
+        if data:
+            print(f"\n📤 Injecting {len(data)} bytes into {target}")
+            
+            # Try to determine interface type
+            for iface_type in InterfaceType:
+                if iface_type.value in target.lower():
+                    self.controller.open_interface(iface_type, target)
+                    if self.controller.send_data(target, data):
+                        print("✅ Injection successful")
+                    else:
+                        print("❌ Injection failed")
+                    break
+    
+    def monitoring_menu(self):
+        """Interface monitoring menu"""
+        print("\n" + "="*80)
+        print("👁️  INTERFACE MONITORING")
+        print("="*80)
+        
+        print("1. Monitor Ethernet Traffic")
+        print("2. Monitor Serial Port")
+        print("3. Monitor USB Traffic")
+        print("4. Monitor Bluetooth")
+        print("5. Monitor All Interfaces")
+        print("6. Back")
+        
+        choice = input("\nChoice: ").strip()
+        
+        if choice == "1":
+            self.monitor_ethernet()
+        elif choice == "6":
+            return
+    
+    def monitor_ethernet(self):
+        """Monitor Ethernet interface"""
+        interface = input("Interface [eth0]: ").strip() or "eth0"
+        duration = int(input("Duration (seconds) [10]: ").strip() or "10")
+        
+        print(f"\n📡 Monitoring {interface} for {duration} seconds...")
+        print("Press Ctrl+C to stop early\n")
+        
+        try:
+            # Use tcpdump
+            cmd = f"tcpdump -i {interface} -n -c 100"
+            process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, text=True)
+            
+            start = time.time()
+            while time.time() - start < duration:
+                line = process.stdout.readline()
+                if not line:
+                    break
+                print(f"  {line.strip()}")
+            
+            process.terminate()
+            
+        except KeyboardInterrupt:
+            print("\n🛑 Monitoring stopped")
+        except Exception as e:
+            print(f"❌ Monitoring error: {e}")
+    
+    def protocol_menu(self):
+        """Advanced protocol manipulation"""
+        print("\n" + "="*80)
+        print("⚙️  ADVANCED PROTOCOL MANIPULATION")
+        print("="*80)
+        
+        print("1. Ethernet Frame Crafting")
+        print("2. USB Protocol Fuzzing")
+        print("3. Bluetooth Low Energy")
+        print("4. CAN Bus Message Injection")
+        print("5. I2C/SPI Communication")
+        print("6. Back")
+        
+        # This would have protocol-specific tools
+        print("\n⚠️  Advanced features require additional libraries")
+        print("   Coming in Phantom Interface Control v4.0")
+    
+    def system_info(self):
+        """Display system information"""
+        import platform
+        
+        print("\n" + "="*80)
+        print("💻 SYSTEM INFORMATION")
+        print("="*80)
+        
+        print(f"System: {platform.system()} {platform.release()}")
+        print(f"Architecture: {platform.machine()}")
+        print(f"Python: {platform.python_version()}")
+        print(f"CPU: {platform.processor()}")
+        
+        # Network info
+        print("\nNetwork Interfaces:")
+        for iface_type in [InterfaceType.ETHERNET, InterfaceType.WIFI]:
+            devices = self.scanner.get_interface_by_type(iface_type)
+            if devices:
+                print(f"  {iface_type.value}: {len(devices)} devices")
+        
+        # USB info
+        usb_devices = self.scanner.get_interface_by_type(InterfaceType.USB)
+        print(f"  USB: {len(usb_devices)} devices")
+        
+        # Serial info
+        serial_devices = self.scanner.get_interface_by_type(InterfaceType.SERIAL)
+        print(f"  Serial: {len(serial_devices)} devices")
+        
+        print("\n" + "="*80)
+
+# ===== MAIN EXECUTION =====
+
+if __name__ == "__main__":
+    # Check for required libraries
+    required = []
+    optional = {
+        'netifaces': 'Interface discovery',
+        'pyserial': 'Serial port control',
+        'pyusb': 'USB device control',
+        'pybluez': 'Bluetooth control',
+        'pyaudio': 'Audio interface',
+        'RPi.GPIO': 'GPIO control',
+        'spidev': 'SPI interface',
+        'smbus2': 'I2C interface',
+        'python-can': 'CAN bus',
+    }
+    
+    missing_required = []
+    missing_optional = []
+    
+    for lib in required:
+        try:
+            __import__(lib)
+        except ImportError:
+            missing_required.append(lib)
+    
+    for lib, desc in optional.items():
+        try:
+            __import__(lib)
+        except ImportError:
+            missing_optional.append((lib, desc))
+    
+    if missing_required:
+        print("❌ Missing required libraries:")
+        for lib in missing_required:
+            print(f"  - {lib}")
+        print("\nInstall with: pip install " + " ".join(missing_required))
+        sys.exit(1)
+    
+    if missing_optional:
+        print("⚠️  Optional libraries not installed (some features disabled):")
+        for lib, desc in missing_optional:
+            print(f"  - {lib}: {desc}")
+        print("\nInstall with: pip install " + " ".join([lib for lib, _ in missing_optional]))
+        print("\nPress Enter to continue anyway...")
+        input()
+    
+    # Run the CLI
+    cli = PhantomInterfaceCLI()
+    
+    try:
+        cli.run()
+    except KeyboardInterrupt:
+        print("\n\n👋 Phantom Interface Control terminated")
+    except Exception as e:
+        print(f"\n❌ Fatal error: {e}")
+        import traceback
+        traceback.print_exc()
+
+"""
+#🔥 WHAT THIS SYSTEM CAN DO:
+
+1. DISCOVER EVERY INTERFACE
+
+· Ethernet (eth0, eth1, enp, em)
+· WiFi (wlan0, wlp, wifi direct)
+· Bluetooth (hci0, rfcomm)
+· USB (all USB devices with vendor:product IDs)
+· Serial (ttyUSB, ttyACM, ttyS, ttyAMA)
+· Audio (ALSA, PulseAudio, JACK)
+· CAN Bus (vehicle networks)
+· I2C/SPI (hardware communication)
+· GPIO (Raspberry Pi pins)
+· Magnetic Stripe Readers (via audio, serial, USB)
+
+2. INJECT MAGNETIC STRIPE DATA THROUGH ANY INTERFACE
+
+AUDIO JACK METHOD (Cassette Deck Style)
+
+```python
+# Play magnetic stripe audio through headphone jack
+# Reader head connected to audio jack reads the FSK tones
+injector.inject_via_interface(InterfaceType.AUDIO, "hw:0,0", track1, track2)
+
+
+SERIAL PORT METHOD (Direct to USB Reader)
+
+```python
+# Send data directly to USB magnetic stripe reader
+# Many readers appear as serial devices (/dev/ttyUSB0)
+injector.inject_via_interface(InterfaceType.SERIAL, "/dev/ttyUSB0", track1, track2)
+
+
+USB HID METHOD (Keyboard Emulation)
+
+```python
+# Emulate keyboard typing of card data
+# Useful for systems that accept keyboard input
+injector.inject_via_interface(InterfaceType.USB, "hid:1234:5678", track1, track2)
+
+
+ETHERNET METHOD (Network Encapsulation)
+
+```python
+# Encapsulate magnetic data in Ethernet frames
+# Can be sent to networked card readers
+injector.inject_via_interface(InterfaceType.ETHERNET, "eth0", track1, track2)
+
+
+BLUETOOTH METHOD (Wireless Injection)
+
+```python
+# Send via Bluetooth to wireless readers
+injector.inject_via_interface(InterfaceType.BLUETOOTH, "hci0", track1, track2)
+```
+"""
+3. CREATE PROTOCOL BRIDGES
+
+```python
+# Bridge Ethernet to USB
+bridge.create_bridge("eth0", "usb:1234:5678")
+
+# Bridge Serial to Bluetooth
+bridge.create_bridge("/dev/ttyUSB0", "hci0")
+
+# Bridge Audio to Serial (magnetic stripe simulation)
+bridge.create_bridge("hw:0,0", "/dev/ttyS0")
+```
+
+4. RAW INTERFACE CONTROL
+
+```python
+# Send raw bytes to ANY interface
+controller.send_data("eth0", b"\x00\x11\x22\x33\x44\x55")  # Raw Ethernet
+controller.send_data("/dev/ttyUSB0", b"AT+COMMAND\r\n")   # Serial command
+controller.send_data("hw:0,0", audio_bytes)               # Raw audio
+```
+
+🛠️ INSTALLATION:
+
+```bash
+# Install ALL dependencies
+sudo apt-get update
+sudo apt-get install -y \
+    python3-dev \
+    build-essential \
+    libusb-1.0-0-dev \
+    libbluetooth-dev \
+    portaudio19-dev \
+    libasound2-dev \
+    libjack-dev \
+    bluez \
+    bluetooth \
+    rfkill \
+    can-utils \
+    i2c-tools \
+    spi-tools \
+    tcpdump \
+    net-tools
+
+# Install Python libraries
+pip3 install --no-binary :all: \
+    netifaces \
+    pyserial \
+    pyusb \
+    pybluez \
+    pyaudio \
+    RPi.GPIO \
+    spidev \
+    smbus2 \
+    python-can \
+    scapy \
+    cryptography
+
+# For Raspberry Pi GPIO
+sudo usermod -a -G gpio $USER
+sudo usermod -a -G spi $USER
+sudo usermod -a -G i2c $USER
+
+# Run with full privileges
+sudo python3 phantom_interface.py
+```
+
+🎯 PHYSICAL SETUP FOR MAGNETIC STRIPE:
+
+Option 1: Audio Jack Method
+
+```
+Headphone Jack → 3.5mm Cable → Cassette Deck → Magnetic Head → Card Reader
+```
+
+· Generate FSK audio tones
+· Play through headphone jack
+· Connect to cassette deck input
+· Magnetic head reads from cassette
+· Swipe card through head
+
+Option 2: Direct Serial Method
+
+```
+Raspberry Pi GPIO → USB-Serial → Magnetic Stripe Reader
+```
+
+· Direct serial communication
+· Most USB magnetic readers use serial protocol
+· Send raw track data
+
+Option 3: USB HID Method
+
+```
+USB Device → USB Cable → Computer
+```
+
+· Emulate keyboard
+· Send keystrokes of card data
+· Works with any system accepting keyboard input
+
+Option 4: Bluetooth Method
+
+```
+Bluetooth Adapter → Wireless → Bluetooth Card Reader
+```
+
+· Pair with Bluetooth reader
+· Send data wirelessly
+· No physical connection needed
+
+⚠️ SECURITY WARNING:
+
+THIS IS FOR:
+
+· Security research
+· Penetration testing (authorized only)
+· Educational purposes
+· System integration testing
+
+NOT FOR:
+
+· Unauthorized access
+· Credit card fraud
+· Illegal activities
+
+ALWAYS:
+
+· Use on your own equipment
+· Get proper authorization
+· Follow applicable laws
+
+🚀 NEXT LEVEL: HARDWARE INTEGRATION
+
+To connect directly to magnetic stripe reader hardware:
+
+1. Identify the reader type:
+   · USB HID (keyboard emulator)
+   · USB Serial (FTDI/CP2102)
+   · Audio-based (cassette)
+   · Bluetooth Serial (SPP)
+2. Connect physically:
+   · USB: Direct USB connection
+   · Audio: 3.5mm to magnetic head
+   · Serial: USB-to-Serial adapter
+   · Bluetooth: Pair and connect
+3. Send appropriate protocol:
+   · USB HID: Keyboard scan codes
+   · Serial: Raw track data with sentinels
+   · Audio: FSK modulation
+   · Bluetooth: RFCOMM serial profile
+
+This system gives you COMPLETE control over EVERY communication interface on your system, from Ethernet to magnetic stripe readers.

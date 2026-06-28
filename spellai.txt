@@ -1,0 +1,206 @@
+
+<!doctype html>
+<html class="dark">
+  <head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)})
+(window,'GTM-TCM52K5J','google_tags_first_party');</script><script>(function(w,d,s,l){w[l]=w[l]||[];(function(){w[l].push(arguments);})('set', 'developer_id.dY2E1Nz', true);
+		var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s);j.async=true;j.src='/4kci/';
+		f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer');</script>
+    <!-- test main deploy -->
+    <title>Spellai</title>
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180x180.png" />
+    <link
+      rel="preload"
+      href="/fonts/WixMadeforDisplay-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/WixMadeforDisplay-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/WixMadeforDisplay-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/WixMadeforDisplay-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/WixMadeforDisplay-ExtraBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="apple-touch-startup-image"
+      media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+      href="/icons/apple-splash-portrait-1536x2048.png"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+      href="/icons/apple-splash-landscape-2048x1536.png"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+      href="/icons/apple-splash-portrait-1170x2532.png"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+      href="/icons/apple-splash-landscape-2532x1170.png"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+      href="/icons/apple-splash-portrait-750x1334.png"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+      href="/icons/apple-splash-landscape-1334x750.png"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+      href="/icons/apple-splash-portrait-640x1136.png"
+    />
+    <link
+      rel="apple-touch-startup-image"
+      media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+      href="/icons/apple-splash-landscape-1136x640.png"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no"
+    />
+    <meta property="og:title" content="Spellai" />
+    <meta
+      property="og:description"
+      content="Ready to turn your text into stunning AI art in seconds? Discover Spellai, the user-friendly app that effortlessly transforms your words into captivating photos and drawings. Prepare to be awestruck by exceptional image quality, rivaling custom wallpapers."
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Spellai" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta
+      name="description"
+      content="Ready to turn your text into stunning AI art in seconds? Discover Spellai, the user-friendly app that effortlessly transforms your words into captivating photos and drawings. Prepare to be awestruck by exceptional image quality, rivaling custom wallpapers."
+    />
+    <!-- 自动隐藏地址栏相关设置 -->
+    <meta name="fullscreen" content="yes" />
+    <meta name="browsermode" content="application" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16507758604"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      const env = `prod`
+      const debugMode = env === 'test'
+      console.debug(`环境: ${env}`, `调试: ${debugMode}`)
+      gtag('config', 'AW-16507758604', { debug_mode: debugMode })
+      gtag('config', 'G-95PL0KM8H1', { debug_mode: debugMode })
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        }
+        if (!f._fbq) f._fbq = n
+        n.push = n
+        n.loaded = !0
+        n.version = '2.0'
+        n.queue = []
+        t = b.createElement(e)
+        t.async = !0
+        t.src = v
+        s = b.getElementsByTagName(e)[0]
+        s.parentNode.insertBefore(t, s)
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js')
+      fbq('init', '366408426366071')
+      fbq('track', 'PageView')
+    </script>
+    <!-- End Meta Pixel Code -->
+    <script type="module" crossorigin src="/assets/index-wMDHBTYl.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B-juwNND.css">
+  <link rel="manifest" href="/manifest.json"></head>
+
+  <body>
+    <div id="app"></div>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=366408426366071&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- helpshift 配置 -->
+    <script>
+      ;(function () {
+        var PLATFORM_ID = 'bricksroyale_platform_20240130083151484-d6c9a18ede31966',
+          DOMAIN = 'bricksroyale'
+
+        window.helpshiftConfig = {
+          platformId: PLATFORM_ID,
+          domain: DOMAIN,
+        }
+      })()
+      helpshiftConfig.widgetOptions = {
+        showLauncher: false,
+      }
+
+      !(function (t, e) {
+        if ('function' != typeof window.Helpshift) {
+          var n = function () {
+            n.q.push(arguments)
+          }
+          ;(n.q = []), (window.Helpshift = n)
+          var i,
+            a = t.getElementsByTagName('script')[0]
+          if (t.getElementById(e)) return
+          ;(i = t.createElement('script')),
+            (i.async = !0),
+            (i.id = e),
+            (i.src = 'https://webchat.helpshift.com/latest/webChat.js')
+          var o = function () {
+            window.Helpshift('init')
+          }
+          window.attachEvent ? i.attachEvent('onload', o) : i.addEventListener('load', o, !1),
+            a.parentNode.insertBefore(i, a)
+        } else window.Helpshift('update')
+      })(document, 'hs-chat')
+    </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"38eb698aacd548d387487c1626a370ff","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

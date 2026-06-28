@@ -1,0 +1,19 @@
+{
+  "balance": 14298.0,
+  "history": [
+    10,
+    16,
+    16
+  ],
+  "stats": {},
+  "hero_bonuses": {
+    "balance_bonus": 2000,
+    "prediction_boost": 0,
+    "win_multiplier": 1.375,
+    "special_abilities": [
+      "Time Weaving",
+      "Paradox Betting"
+    ]
+  },
+  "timestamp": "2025-12-10T05:20:28.170548"
+}

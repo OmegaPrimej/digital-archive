@@ -1,0 +1,7 @@
+u0_a190   2949  0.0  0.1   9576  2992 pts/7    S     1970   0:01 bash /data/data/com.termux/files/usr/bin/bash -c while true; do echo "VOMTIJURC 9443" | espeak -v en+f5 -p 99 -s 130 -g 5 --punct --stdin 2>/dev/null; sleep 0.5; done
+u0_a190   6023  1.9  0.2 275428  4664 pts/0    Sl    1970   0:28 play /data/data/com.termux/files/usr/bin/play -n synth brownnoise gain -1
+u0_a190   9175 66.2  0.7  22296 14332 pts/0    R     1970  10:46 python /data/data/com.termux/files/usr/bin/python /data/data/com.termux/files/home/queen_auora_llm.py
+u0_a190  11214  0.0  0.3  14696  6704 pts/6    S+    1970   0:00 python /data/data/com.termux/files/usr/bin/python /data/data/com.termux/files/home/queen_voice.py
+u0_a190  19501  4.3  0.3 278212  6168 pts/7    Sl    1970   0:00 espeak /data/data/com.termux/files/usr/bin/espeak -v en+f5 -p 99 -s 130 -g 5 --punct --stdin
+u0_a190  30343 57.7  0.2  78820  4052 ?        Rl    1970  25:55 play /data/data/com.termux/files/usr/bin/play -n synth brownnoise gain -2
+u0_a190  31554 58.5  0.2 275860  4260 ?        Sl    1970  24:39 espeak /data/data/com.termux/files/usr/bin/espeak -v en-us+f5 -p 99 -s 130 -g 5 --punct

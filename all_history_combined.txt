@@ -1,0 +1,481 @@
+    1  # LSB first, timing in microseconds
+    2  START_PULSE=9000
+    3  START_SPACE=4500
+    4  BIT_PULSE=562
+    5  ZERO_SPACE=562
+    6  ONE_SPACE=1687
+    7  STOP_PULSE=562
+    8  # Build the pulse pattern (microseconds)
+    9  pattern=()
+   10  pattern+=($START_PULSE $START_SPACE)
+   11  # Address (0x00), inverted address (0xFF), command (0x45), inverted command (0xBA)
+   12  for byte in 0x00 0xFF 0x45 0xBA; do     val=$((byte));     for bit in {0..7}; do         pattern+=($BIT_PULSE);         if (( (val >> bit) & 1 )); then             pattern+=($ONE_SPACE);         else             pattern+=($ZERO_SPACE);         fi;     done; done
+   13  pattern+=($STOP_PULSE)
+   14  # Add a 20ms gap between repeats (so the receiver doesn't lock up)
+   15  GAP_MS=20
+   16  PATTERN_US=$(IFS=+; echo "$((${pattern[*]}))" )
+   17  TOTAL_US=$((PATTERN_US + GAP_MS*1000))
+   18  REPEATS=$(( (DURATION * 1000000) / TOTAL_US ))
+   19  echo "Generating ${REPEATS} repeats of the NEC code (total ${DURATION}s)..."
+   20  python3 - <<EOF
+   21  import math
+   22  import struct
+   23  import wave
+   24  sample_rate = ${SAMPLE_RATE}
+   25  carrier_freq = ${FREQ}
+   26  duration = ${DURATION}
+   27  repeats = ${REPEATS}
+   28  gap_samples = int(${GAP_MS} * sample_rate / 1000)
+   29  # Convert pattern (µs) to samples
+   30  pattern_us = ${pattern[@]}
+   31  pattern_samples = [int(t * sample_rate / 1_000_000) for t in pattern_us]
+   32  # Precompute one full carrier cycle
+   33  carrier_period = sample_rate / carrier_freq
+   34  carrier_cycle = [32767 * math.sin(2 * math.pi * i / carrier_period) for i in range(int(carrier_period))]
+   35  # Function to generate a burst (pulse) of carrier
+   36  def make_burst(samples):
+   37      out = []
+   38      for _ in range(samples):
+   39          out.append(carrier_cycle[_ % len(carrier_cycle)])
+   40      return out
+   41  # Silence
+   42  silence = [0] * int(sample_rate * 0.001)  # 1ms silence template
+   43  # Build the full waveform
+   44  wf = []
+   45  for _ in range(repeats):
+   46      for i, t in enumerate(pattern_us):
+   47          samples = pattern_samples[i]
+   48          if i % 2 == 0:          # pulse (carrier on)
+   49              wf.extend(make_burst(samples))
+   50          else:                   # space (carrier off)
+   51              wf.extend([0] * samples)
+   52      # add gap silence
+   53      wf.extend([0] * gap_samples)
+   54  # Trim to exact duration (sample count)
+   55  max_samples = int(duration * sample_rate)
+   56  if len(wf) > max_samples:
+   57      wf = wf[:max_samples]
+   58  else:
+   59      wf.extend([0] * (max_samples - len(wf)))
+   60  # Write WAV (mono, 16-bit PCM)
+   61  with wave.open("${OUTPUT_WAV}", "wb") as wav:
+   62      wav.setnchannels(1)
+   63      wav.setsampwidth(2)
+   64      wav.setframerate(sample_rate)
+   65      data = b''.join(struct.pack('<h', int(s)) for s in wf)
+   66      wav.writeframes(data)
+   67  print("WAV file written to ${OUTPUT_WAV}")
+   68  EOF
+   69  # Play the file through the headphone jack
+   70  echo "Playing IR code for ${DURATION} seconds..."
+   71  termux-media-player play "${OUTPUT_WAV}"
+   72  # Optional: delete the file after playing
+   73  # rm "${OUTPUT_WAV}"
+   74  ./nec_audio_power.sh
+   75  #!/data/data/com.termux/files/usr/bin/bash
+   76  # NEC Power Pulsator for Termux
+   77  # Sends a NEC IR power code repeatedly for 60 seconds
+   78  # NEC protocol parameters
+   79  FREQ=38000                # Carrier frequency (Hz)
+   80  START_PULSE=9000          # 9ms
+   81  START_SPACE=4500          # 4.5ms
+   82  BIT_PULSE=562             # 562.5µs rounded
+   83  ZERO_SPACE=562            # 562.5µs
+   84  ONE_SPACE=1687            # 1687.5µs rounded
+   85  STOP_PULSE=562            # 562.5µs
+   86  # Example NEC code: address 0x00FF, command 0x45 (common "Power" for many TVs)
+   87  # Address (8 bits) = 0x00, inverted address = 0xFF
+   88  # Command (8 bits)  = 0x45, inverted command = 0xBA
+   89  ADDRESS=0x00
+   90  INV_ADDRESS=0xFF
+   91  COMMAND=0x45
+   92  INV_COMMAND=0xBA
+   93  # Helper: convert hex byte to LSB-first bit list (0/1)
+   94  hex_to_bits_lsb() {     local val=$(( $1 ));     local bits=();     for i in {0..7}; do         bits[$i]=$(( (val >> i) & 1 ));     done;     echo "${bits[@]}"; }
+   95  # Generate the full pulse pattern array
+   96  pattern=()
+   97  pattern+=( $START_PULSE $START_SPACE )
+   98  # Append bits for address, inverted address, command, inverted command
+   99  for byte in $ADDRESS $INV_ADDRESS $COMMAND $INV_COMMAND; do     bits=( $(hex_to_bits_lsb $byte) );     for bit in "${bits[@]}"; do         pattern+=( $BIT_PULSE );         if [ $bit -eq 0 ]; then             pattern+=( $ZERO_SPACE );         else             pattern+=( $ONE_SPACE );         fi;     done; done
+  100  # Add final stop pulse
+  101  pattern+=( $STOP_PULSE )
+  102  # Check if termux-infrared-transmit exists
+  103  if ! command -v termux-infrared-transmit &>/dev/null; then     echo "ERROR: termux-infrared-transmit not found.";     echo "Install Termux:Infrared add-on from F-Droid or GitHub.";     exit 1; fi
+  104  echo "Sending NEC Power code every 100ms for 60 seconds..."
+  105  END_TIME=$(( $(date +%s) + 60 ))
+  106  while [ $(date +%s) -lt $END_TIME ]; do     termux-infrared-transmit -f $FREQ ${pattern[@]};     sleep 0.1; done
+  107  echo "Finished."
+  108  nano nec_audio_power.sh
+  109  pkg install python termux-media-player
+  110  termux-setup-storage
+  111  chmod +x nec_audio_power.sh
+  112  ./nec_audio_power.sh
+  113  #!/data/data/com.termux/files/usr/bin/bash
+  114  # ==============================================
+  115  # NEC Power IR Transmitter via Headphone Jack
+  116  # ==============================================
+  117  # Connect IR LED + 100Ω resistor to 3.5mm audio jack.
+  118  # Set media volume to MAXIMUM before running.
+  119  # Configuration
+  120  DURATION=60               # How long to transmit (seconds)
+  121  FREQ=38000                # IR carrier frequency (Hz)
+  122  SAMPLE_RATE=48000         # 48kHz is enough for a 38kHz square wave
+  123  OUTPUT_WAV="/sdcard/nec_power.wav"   # Save to shared storage
+  124  # NEC "Power" Code Timings (microseconds)
+  125  START_PULSE=9000
+  126  START_SPACE=4500
+  127  BIT_PULSE=562
+  128  ZERO_SPACE=562
+  129  ONE_SPACE=1687
+  130  STOP_PULSE=562
+  131  # Build the pulse pattern
+  132  pattern=()
+  133  pattern+=($START_PULSE $START_SPACE)
+  134  # NEC code: Address 0x00, Inverted 0xFF, Command 0x45, Inverted 0xBA
+  135  for byte in 0x00 0xFF 0x45 0xBA; do     val=$((byte));     for bit in {0..7}; do         pattern+=($BIT_PULSE);         if (( (val >> bit) & 1 )); then             pattern+=($ONE_SPACE);         else             pattern+=($ZERO_SPACE);         fi;     done; done
+  136  pattern+=($STOP_PULSE)
+  137  GAP_MS=20
+  138  PATTERN_US=$(IFS=+; echo "$((${pattern[*]}))")
+  139  TOTAL_US=$((PATTERN_US + GAP_MS*1000))
+  140  REPEATS=$(( (DURATION * 1000000) / TOTAL_US ))
+  141  echo "Generating ${REPEATS} repeats of NEC Power (total ${DURATION}s)..."
+  142  # Generate WAV using Python with a SQUARE WAVE (much faster!)
+  143  python3 - <<EOF
+  144  import math, struct, wave
+  145  import numpy as np
+  146  sample_rate = ${SAMPLE_RATE}
+  147  carrier_freq = ${FREQ}
+  148  duration = ${DURATION}
+  149  repeats = ${REPEATS}
+  150  gap_samples = int(${GAP_MS} * sample_rate / 1000)
+  151  # Convert pattern from microseconds to samples
+  152  pattern_us = [${pattern[@]}]
+  153  pattern_samples = [int(t * sample_rate / 1_000_000) for t in pattern_us]
+  154  # Generate one period of a SQUARE WAVE (maximized for IR LED)
+  155  period = sample_rate / carrier_freq
+  156  samples_per_period = int(period)
+  157  square_wave = [32767] * (samples_per_period // 2) + [-32768] * (samples_per_period - samples_per_period // 2)
+  158  # Function to repeat the square wave for a given number of samples
+  159  def make_burst(samples):
+  160      out = []
+  161      for _ in range(samples):
+  162          out.append(square_wave[_ % len(square_wave)])
+  163      return out
+  164  # Build the full waveform
+  165  wf = []
+  166  for _ in range(repeats):
+  167      for i, samples in enumerate(pattern_samples):
+  168          if i % 2 == 0:   # Pulse (carrier ON)
+  169              wf.extend(make_burst(samples))
+  170          else:            # Space (carrier OFF)
+  171              wf.extend([0] * samples)
+  172      wf.extend([0] * gap_samples)
+  173  # Trim to exact duration
+  174  max_samples = int(duration * sample_rate)
+  175  if len(wf) > max_samples:
+  176      wf = wf[:max_samples]
+  177  else:
+  178      wf.extend([0] * (max_samples - len(wf)))
+  179  # Write WAV file
+  180  with wave.open("${OUTPUT_WAV}", "wb") as wav:
+  181      wav.setnchannels(1)
+  182      wav.setsampwidth(2)
+  183      wav.setframerate(sample_rate)
+  184      data = b''.join(struct.pack('<h', int(s)) for s in wf)
+  185      wav.writeframes(data)
+  186  print("WAV file written to ${OUTPUT_WAV}")
+  187  EOF
+  188  # Check if file was created
+  189  if [ ! -f "$OUTPUT_WAV" ]; then     echo "ERROR: Could not create $OUTPUT_WAV";     echo "Run 'termux-setup-storage' and grant permission, then try again.";     exit 1; fi
+  190  echo "Playing IR code for ${DURATION} seconds (set media volume to MAXIMUM)..."
+  191  termux-media-player play "$OUTPUT_WAV"
+  192  # Optional: delete the WAV after playing
+  193  # rm "$OUTPUT_WAV"
+  194  pkg update && pkg upgrade -y
+  195  pkg install python
+  196  pip install numpy
+  197  nec_power.sh
+  198  nano nec_power.sh
+  199  termux-setup-storage
+  200  ./nec_power.sh
+  201  pkg install mpv
+  202  nano ir_power.sh
+  203  chmod +x ir_power.sh
+  204  ./ir_power.sh
+  205  nano ir_power_stereo.sh
+  206  chmod +x ir_power_stereo.sh
+  207  ./ir_power_stereo.sh
+  208  FREQ=36000 DUTY=75 MODE=same DUR=60 OUTPUT="$HOME/storage/shared/ir_temp.wav" bash -c 'python3 -c "
+  209  import math, struct, wave
+  210  sample_rate=48000; carrier=$FREQ; duration=$DUR; repeats=int(duration*sample_rate/((9000+4500+32*(562+562)+562+20*1000)/1e6))
+  211  gap_samples=int(20*sample_rate/1000)
+  212  pattern_us=[9000,4500]
+  213  for b in [0x00,0xFF,0x45,0xBA]:
+  214      for bit in range(8):
+  215          pattern_us.append(562)
+  216          pattern_us.append(1687 if (b>>bit)&1 else 562)
+  217  pattern_us.append(562)
+  218  pattern_samples=[int(t*sample_rate/1e6) for t in pattern_us]
+  219  period=sample_rate/carrier; sp=int(period); on=int(sp*$DUTY/100); sq=[32767]*on+[-32768]*(sp-on)
+  220  def burst(s): return [sq[i%len(sq)] for i in range(s)]
+  221  wf_left=[]
+  222  for _ in range(repeats):
+  223      for i,s in enumerate(pattern_samples):
+  224          wf_left.extend(burst(s) if i%2==0 else [0]*s)
+  225      wf_left.extend([0]*gap_samples)
+  226  wf_left=wf_left[:int(duration*sample_rate)]+[0]*max(0,int(duration*sample_rate)-len(wf_left))
+  227  if \"$MODE\"==\"same\": wf_right=wf_left[:]
+  228  elif \"$MODE\"==\"invert\": wf_right=[-x for x in wf_left]
+  229  else: wf_right=[0]*len(wf_left)
+  230  wf_stereo=[v for pair in zip(wf_left,wf_right) for v in pair]
+  231  with wave.open(\"$OUTPUT\",\"wb\") as w:w.setnchannels(2);w.setsampwidth(2);w.setframerate(sample_rate);w.writeframes(b''.join(struct.pack(\"<h\",int(x)) for x in wf_stereo))
+  232  print(\"WAV ready\")
+  233  " && mpv --no-video "$OUTPUT" && rm "$OUTPUT"'
+  234  FREQ=36000 DUTY=75 MODE=same DUR=60 OUTPUT="$HOME/storage/shared/ir_temp.wav" bash -c 'python3 -c "
+  235  import math, struct, wave
+  236  sample_rate=48000; carrier=$FREQ; duration=$DUR; repeats=int(duration*sample_rate/((9000+4500+32*(562+562)+562+20*1000)/1e6))
+  237  gap_samples=int(20*sample_rate/1000)
+  238  pattern_us=[9000,4500]
+  239  for b in [0x00,0xFF,0x45,0xBA]:
+  240      for bit in range(8):
+  241          pattern_us.append(562)
+  242          pattern_us.append(1687 if (b>>bit)&1 else 562)
+  243  pattern_us.append(562)
+  244  pattern_samples=[int(t*sample_rate/1e6) for t in pattern_us]
+  245  period=sample_rate/carrier; sp=int(period); on=int(sp*$DUTY/100); sq=[32767]*on+[-32768]*(sp-on)
+  246  def burst(s): return [sq[i%len(sq)] for i in range(s)]
+  247  wf_left=[]
+  248  for _ in range(repeats):
+  249      for i,s in enumerate(pattern_samples):
+  250          wf_left.extend(burst(s) if i%2==0 else [0]*s)
+  251      wf_left.extend([0]*gap_samples)
+  252  wf_left=wf_left[:int(duration*sample_rate)]+[0]*max(0,int(duration*sample_rate)-len(wf_left))
+  253  if \"$MODE\"==\"same\": wf_right=wf_left[:]
+  254  elif \"$MODE\"==\"invert\": wf_right=[-x for x in wf_left]
+  255  else: wf_right=[0]*len(wf_left)
+  256  wf_stereo=[v for pair in zip(wf_left,wf_right) for v in pair]
+  257  with wave.open(\"$OUTPUT\",\"wb\") as w:w.setnchannels(2);w.setsampwidth(2);w.setframerate(sample_rate);w.writeframes(b''.join(struct.pack(\"<h\",int(x)) for x in wf_stereo))
+  258  print(\"WAV ready\")
+  259  " && mpv --no-video "$OUTPUT" && rm "$OUTPUT"'
+  260  FREQ=36000 DUTY=75 MODE=same DUR=60 OUTPUT="$HOME/storage/shared/ir_temp.wav" bash -c 'python3 -c "
+  261  import math, struct, wave
+  262  sample_rate=48000; carrier=$FREQ; duration=$DUR; repeats=int(duration*sample_rate/((9000+4500+32*(562+562)+562+20*1000)/1e6))
+  263  gap_samples=int(20*sample_rate/1000)
+  264  pattern_us=[9000,4500]
+  265  for b in [0x00,0xFF,0x45,0xBA]:
+  266      for bit in range(8):
+  267          pattern_us.append(562)
+  268          pattern_us.append(1687 if (b>>bit)&1 else 562)
+  269  pattern_us.append(562)
+  270  pattern_samples=[int(t*sample_rate/1e6) for t in pattern_us]
+  271  period=sample_rate/carrier; sp=int(period); on=int(sp*$DUTY/100); sq=[32767]*on+[-32768]*(sp-on)
+  272  def burst(s): return [sq[i%len(sq)] for i in range(s)]
+  273  wf_left=[]
+  274  for _ in range(repeats):
+  275      for i,s in enumerate(pattern_samples):
+  276          wf_left.extend(burst(s) if i%2==0 else [0]*s)
+  277      wf_left.extend([0]*gap_samples)
+  278  wf_left=wf_left[:int(duration*sample_rate)]+[0]*max(0,int(duration*sample_rate)-len(wf_left))
+  279  if \"$MODE\"==\"same\": wf_right=wf_left[:]
+  280  elif \"$MODE\"==\"invert\": wf_right=[-x for x in wf_left]
+  281  else: wf_right=[0]*len(wf_left)
+  282  wf_stereo=[v for pair in zip(wf_left,wf_right) for v in pair]
+  283  with wave.open(\"$OUTPUT\",\"wb\") as w:w.setnchannels(2);w.setsampwidth(2);w.setframerate(sample_rate);w.writeframes(b''.join(struct.pack(\"<h\",int(x)) for x in wf_stereo))
+  284  print(\"WAV ready\")
+  285  " && mpv --no-video "$OUTPUT" && rm "$OUTPUT"'
+  286  FREQ=34000 DUTY=80 MODE=invert DUR=30 OUTPUT="$HOME/storage/shared/ir_temp.wav" bash -c '...'
+  287  ir() {     FREQ=${1:-36000};     DUTY=${2:-75};     MODE=${3:-same};     DUR=${4:-60};     OUTPUT="$HOME/storage/shared/ir_temp.wav";     python3 -c "
+  288  import math, struct, wave
+  289  sr=48000; cf=$FREQ; dur=$DUR; gap_ms=20
+  290  repeats=int(dur*sr/((9000+4500+32*(562+562)+562+gap_ms*1000)/1e6))
+  291  gap=int(gap_ms*sr/1000)
+  292  pat=[9000,4500]
+  293  for b in [0x00,0xFF,0x45,0xBA]:
+  294      for bit in range(8):
+  295          pat.append(562)
+  296          pat.append(1687 if (b>>bit)&1 else 562)
+  297  pat.append(562)
+  298  samps=[int(t*sr/1e6) for t in pat]
+  299  period=sr/cf; sp=int(period); on=int(sp*$DUTY/100)
+  300  sq=[32767]*on+[-32768]*(sp-on)
+  301  def burst(n): return [sq[i%len(sq)] for i in range(n)]
+  302  wf=[]
+  303  for _ in range(repeats):
+  304      for i,s in enumerate(samps):
+  305          wf.extend(burst(s) if i%2==0 else [0]*s)
+  306      wf.extend([0]*gap)
+  307  wf=wf[:int(dur*sr)]+[0]*max(0,int(dur*sr)-len(wf))
+  308  if '$MODE'=='same': wfr=wf[:]
+  309  elif '$MODE'=='invert': wfr=[-x for x in wf]
+  310  else: wfr=[0]*len(wf)
+  311  stereo=[v for pair in zip(wf,wfr) for v in pair]
+  312  with wave.open('$OUTPUT','wb') as w:
+  313      w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr)
+  314      w.writeframes(b''.join(struct.pack('<h',int(x)) for x in stereo))
+  315  print('WAV ready')
+  316  " && mpv --no-video "$OUTPUT" && rm "$OUTPUT"; }
+  317  ir <frequency> <duty_cycle> <mode> <duration>
+  318  ir_menu() {
+  319      FREQ=36000;     DUTY=75;     MODE="same";     DUR=60;      while true; do         clear;         echo "==================================";         echo "     IR Transmitter Controller";         echo "==================================";         echo "1) Frequency      : $FREQ Hz";         echo "2) Duty cycle     : $DUTY %";         echo "3) Stereo mode    : $MODE";         echo "4) Duration       : $DUR sec";         echo "5) RUN TRANSMISSION";         echo "0) Exit";         echo "==================================";         read -p "Choose [0-5]: " choice;          case $choice in             1)                 read -p "Enter frequency (Hz) [38000, 36000, 34000]: " new;                 [[ -n "$new" ]] && FREQ=$new;                 ;;             2)                 read -p "Enter duty cycle (50-90) [75]: " new;                 [[ -n "$new" ]] && DUTY=$new;                 ;;             3)                 echo "Modes: same (two LEDs to ground) / invert (bridge mode)";                 read -p "Enter mode [same/invert]: " new;                 [[ -n "$new" ]] && MODE="$new";                 ;;             4)                 read -p "Enter duration in seconds [60]: " new;                 [[ -n "$new" ]] && DUR=$new;                 ;;             5)                 echo "Generating $FREQ Hz, ${DUTY}% duty, mode $MODE, ${DUR}s...";                 OUTPUT="$HOME/storage/shared/ir_temp.wav";                 python3 -c "
+  320  import math, struct, wave
+  321  sr=48000; cf=$FREQ; dur=$DUR; gap_ms=20
+  322  repeats=int(dur*sr/((9000+4500+32*(562+562)+562+gap_ms*1000)/1e6))
+  323  gap=int(gap_ms*sr/1000)
+  324  pat=[9000,4500]
+  325  for b in [0x00,0xFF,0x45,0xBA]:
+  326      for bit in range(8):
+  327          pat.append(562)
+  328          pat.append(1687 if (b>>bit)&1 else 562)
+  329  pat.append(562)
+  330  samps=[int(t*sr/1e6) for t in pat]
+  331  period=sr/cf; sp=int(period); on=int(sp*$DUTY/100)
+  332  sq=[32767]*on+[-32768]*(sp-on)
+  333  def burst(n): return [sq[i%len(sq)] for i in range(n)]
+  334  wf=[]
+  335  for _ in range(repeats):
+  336      for i,s in enumerate(samps):
+  337          wf.extend(burst(s) if i%2==0 else [0]*s)
+  338      wf.extend([0]*gap)
+  339  wf=wf[:int(dur*sr)]+[0]*max(0,int(dur*sr)-len(wf))
+  340  if '$MODE'=='same': wfr=wf[:]
+  341  elif '$MODE'=='invert': wfr=[-x for x in wf]
+  342  else: wfr=[0]*len(wf)
+  343  stereo=[v for pair in zip(wf,wfr) for v in pair]
+  344  with wave.open('$OUTPUT','wb') as w:
+  345      w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr)
+  346      w.writeframes(b''.join(struct.pack('<h',int(x)) for x in stereo))
+  347  print('WAV ready')
+  348  " && mpv --no-video "$OUTPUT" && rm "$OUTPUT";                 read -p "Press Enter to continue...";                 ;;             0)                 echo "Exiting.";                 break;                 ;;             *)                 echo "Invalid choice";                 sleep 1;                 ;;         esac;     done; }
+  349  ir_menu
+  350  python3 -c "import math,struct,wave; w=wave.open('/sdcard/test.wav','wb'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(48000); data=b''.join(struct.pack('<h',int(16000*math.sin(2*math.pi*440*i/48000))) for i in range(48000)); w.writeframes(data); w.close()" && mpv --no-video /sdcard/test.wav && rm /sdcard/test.wav
+  351  ir_menu() {
+  352      FREQ=38000;     DUTY=75;     MODE="same";     DUR=10;      while true; do         clear;         echo "==========================================";         echo "       IR Transmitter (Headphone Jack)";         echo "==========================================";         echo "1) Frequency : $((FREQ/1000)) kHz  ($FREQ Hz)";         echo "2) Duty cycle: $DUTY %";         echo "3) Stereo mode: $MODE";         echo "4) Duration   : $DUR sec (max 60)";         echo "5) RUN TRANSMISSION";         echo "0) Exit";         echo "==========================================";         read -p "Choose [0-5]: " choice;          case $choice in             1)                 read -p "Enter frequency (30000-40000 Hz) [38000]: " new;                 if [[ -n "$new" && "$new" -ge 30000 && "$new" -le 40000 ]]; then                     FREQ=$new;                 else                     echo "Invalid – using 38000";                     sleep 1;                 fi;                 ;;             2)                 read -p "Enter duty cycle (50-90) [75]: " new;                 if [[ -n "$new" && "$new" -ge 50 && "$new" -le 90 ]]; then                     DUTY=$new;                 else                     echo "Invalid – using 75";                     sleep 1;                 fi;                 ;;             3)                 echo "Modes: same (two LEDs to ground) / invert (bridge mode)";                 read -p "Enter mode [same/invert]: " new;                 [[ "$new" == "invert" ]] && MODE="invert" || MODE="same";                 ;;             4)                 read -p "Enter duration (1-60 seconds) [10]: " new;                 if [[ -n "$new" && "$new" -ge 1 && "$new" -le 60 ]]; then                     DUR=$new;                 else                     echo "Invalid – using 10";                     sleep 1;                 fi;                 ;;             5)                 echo -e "\n=== Generating IR signal ===";                 echo "Frequency: $FREQ Hz, Duty: $DUTY%, Mode: $MODE, Duration: ${DUR}s";                 echo -e "\nStarting in 3 seconds...";                 for i in 3 2 1; do
+  353                      printf "%d... [" $i;                     for ((j=0; j<20; j++)); do                         if [ $j -lt $((i*7)) ]; then                             printf "█";                         else                             printf "░";                         fi;                     done;                     printf "]  %d%%\r" $((i*33));                     sleep 1;                 done;                 echo -e "\n\n🔴 TRANSMITTING NOW... (point LED at camera)\n";                  OUTPUT="$HOME/storage/shared/ir_temp.wav"
+  354                  python3 -c "
+  355  import math, struct, wave
+  356  sr=48000; cf=$FREQ; dur=$DUR; gap_ms=20
+  357  repeats = int(dur * sr / ((9000+4500+32*(562+562)+562+gap_ms*1000)/1e6))
+  358  gap = int(gap_ms * sr / 1000)
+  359  pat = [9000,4500]
+  360  for b in [0x00,0xFF,0x45,0xBA]:
+  361      for bit in range(8):
+  362          pat.append(562)
+  363          pat.append(1687 if (b>>bit)&1 else 562)
+  364  pat.append(562)
+  365  samps = [int(t * sr / 1_000_000) for t in pat]
+  366  period = sr / cf; sp = int(period); on = int(sp * $DUTY / 100)
+  367  sq = [32767] * on + [-32768] * (sp - on)
+  368  def burst(n): return [sq[i % len(sq)] for i in range(n)]
+  369  wf = []
+  370  for _ in range(repeats):
+  371      for i, s in enumerate(samps):
+  372          wf.extend(burst(s) if i % 2 == 0 else [0] * s)
+  373      wf.extend([0] * gap)
+  374  wf = wf[:int(dur * sr)] + [0] * max(0, int(dur * sr) - len(wf))
+  375  if '$MODE' == 'same':
+  376      wfr = wf[:]
+  377  elif '$MODE' == 'invert':
+  378      wfr = [-x for x in wf]
+  379  else:
+  380      wfr = [0] * len(wf)
+  381  stereo = [v for pair in zip(wf, wfr) for v in pair]
+  382  with wave.open('$OUTPUT', 'wb') as w:
+  383      w.setnchannels(2)
+  384      w.setsampwidth(2)
+  385      w.setframerate(sr)
+  386      w.writeframes(b''.join(struct.pack('<h', int(x)) for x in stereo))
+  387  print('WAV ready')
+  388  " && mpv --no-video "$OUTPUT" && rm "$OUTPUT";                 echo -e "\n✅ Transmission finished.\n";                 read -p "Press Enter to continue...";                 ;;             0)                 echo "Exiting.";                 break;                 ;;             *)                 echo "Invalid choice";                 sleep 1;                 ;;         esac;     done; }
+  389  ir_menu
+  390  python3 -c "import wave,struct; w=wave.open('/sdcard/ir_test.wav','wb'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(38000); data=b''.join(struct.pack('<h',32767 if i%2==0 else -32768) for i in range(38000*2)); w.writeframes(data); w.close()" && mpv --no-video /sdcard/ir_test.wav && rm /sdcard/ir_test.wav
+  391  ir_menu
+  392  termux-setup-storage
+  393  nano nec_power.sh
+  394  chmod +x nec_power.sh
+  395  ./nec_power.sh
+  396  #!/data/data/com.termux/files/usr/bin/bash
+  397  # NEC Power IR via headphone jack – 60 seconds
+  398  # Connect IR LED + 100Ω resistor to 3.5mm audio.
+  399  # Set media volume to MAXIMUM before running.
+  400  DURATION=60
+  401  FREQ=38000
+  402  SAMPLE_RATE=48000
+  403  OUTPUT_WAV="$HOME/storage/shared/nec_power.wav"
+  404  # NEC Power code timings (microseconds)
+  405  START_PULSE=9000
+  406  START_SPACE=4500
+  407  BIT_PULSE=562
+  408  ZERO_SPACE=562
+  409  ONE_SPACE=1687
+  410  STOP_PULSE=562
+  411  # Build bash array of pulse timings
+  412  pattern=()
+  413  pattern+=($START_PULSE $START_SPACE)
+  414  for byte in 0x00 0xFF 0x45 0xBA; do     val=$((byte));     for bit in {0..7}; do         pattern+=($BIT_PULSE);         if (( (val >> bit) & 1 )); then             pattern+=($ONE_SPACE);         else             pattern+=($ZERO_SPACE);         fi;     done; done
+  415  pattern+=($STOP_PULSE)
+  416  # Convert bash array to a Python list WITH COMMAS
+  417  pattern_py=$(printf '%s, ' "${pattern[@]}" | sed 's/, $//')
+  418  pattern_py="[$pattern_py]"
+  419  GAP_MS=20
+  420  PATTERN_US=$(IFS=+; echo "$((${pattern[*]}))")
+  421  TOTAL_US=$((PATTERN_US + GAP_MS*1000))
+  422  REPEATS=$(( (DURATION * 1000000) / TOTAL_US ))
+  423  echo "Generating ${REPEATS} repeats of NEC Power (total ${DURATION}s)..."
+  424  # Generate WAV file (square wave, no numpy needed)
+  425  python3 - <<EOF
+  426  import math, struct, wave
+  427  sample_rate = ${SAMPLE_RATE}
+  428  carrier_freq = ${FREQ}
+  429  duration = ${DURATION}
+  430  repeats = ${REPEATS}
+  431  gap_samples = int(${GAP_MS} * sample_rate / 1000)
+  432  # Pattern with commas now!
+  433  pattern_us = ${pattern_py}
+  434  pattern_samples = [int(t * sample_rate / 1_000_000) for t in pattern_us]
+  435  # Square wave for one carrier period
+  436  period = sample_rate / carrier_freq
+  437  samples_per_period = int(period)
+  438  half = samples_per_period // 2
+  439  square_wave = [32767] * half + [-32768] * (samples_per_period - half)
+  440  def make_burst(samples):
+  441      out = []
+  442      for _ in range(samples):
+  443          out.append(square_wave[_ % len(square_wave)])
+  444      return out
+  445  wf = []
+  446  for _ in range(repeats):
+  447      for i, samples in enumerate(pattern_samples):
+  448          if i % 2 == 0:          # pulse (carrier ON)
+  449              wf.extend(make_burst(samples))
+  450          else:                   # space (carrier OFF)
+  451              wf.extend([0] * samples)
+  452      wf.extend([0] * gap_samples)
+  453  max_samples = int(duration * sample_rate)
+  454  if len(wf) > max_samples:
+  455      wf = wf[:max_samples]
+  456  else:
+  457      wf.extend([0] * (max_samples - len(wf)))
+  458  with wave.open("${OUTPUT_WAV}", "wb") as wav:
+  459      wav.setnchannels(1)
+  460      wav.setsampwidth(2)
+  461      wav.setframerate(sample_rate)
+  462      data = b''.join(struct.pack('<h', int(s)) for s in wf)
+  463      wav.writeframes(data)
+  464  print("WAV file written to ${OUTPUT_WAV}")
+  465  EOF
+  466  # Check if WAV was created
+  467  if [ ! -f "$OUTPUT_WAV" ]; then     echo "ERROR: Could not create $OUTPUT_WAV";     echo "Run 'termux-setup-storage' and allow permissions, then try again.";     exit 1; fi
+  468  echo "Playing IR code for ${DURATION} seconds (volume MAXIMUM)..."
+  469  # Try termux-media-player first, fallback to mpv
+  470  if command -v termux-media-player &>/dev/null; then     termux-media-player play "$OUTPUT_WAV"; elif command -v mpv &>/dev/null; then     mpv --no-video "$OUTPUT_WAV"; else     echo "ERROR: No audio player found. Install mpv: pkg install mpv";     exit 1; fi
+  471  # Optional: delete the WAV after playing
+  472  # rm "$OUTPUT_WAV"
+  473  tail -n 1000 ~/.bash_history
+  474  python3 -c "import wave,struct; w=wave.open('/sdcard/carrier_test.wav','wb'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(48000); data=b''.join(struct.pack('<h',32767 if (i//16)%2==0 else -32768) for i in range(48000*2)); w.writeframes(data); w.close()" && mpv --no-video /sdcard/carrier_test.wav && rm /sdcard/carrier_test.wav
+  475  history > /sdcard/history_terminal_$(tty | tr '/' '_').txt
+  476  cat /sdcard/history_terminal_*.txt > ~/all_history_combined.txt
+  477  find ~ -type f -name "*.sh" -exec ls -la --time-style=full {} \; > ~/all_scripts_list.txt
+  478  find ~ -type f -executable -not -name "*.sh" -ls >> ~/all_scripts_list.txt
+  479  grep -E "^\s*\.\/|^\s*bash |^\s*sh " ~/all_history_combined.txt > ~/executed_scripts.txt
+  480  python3 -c "import math,struct,wave; w=wave.open('/sdcard/test.wav','wb'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(48000); data=b''.join(struct.pack('<h',int(16000*math.sin(2*math.pi*440*i/48000))) for i in range(48000)); w.writeframes(data); w.close()" && mpv --no-video /sdcard/test.wav && rm /sdcard/test.wav
+  481  history > /sdcard/history_terminal_$(tty | tr '/' '_').txt

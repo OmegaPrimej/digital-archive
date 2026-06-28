@@ -1,0 +1,30 @@
+{
+  "device_info": {
+    "android_id": "cmd: Failure calling service settings: Failed transaction (2147483646)
+unknown",
+    "manufacturer": "revoview",
+    "model": "A56",
+    "sdk_version": "33"
+  },
+  "files_available": [
+    {
+      "content_uri": "content://media/external/downloads/1000087073",
+      "possible_paths": [
+        "/storage/emulated/0/Download/",
+        "/storage/emulated/0/",
+        "/sdcard/Download/"
+      ]
+    }
+  ],
+  "tls_script": {
+    "name": "modern_tls_termux_setup.sh",
+    "location": "~/setup_tls.sh",
+    "features": [
+      "TLS 1.3",
+      "Elliptic Curve Cryptography",
+      "ChaCha20-Poly1305",
+      "X25519 curves",
+      "0-RTT handshake"
+    ]
+  }
+}

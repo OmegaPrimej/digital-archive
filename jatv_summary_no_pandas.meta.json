@@ -1,0 +1,21 @@
+{
+  "simulations": 1000000,
+  "avg_final_contracts": 643.790438,
+  "median_final_contracts": 644,
+  "p10_final_contracts": 641,
+  "p90_final_contracts": 646,
+  "avg_total_gain": 602001.5802065752,
+  "min_total_gain": 550030.13871,
+  "max_total_gain": 652901.729358,
+  "breach_probability": 0.0,
+  "parameters": {
+    "start_contracts": 5,
+    "daily_gain_per_contract": 157.16,
+    "contract_cost": 20,
+    "max_new_per_day": 50,
+    "max_days": 13,
+    "stop_contracts": 813,
+    "volatility": 0.05
+  },
+  "timestamp_utc": "2025-11-04T08:41:03.506472"
+}

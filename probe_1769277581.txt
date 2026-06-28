@@ -1,0 +1,27 @@
+=== Starting probe at Sat Jan 24 09:59:41 PST 2026 ===
+
+[1] ICMP Pattern Ping:
+
+[2] Standard ICMP:
+PING 172.28.0.12 (172.28.0.12) 56(84) bytes of data.
+
+--- 172.28.0.12 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3122ms
+
+
+[3] TCP Port Scan:
+Port 22: Port 80: Port 443: Port 8080: Port 21: Port 25: Port 53: Connection to 172.28.0.12 53 port [tcp/domain] succeeded!
+Port 110: Port 143: Port 993: Port 995: 
+[4] ARP Discovery:
+
+[5] DNS Lookup:
+
+[6] HTTP Probe:
+HTTP 80:   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+HTTP 8080:   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+HTTP 8000:   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+HTTP 8888:   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+
+[7] Broadcast Ping:
+
+=== Probe Complete ===

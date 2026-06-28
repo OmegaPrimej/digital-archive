@@ -1,0 +1,24 @@
+Binary Tone Encoder - Quick Reference
+
+1. Encode text to audio:
+   python binary_tone_encoder.py --encode "Hello World"
+
+2. Encode and save to file:
+   python binary_tone_encoder.py --encode "Secret" --save secret.wav
+
+3. Decode from audio file:
+   python binary_tone_encoder.py --decode-file secret.wav
+
+4. Record and decode live:
+   python binary_tone_encoder.py --decode --bits 40
+
+5. Custom settings:
+   python binary_tone_encoder.py --encode "Test" --freq0 500 --freq1 1000 --duration 0.3
+
+6. Using symlink (if installed):
+   binary-tone --encode "Hello"
+
+Troubleshooting:
+- If no audio: Start pulseaudio: pulseaudio --start &
+- Check audio devices: python3 -c "import sounddevice as sd; print(sd.query_devices())"
+- Volume too low/too high: Modify the 0.3 value in generate_tone() function

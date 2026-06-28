@@ -1,0 +1,22 @@
+{
+  "templates": {
+    "combat": {
+      "type": "Warrior",
+      "abilities": ["Plasma Cannons", "Energy Shield", "Tactical AI"],
+      "stats": {"strength": 90, "agility": 70, "intelligence": 60},
+      "appearance": "Heavy armor, glowing weapons, battle scars"
+    },
+    "medical": {
+      "type": "Healer",
+      "abilities": ["Nanobot Swarm", "Diagnostic Scan", "Tissue Regeneration"],
+      "stats": {"strength": 30, "agility": 50, "intelligence": 95},
+      "appearance": "White chassis, blue lights, medical symbols"
+    },
+    "stealth": {
+      "type": "Assassin",
+      "abilities": ["Optical Camouflage", "Silent Movement", "Neural Hack"],
+      "stats": {"strength": 60, "agility": 95, "intelligence": 80},
+      "appearance": "Black matte finish, minimal lights, sleek design"
+    }
+  }
+}

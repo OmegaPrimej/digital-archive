@@ -1,0 +1,530 @@
+{
+  "tls_handshake": [
+    {
+      "type": "Client Hello",
+      "version": "TLS 1.2 (0x0303) - for compatibility",
+      "random": "a1a2678db0d3fc8f8173696e69b488724ccb83abd1f76e64eac1fc832fe48fc0",
+      "session_id": null,
+      "cipher_suites": [
+        "TLS_AES_256_GCM_SHA384",
+        "TLS_CHACHA20_POLY1305_SHA256",
+        "TLS_AES_128_GCM_SHA256"
+      ],
+      "compression_methods": "null (0x00)",
+      "extensions": {
+        "supported_versions": [
+          "TLS 1.3"
+        ],
+        "key_share": {
+          "group": "x25519",
+          "key_exchange": "e545faf0293a64eed01c5bde3445b428ecc7aad6fe1061bfe7316dc7461215cc"
+        },
+        "signature_algorithms": [
+          "ecdsa_secp256r1_sha256",
+          "rsa_pss_rsae_sha256",
+          "rsa_pkcs1_sha256"
+        ],
+        "supported_groups": [
+          "x25519",
+          "secp256r1",
+          "secp384r1"
+        ],
+        "server_name": "payment.processor.com",
+        "application_layer_protocol_negotiation": [
+          "h2",
+          "http/1.1"
+        ],
+        "session_ticket": null,
+        "encrypt_then_mac": true,
+        "extended_master_secret": true,
+        "signature_algorithms_cert": [
+          "rsa_pss_rsae_sha256",
+          "ecdsa_secp256r1_sha256"
+        ],
+        "padding": 21
+      }
+    },
+    {
+      "type": "Server Hello",
+      "version": "TLS 1.2 (0x0303)",
+      "random": "acc42f684aed08a83d8a4085b273e7fe8e3e209bb19beb47f00971e53b6cdbdf",
+      "session_id": null,
+      "cipher_suite": "TLS_AES_256_GCM_SHA384 (0x1302)",
+      "compression_method": "null (0x00)",
+      "extensions": {
+        "supported_versions": "TLS 1.3 (0x0304)",
+        "key_share": {
+          "group": "x25519 (0x001d)",
+          "key_exchange": "5ab6c0ec67d077a3814e7394fb78214eb22d2f2162229e8da402cbecdbc8385a"
+        }
+      }
+    },
+    {
+      "type": "Encrypted Extensions",
+      "extensions": {
+        "server_name": "empty",
+        "application_layer_protocol_negotiation": "h2",
+        "supported_groups": [
+          "x25519",
+          "secp256r1"
+        ]
+      }
+    },
+    {
+      "type": "Certificate",
+      "certificate_request_context": "empty",
+      "certificate_list": [
+        {
+          "cert_type": "X.509v3",
+          "cert_data": "3082... (2048 bytes)",
+          "extensions": {
+            "subject_alt_name": "payment.processor.com",
+            "key_usage": "digitalSignature, keyEncipherment",
+            "extended_key_usage": "serverAuth",
+            "basic_constraints": "CA:FALSE",
+            "subject_key_identifier": "SHA-1: A1:B2:C3:...",
+            "authority_key_identifier": "keyid:digicert-sha256"
+          }
+        },
+        {
+          "cert_type": "X.509v3",
+          "cert_data": "3082... (Intermediate CA)",
+          "extensions": {}
+        },
+        {
+          "cert_type": "X.509v3",
+          "cert_data": "3082... (Root CA)",
+          "extensions": {}
+        }
+      ]
+    },
+    {
+      "type": "Certificate Verify",
+      "algorithm": "ecdsa_secp256r1_sha256 (0x0403)",
+      "signature": "3046... (70 bytes)",
+      "signed_data": "Handshake context + hash of all previous messages"
+    },
+    {
+      "type": "Server Finished",
+      "verify_data": "HMAC-SHA256 of handshake messages",
+      "length": "32 bytes"
+    },
+    {
+      "type": "Client Certificate (Optional - Mutual TLS)",
+      "certificate_request_context": "from ServerHello",
+      "certificate_list": [
+        {
+          "cert_type": "X.509v3",
+          "cert_data": "Merchant certificate for PCI compliance"
+        }
+      ]
+    },
+    {
+      "type": "Client Finished",
+      "verify_data": "HMAC-SHA256 of handshake messages",
+      "length": "32 bytes"
+    },
+    {
+      "type": "Key Derivation",
+      "details": {
+        "handshake_secret": "88f5c8f69bcc03bcf9667c97292a2ce3598093e75f16f535021825aeef3eb1ff",
+        "client_handshake_traffic_secret": "HKDF-Expand-Label(...)",
+        "server_handshake_traffic_secret": "HKDF-Expand-Label(...)",
+        "client_application_traffic_secret": "HKDF-Expand-Label(...)",
+        "server_application_traffic_secret": "HKDF-Expand-Label(...)",
+        "master_secret": "9145b0d04a65ea19f5a81eeaff7afee78175552a8e6e38a38a0fe48060c83e9a0e3b1c4916040bf49d60472594e5f136",
+        "resumption_master_secret": "For session tickets",
+        "keys_generated": {
+          "client_write_key": "AES-256-GCM key (32 bytes)",
+          "server_write_key": "AES-256-GCM key (32 bytes)",
+          "client_iv": "12 bytes",
+          "server_iv": "12 bytes"
+        }
+      }
+    }
+  ],
+  "iso8583_message": {
+    "message_type": "ISO 8583 Authorization Request",
+    "transaction_type": "CREDIT",
+    "mti": "0100",
+    "bitmap_hex": "723C46C020E09A260000000000000000",
+    "bitmap_binary": "01110010001111000100011011000000001000001110000010011010001001100000000000000000000000000000000000000000000000000000000000000000",
+    "fields": [
+      {
+        "field": "2",
+        "name": "Primary Account Number",
+        "value": "4450468933025328",
+        "description": "PAN - Card number"
+      },
+      {
+        "field": "3",
+        "name": "Processing Code",
+        "value": "000000",
+        "description": "Transaction type"
+      },
+      {
+        "field": "4",
+        "name": "Amount, Transaction",
+        "value": "000000007859",
+        "description": "Transaction amount"
+      },
+      {
+        "field": "7",
+        "name": "Transmission Date & Time",
+        "value": "0120022543",
+        "description": "MMDDhhmmss"
+      },
+      {
+        "field": "11",
+        "name": "Systems Trace Audit Number",
+        "value": "977241",
+        "description": "STAN"
+      },
+      {
+        "field": "12",
+        "name": "Time, Local Transaction",
+        "value": "022543",
+        "description": "hhmmss"
+      },
+      {
+        "field": "13",
+        "name": "Date, Local Transaction",
+        "value": "0120",
+        "description": "MMDD"
+      },
+      {
+        "field": "14",
+        "name": "Date, Expiration",
+        "value": "2806",
+        "description": "YYMM"
+      },
+      {
+        "field": "18",
+        "name": "Merchant Type",
+        "value": "5999",
+        "description": "MCC"
+      },
+      {
+        "field": "22",
+        "name": "POS Entry Mode",
+        "value": "010",
+        "description": "Entry mode"
+      },
+      {
+        "field": "23",
+        "name": "Card Sequence Number",
+        "value": "001",
+        "description": "Card sequence"
+      },
+      {
+        "field": "25",
+        "name": "POS Condition Code",
+        "value": "00",
+        "description": "Condition code"
+      },
+      {
+        "field": "26",
+        "name": "POS Capture Code",
+        "value": "12",
+        "description": "Capture code"
+      },
+      {
+        "field": "35",
+        "name": "Track 2 Data",
+        "value": "4450468933025328=28062012648906199",
+        "description": "Track 2 equivalent"
+      },
+      {
+        "field": "41",
+        "name": "Card Acceptor Terminal ID",
+        "value": "12345678",
+        "description": "Terminal ID"
+      },
+      {
+        "field": "42",
+        "name": "Card Acceptor ID",
+        "value": "123456789012345",
+        "description": "Merchant ID"
+      },
+      {
+        "field": "43",
+        "name": "Card Acceptor Name/Location",
+        "value": "MERCHANT NAME               CITY      US",
+        "description": "Merchant info"
+      },
+      {
+        "field": "49",
+        "name": "Currency Code",
+        "value": "840",
+        "description": "Currency"
+      },
+      {
+        "field": "52",
+        "name": "PIN Block",
+        "value": "B4E1A4160E3708CF",
+        "description": "Encrypted PIN"
+      },
+      {
+        "field": "53",
+        "name": "Security Related Control Info",
+        "value": "2600000000000000",
+        "description": "Security data"
+      },
+      {
+        "field": "55",
+        "name": "EMV Data",
+        "value": "9F260508CF0A8DD19F2701019F1008487AB19FA98126D79F360200019F3704A5B92A68820100950500000000005F2A0208409A032601209C0100",
+        "description": "EMV chip data"
+      },
+      {
+        "field": "59",
+        "name": "Transport Data",
+        "value": "1234567890",
+        "description": "Transport info"
+      },
+      {
+        "field": "62",
+        "name": "Invoice Number",
+        "value": "910625",
+        "description": "Invoice"
+      },
+      {
+        "field": "63",
+        "name": "Private Data",
+        "value": "12345678901234567890",
+        "description": "Private use"
+      }
+    ],
+    "raw_message_length": 405,
+    "raw_message_preview": "0100723C46C020E09A2600000000000000001644504689330253280000000000000078590120022543977241022543012028...",
+    "message_structure": {
+      "header": "ISO 8583:1987",
+      "mti_position": "0-3",
+      "bitmap_position": "4-19",
+      "data_elements": 24,
+      "primary_fields": 24,
+      "secondary_fields": 0,
+      "encoding": "ASCII",
+      "bitmap_encoding": "Hex ASCII"
+    }
+  },
+  "ebt_transaction": {
+    "transaction_type": "Balance Inquiry",
+    "ebt_card_number": "6006 **** **** 1968",
+    "state": "Texas",
+    "case_number": "TX3171433",
+    "benefits": {
+      "food_stamp_balance": "$73.00",
+      "cash_benefit_balance": "$175.00"
+    },
+    "transaction": {
+      "amount": "$48.00",
+      "date": "2026-01-20",
+      "time": "02:25:43",
+      "retailer_type": "Convenience Store"
+    },
+    "fns_specific_fields": {
+      "issuer_identifier": "TXFNS",
+      "transaction_counter": 3626,
+      "authorization_code": "354933",
+      "food_stamp_voucher": "N/A"
+    },
+    "security_features": {
+      "pin_required": true,
+      "offline_pin_verification": true,
+      "transaction_limits": {
+        "daily_food_limit": "$150.00",
+        "daily_cash_limit": "$100.00",
+        "transaction_limit": "$50.00"
+      }
+    }
+  },
+  "system_comparison": {
+    "ebt_system": {
+      "transaction_time": "2-3 seconds",
+      "cost_per_transaction": "$0.05 - $0.10",
+      "fraud_rate": "0.03%",
+      "clearing_time": "Instant",
+      "funds_availability": "Immediate",
+      "reporting": "Real-time",
+      "access_methods": [
+        "POS Terminal",
+        "ATM",
+        "Mobile App",
+        "Online Portal"
+      ],
+      "security": [
+        "Encrypted PIN",
+        "Real-time Auth",
+        "Transaction Limits",
+        "Geolocation"
+      ]
+    },
+    "check_system": {
+      "transaction_time": "2-10 days",
+      "cost_per_transaction": "$1.00 - $5.00",
+      "fraud_rate": "0.25%",
+      "clearing_time": "1-3 days",
+      "funds_availability": "1-5 business days",
+      "reporting": "Monthly statements",
+      "access_methods": [
+        "Paper Checks",
+        "Bank Branches"
+      ],
+      "security": [
+        "Signature",
+        "MICR encoding",
+        "Watermarks",
+        "Manual Review"
+      ]
+    },
+    "improvements": {
+      "speed_improvement": "99.9% faster",
+      "cost_reduction": "90-98% cheaper",
+      "fraud_reduction": "88% reduction",
+      "access_improvement": "4x more access points"
+    }
+  },
+  "cnp_transaction": {
+    "transaction_id": "TXN98508838",
+    "amount": "$309.93",
+    "timestamp": "2026-01-20T02:25:43.159151",
+    "channel": "Phone",
+    "risk_assessment": {
+      "risk_score": 88,
+      "risk_level": "HIGH",
+      "decision": "DECLINE",
+      "reasons": [
+        "High transaction amount",
+        "New merchant relationship",
+        "International transaction",
+        "Unusual time of day"
+      ]
+    },
+    "verification_results": {
+      "avs_code": "Y",
+      "avs_description": "Address and ZIP match",
+      "cvv_result": "S",
+      "cvv_description": "Should have been present",
+      "3d_secure": "U",
+      "3d_secure_description": "Authentication unavailable"
+    },
+    "fraud_indicators": {
+      "velocity_checks": "FAIL",
+      "device_fingerprint": {
+        "browser": "Edge",
+        "os": "macOS",
+        "screen_resolution": "2613x963",
+        "timezone": "0",
+        "plugins": 7,
+        "font_hash": "3C3F15D4D351235A"
+      },
+      "ip_geolocation": {
+        "city": "London",
+        "country": "AU",
+        "isp": "Spectrum",
+        "proxy_detected": false,
+        "vpn_detected": false
+      },
+      "billing_shipping_match": true
+    },
+    "processing_details": {
+      "merchant_category": "Services",
+      "recurring": false,
+      "installments": 6,
+      "currency": "USD"
+    }
+  },
+  "protocol_comparison": {
+    "encryption_standards": {
+      "TLS_1.3": "AES-256-GCM, ChaCha20-Poly1305",
+      "ISO_8583": "Field-level TDES, AES",
+      "EBT_FNS": "TDES PIN encryption, AES transport",
+      "ACH": "SSL/TLS for file transfer",
+      "FEDWIRE": "Private network, TLS 1.2+",
+      "SWIFT": "SWIFT PKI, TLS 1.2+"
+    },
+    "authentication_methods": {
+      "TLS_1.3": "X.509 certificates, mutual TLS",
+      "ISO_8583": "MAC, digital signatures",
+      "EBT_FNS": "Offline PIN, online PIN, biometrics",
+      "ACH": "NACHA IAT, account validation",
+      "FEDWIRE": "Bank-level authentication",
+      "SWIFT": "BIC codes, SWIFT certificates"
+    },
+    "settlement_speed": {
+      "TLS_1.3": "Real-time (milliseconds)",
+      "ISO_8583": "Authorization: real-time, Settlement: batch",
+      "EBT_FNS": "Real-time authorization, nightly settlement",
+      "ACH": "Next business day",
+      "FEDWIRE": "Real-time, immediate finality",
+      "SWIFT": "Depends on correspondent banking (1-5 days)"
+    },
+    "transaction_limits": {
+      "TLS_1.3": "Protocol agnostic",
+      "ISO_8583": "Field size limits (12-999 chars)",
+      "EBT_FNS": "Daily/transaction limits by state",
+      "ACH": "$1M+ per transaction, $25M+ daily",
+      "FEDWIRE": "No limit (with prefunding)",
+      "SWIFT": "No limit (bank policies apply)"
+    },
+    "error_handling": {
+      "TLS_1.3": "Alert protocol, connection termination",
+      "ISO_8583": "Response codes (00=success, others=errors)",
+      "EBT_FNS": "State-specific error codes",
+      "ACH": "Return codes (R01-R99)",
+      "FEDWIRE": "Return/refund messages",
+      "SWIFT": "NACK messages, repair procedures"
+    }
+  },
+  "error_scenarios": [
+    {
+      "type": "network",
+      "scenario": "TLS Handshake Timeout",
+      "description": "Client Hello sent but no Server Hello response within timeout",
+      "error_code": "ERR_TIMEOUT",
+      "recovery_action": "Retry with exponential backoff",
+      "impact": "Transaction delayed 2-5 seconds"
+    },
+    {
+      "type": "security",
+      "scenario": "Certificate Validation Failed",
+      "description": "Server certificate chain validation failed - intermediate CA not trusted",
+      "error_code": "CERT_VALIDATION_ERROR",
+      "recovery_action": "Terminate connection, log security event",
+      "impact": "Transaction blocked, manual review required"
+    },
+    {
+      "type": "protocol",
+      "scenario": "ISO 8583 Bitmap Mismatch",
+      "description": "Field 2 (PAN) indicated in bitmap but not present in message",
+      "error_code": "BITMAP_FIELD_MISMATCH",
+      "recovery_action": "Send decline (code 12 - Invalid transaction)",
+      "impact": "Transaction declined, requires message repair"
+    },
+    {
+      "type": "business",
+      "scenario": "EBT Food Stamp Balance Insufficient",
+      "description": "Requested amount exceeds available food stamp balance",
+      "error_code": "FNS_51",
+      "recovery_action": "Partial authorization if allowed, otherwise decline",
+      "impact": "Transaction declined, customer must adjust amount"
+    },
+    {
+      "type": "security",
+      "scenario": "CNP Fraud Score Too High",
+      "description": "Transaction scored 85/100 risk - multiple fraud indicators",
+      "error_code": "FRAUD_SCORE_HIGH",
+      "recovery_action": "Route to manual review, request 3D Secure",
+      "impact": "Transaction delayed for review, possible decline"
+    },
+    {
+      "type": "business",
+      "scenario": "ACH Return - Insufficient Funds",
+      "description": "Settlement failed due to insufficient funds in originating account",
+      "error_code": "R01 - NSF",
+      "recovery_action": "Retry in 2 days, assess return fee",
+      "impact": "Settlement delayed 2-3 days, fees applied"
+    }
+  ]
+}

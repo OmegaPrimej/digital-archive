@@ -1,0 +1,19 @@
+{
+  "balance": 6,
+  "history": [
+    4,
+    5,
+    24,
+    35,
+    23,
+    23,
+    26
+  ],
+  "stats": {
+    "total_spins": 7,
+    "blacks": 4,
+    "reds": 3
+  },
+  "timeline": "alpha",
+  "rewinds_used": 0
+}

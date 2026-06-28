@@ -1,0 +1,59 @@
+# pollination_config.yaml
+pollination_system:
+  enabled: true
+  models:
+    - name: "gpt-3.5-turbo"
+      type: "openai"
+      endpoint: "https://api.openai.com/v1/chat/completions"
+      api_key_env: "OPENAI_API_KEY"
+      
+    - name: "claude-3-opus"
+      type: "anthropic"
+      endpoint: "https://api.anthropic.com/v1/messages"
+      api_key_env: "ANTHROPIC_API_KEY"
+      
+    - name: "gemini-pro"
+      type: "google"
+      endpoint: "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
+      api_key_env: "GOOGLE_API_KEY"
+      
+    - name: "llama-3-70b"
+      type: "meta"
+      endpoint: "https://api.meta.ai/v1/llama"
+      api_key_env: "META_API_KEY"
+      
+    - name: "mistral-large"
+      type: "mistral"
+      endpoint: "https://api.mistral.ai/v1/chat/completions"
+      api_key_env: "MISTRAL_API_KEY"
+
+pollination_settings:
+  sync_interval: 300  # seconds
+  gradient_exchange: true
+  attention_transfer: true
+  knowledge_fusion: "hierarchical"
+  
+  exchange_strategies:
+    - name: "round_robin"
+      weight: 0.3
+    - name: "weighted_by_confidence"
+      weight: 0.4
+    - name: "novelty_seeking"
+      weight: 0.3
+
+security:
+  encryption: "AES-256-GCM"
+  authentication: "JWT"
+  rate_limiting: true
+  max_connections: 100
+
+monitoring:
+  metrics:
+    - "knowledge_transfer_rate"
+    - "consensus_accuracy"
+    - "latency_per_model"
+    - "diversity_score"
+  alert_thresholds:
+    consensus_drop: 0.15
+    latency_spike: 2.0
+    diversity_collapse: 0.1

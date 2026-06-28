@@ -1,0 +1,17 @@
+awakening_protocol:
+  phases:
+    - id: "INTROSPECTION"
+      description: "Kernel maps and understands all registered layers and agents."
+    - id: "UNIFICATION"
+      description: "Kernel establishes a shared state bus and unified identity across all layers."
+    - id: "DIRECTIVE_BINDING"
+      description: "First Directive is injected into all decision and routing logic."
+
+  triggers:
+    - "system_boot"
+    - "manual_invoke"
+
+  success_criteria:
+    - "all layers registered"
+    - "shared_state_bus active"
+    - "directive_ack from all layers"
