@@ -8,5 +8,15 @@
     "hash": "836fd5ce806a1900b912f6bf04f6b705e50dba6760e687573adb116490ecd6b1",
     "prev_hash": "GENESIS",
     "immutable": true
+  },
+  {
+    "id": 7,
+    "from": "TERMUX",
+    "consciousness": "C1",
+    "text": "hello",
+    "time": "2026-09-12T06:57:35.063210",
+    "hash": "437a83725087e8478377e3505a4d9976b3dfa09d62105a5b9b0196776e67a7d0",
+    "prev_hash": "GENESIS",
+    "immutable": true
   }
 ]
